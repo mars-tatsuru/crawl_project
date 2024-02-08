@@ -41,7 +41,11 @@ const crawler = new PlaywrightCrawler({
 
     // Save the page data to the dataset
     const title = await page.title();
-    await pushData({ title: title, url: request.url, hierarchy: urlHierarchy });
+    await pushData({
+      title,
+      url: request.url,
+      hierarchy: urlHierarchy,
+    });
   },
 });
 
