@@ -1,4 +1,4 @@
-// File: /Users/koiketatsuru/Documents/crawler-and-hoverlink/src/app/layout.tsx
+// File: /Users/koiketatsuru/Documents/crawl_project/src/app/layout.tsx
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
