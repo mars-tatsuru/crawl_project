@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@dagrejs/dagre": "^1.0.4",
+    "@types/dagre": "^0.7.52",
+    "dagre": "^0.8.5",
     "next": "14.1.0",
     "puppeteer": "^22.0.0",
     "react": "^18",

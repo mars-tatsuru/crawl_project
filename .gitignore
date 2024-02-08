@@ -1,3 +1,6 @@
+# next.js build output
+.next
+
 # Logs
 logs
 *.log
@@ -22,12 +25,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
-
-mfx-test/*
-mfx-test-history/*
-
 .pnpm-store/*
