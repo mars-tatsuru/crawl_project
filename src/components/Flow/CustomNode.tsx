@@ -14,20 +14,16 @@ const CustomNode: FC<NodeProps> = ({ data, xPos, yPos }) => {
     <>
       <NodeResizer />
       <Handle type="target" position={Position.Top} />
+      <Handle type="source" position={Position.Bottom} />
+      <Handle type="target" position={Position.Right} />
+      <Handle type="source" position={Position.Left} />
       <div className={styles.card}>
         <div className={styles.title}>{data?.title}</div>
-        <div className={styles.content}>{data?.text}</div>
+        <div className={styles.content}>{data?.level}</div>
         <a className={styles.link} href={data?.url} target="_blank">
           {data?.url}
         </a>
       </div>
-      <Handle type="source" position={Position.Bottom} id="a" />
-      {/* <Handle
-        type="source"
-        position={Position.Bottom}
-        id="b"
-        style={sourceHandleStyleB}
-      /> */}
     </>
   );
 };

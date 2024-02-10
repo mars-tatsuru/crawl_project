@@ -1,6 +1,6 @@
 // https://crawlee.dev/docs/examples/crawl-relative-links
-const crawlUrl = "https://tatsucreate.com/";
-// const crawlUrl = "https://www.marsflag.com/ja/";
+// const crawlUrl = "https://tatsucreate.com/";
+const crawlUrl = "https://www.marsflag.com/ja/";
 import {
   PlaywrightCrawler,
   EnqueueStrategy,
@@ -13,10 +13,10 @@ import {
  ********************/
 const crawler = new PlaywrightCrawler({
   // Limitation for only 10 requests (do not use if you want to crawl all links)
-  // maxRequestsPerCrawl: 10,
-  // proxyConfiguration,
+  maxRequestsPerCrawl: 10,
 
   async requestHandler({ request, page, enqueueLinks, log, pushData }) {
+    log.info(`crawler: ${page.route}...`);
     // Log the URL of the page being crawled
     log.info(`crawling ${request.url}...`);
 
@@ -27,24 +27,19 @@ const crawler = new PlaywrightCrawler({
       strategy: EnqueueStrategy.SameOrigin,
     });
 
-    // Get URL part
-    const urlPart = request.url.split("/").slice(-1);
-    log.info(`urlPart: ${urlPart}`);
+    const newUrl = page.url().replace(crawlUrl, "");
+    log.info(`newUrl: ${newUrl}`);
 
-    // remove empty strings from the array
-    const filteredUrlPart = urlPart.filter((part) => part !== "");
-    log.info(`filteredUrlPart: ${filteredUrlPart}`);
-
-    // Get the hierarchy of the URL
-    const urlHierarchy = filteredUrlPart.length;
-    log.info(`urlHierarchy: ${urlHierarchy}`);
+    // count "/" in newUrl
+    const level = (newUrl.match(/\//g) || []).length + 1;
+    log.info(`level: ${level}`);
 
     // Save the page data to the dataset
     const title = await page.title();
     await pushData({
       title,
       url: request.url,
-      hierarchy: urlHierarchy,
+      level,
     });
   },
 });
@@ -56,7 +51,7 @@ const migration = async () => {
   const dataset = await Dataset.open<{
     url: string;
     title: string;
-    hierarchy: number;
+    level: number;
   }>();
 
   // calling reduce function and using memo to calculate number of headers
@@ -64,7 +59,7 @@ const migration = async () => {
     return {
       url: value.url,
       title: value.title,
-      hierarchy: value.hierarchy,
+      level: value.level,
     };
   });
 
