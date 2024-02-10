@@ -17,7 +17,6 @@ import dagre from "dagre";
 import CustomNode from "@/components/Flow/CustomNode";
 import styles from "@/styles/Flow.module.scss";
 import json from "../../backend/storage/key_value_stores/default/page_data.json";
-import { createSolutionBuilderHost } from "typescript";
 
 /****************************
  *style for the box
@@ -39,11 +38,11 @@ type Data = {
 
 type Values = Data[keyof Data][];
 
-/**************
- * json data
- **************/
+/******************************************
+ * processing json data
+ ******************************************/
 const jsonData: Data[] = json;
-const levelObj: { [key: string]: Values } = {};
+// const levelObj: { [key: string]: Values } = {};
 
 // create a node for each url
 jsonData.forEach((data, index) => {
@@ -69,9 +68,9 @@ const levelArr = initialNodes.map((element) => {
 levelArr.sort((a, b) => a - b);
 
 // [1, 2, 21, 22, 23, 3, 31, 32, 33, 34, 35];
-const levelArr2: any = [];
+const levelArrProcessed: string[] = [];
 /****************************
- *style for the edges(lines)
+ * style for the edges(lines)
  *****************************/
 const defaultEdgeOptions = {
   animated: true,
@@ -94,14 +93,10 @@ const initialEdges: Edge[] = [
 
 const initialValue = 0;
 let count = 1;
+// create edges based on the levelArr
 levelArr.reduce((acc, curr, index, arr) => {
   if (index === 0) {
-    initialEdges.push({
-      id: "1->2",
-      source: "1",
-      target: "2",
-    });
-    levelArr2.push(`${curr}`);
+    levelArrProcessed.push(`${curr}`);
     return curr;
   }
   if (curr === acc) {
@@ -113,7 +108,7 @@ levelArr.reduce((acc, curr, index, arr) => {
       source: `${acc - 1}`,
       target: `${curr}${count}`,
     });
-    levelArr2.push(`${curr}${count}`);
+    levelArrProcessed.push(`${curr}${count}`);
     count++;
     return curr;
   } else {
@@ -122,19 +117,19 @@ levelArr.reduce((acc, curr, index, arr) => {
       source: `${acc}`,
       target: `${curr}`,
     });
-    levelArr2.push(`${curr}`);
+    levelArrProcessed.push(`${curr}`);
     return curr;
   }
 }, initialValue);
 
-// initialNodesのidを小さい順に並び替え
+// sort initialNodes by id in decreasing order
 initialNodes.sort((a, b) => {
   return a.data.level - b.data.level;
 });
 
-// initialNodesのidをlevelArr2に変更
+// change the id of initialNodes to levelArrProcessed
 initialNodes.map((node, index) => {
-  node.id = `${levelArr2[index]}`;
+  node.id = `${levelArrProcessed[index]}`;
 });
 
 /****************************
@@ -146,24 +141,28 @@ dagreGraph.setDefaultEdgeLabel(() => ({}));
 const nodeWidth = 172;
 const nodeHeight = 100;
 
-const getLayoutedElements = (nodes: any, edges: any, direction = "TB") => {
+const getLayoutedElements = (
+  nodes: Node[],
+  edges: Edge[],
+  direction = "TB"
+) => {
   const isHorizontal = direction === "LR";
   dagreGraph.setGraph({ rankdir: direction });
 
-  nodes.forEach((node: any) => {
+  nodes.forEach((node) => {
     dagreGraph.setNode(node.id, { width: nodeWidth, height: nodeHeight });
   });
 
-  edges.forEach((edge: any) => {
+  edges.forEach((edge) => {
     dagreGraph.setEdge(edge.source, edge.target);
   });
 
   dagre.layout(dagreGraph);
 
-  nodes.forEach((node: any) => {
+  nodes.forEach((node) => {
     const nodeWithPosition = dagreGraph.node(node.id);
-    node.targetPosition = isHorizontal ? "left" : "top";
-    node.sourcePosition = isHorizontal ? "right" : "bottom";
+    // node.targetPosition = isHorizontal ? "left" : "top";
+    // node.sourcePosition = isHorizontal ? "right" : "bottom";
 
     // We are shifting the dagre node position (anchor=center center) to the top left
     // so it matches the React Flow node anchor point (top left).
@@ -203,7 +202,7 @@ function Flow() {
   );
 
   const onLayout = useCallback(
-    (direction: any) => {
+    (direction: string) => {
       const { nodes: layoutedNodes, edges: layoutedEdges } =
         getLayoutedElements(nodes, edges, direction);
 
@@ -215,17 +214,6 @@ function Flow() {
 
   return (
     <div className={styles.flow}>
-      {/* <ReactFlow
-        nodes={nodes}
-        edges={edges}
-        onNodesChange={onNodesChange}
-        onEdgesChange={onEdgesChange}
-        onConnect={onConnect}
-        nodeTypes={nodeTypes}
-        defaultEdgeOptions={defaultEdgeOptions}
-        connectionLineType={ConnectionLineType.SmoothStep}
-        fitView
-      /> */}
       <ReactFlow
         nodes={nodes}
         edges={edges}
