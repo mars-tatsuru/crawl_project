@@ -36,13 +36,18 @@ type Data = {
   level: number;
 };
 
-type Values = Data[keyof Data][];
+type LevelAndUrl<T extends Data> = {
+  level: T["level"];
+  url: T["url"];
+};
 
 /******************************************
  * processing json data
  ******************************************/
 const jsonData: Data[] = json;
-// const levelObj: { [key: string]: Values } = {};
+
+// sorting the data by level
+jsonData.sort((a, b) => a.level - b.level);
 
 // create a node for each url
 jsonData.forEach((data, index) => {
@@ -60,14 +65,10 @@ jsonData.forEach((data, index) => {
   initialNodes.push(newNode);
 });
 
-const levelArr = initialNodes.map((element) => {
-  return element.data.level;
+const levelAndUrlArr: LevelAndUrl<Data>[] = jsonData.map((data) => {
+  return { level: data.level, url: data.url };
 });
 
-// levelArr = [1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3];
-levelArr.sort((a, b) => a - b);
-
-// [1, 2, 21, 22, 23, 3, 31, 32, 33, 34, 35];
 const levelArrProcessed: string[] = [];
 /****************************
  * style for the edges(lines)
@@ -77,55 +78,85 @@ const defaultEdgeOptions = {
   type: "smoothstep",
 };
 
-const initialEdges: Edge[] = [
-  // { id: "1->2", source: "1", target: "2" },
-  // { id: "1->21", source: "1", target: "21" },
-  // { id: "1->22", source: "1", target: "22" },
-  // { id: "1->23", source: "1", target: "23" },
-  // { id: "1->3", source: "2", target: "3" },
-  // { id: "2->31", source: "2", target: "31" },
-  // { id: "2->32", source: "2", target: "32" },
-  // { id: "2->33", source: "2", target: "33" },
-  // { id: "2->34", source: "2", target: "34" },
-  // { id: "2->35", source: "2", target: "35" },
-  // { id: "2->36", source: "2", target: "36" },
-];
+const initialEdges: Edge[] = [];
 
-const initialValue = 0;
+// const initialValue = 0;
+const initialValue = {
+  level: 0,
+  url: "",
+};
 let count = 1;
-// create edges based on the levelArr
-levelArr.reduce((acc, curr, index, arr) => {
+const firstLevelUrl = levelAndUrlArr[0].url;
+
+// almost success. but not convinced.
+levelAndUrlArr.reduce((acc, curr, index, arr) => {
   if (index === 0) {
-    levelArrProcessed.push(`${curr}`);
+    // not empty string
+    initialEdges.push({
+      id: "1",
+      source: "0",
+      target: "0",
+    });
+
+    // first level url is stored as is
+    levelArrProcessed.push(`${curr.level}`);
+
     return curr;
   }
-  if (curr === acc) {
-    if (arr[index - 2] && curr !== arr[index - 2]) {
+
+  // if the level is the same as the previous level
+  if (acc.level === curr.level) {
+    // if the level is the same as the previous level and the level before the previous level
+    if (arr[index - 2] && curr.level !== arr[index - 2].level) {
       count = 1;
     }
+
+    levelArrProcessed.push(`${curr.level}${count}`);
+
     initialEdges.push({
-      id: `${acc - 1}->${curr}${count}`,
-      source: `${acc - 1}`,
-      target: `${curr}${count}`,
+      id: `${acc.level}->${curr.level}${count}`,
+      source: `${acc.level}`,
+      target: `${curr.level}${count}`,
     });
-    levelArrProcessed.push(`${curr}${count}`);
+
     count++;
+
     return curr;
   } else {
     initialEdges.push({
-      id: `${acc}->${curr}`,
-      source: `${acc}`,
-      target: `${curr}`,
+      id: `${acc.level}->${curr.level}`,
+      source: `${acc.level}`,
+      target: `${curr.level}`,
     });
-    levelArrProcessed.push(`${curr}`);
+    levelArrProcessed.push(`${curr.level}`);
     return curr;
   }
 }, initialValue);
 
-// sort initialNodes by id in decreasing order
-initialNodes.sort((a, b) => {
-  return a.data.level - b.data.level;
-});
+// challenge :WIP
+levelAndUrlArr.reduce((acc, curr, index, arr) => {
+  if (index === 0) {
+    // not empty string
+    initialEdges.push({
+      id: "1",
+      source: "0",
+      target: "0",
+    });
+
+    // first level url is stored as is
+    levelArrProcessed.push(`${curr.level}`);
+
+    return curr;
+  }
+
+  initialEdges.push({
+    id: "1",
+    source: "0",
+    target: "0",
+  });
+
+  return curr;
+}, initialValue);
 
 // change the id of initialNodes to levelArrProcessed
 initialNodes.map((node, index) => {

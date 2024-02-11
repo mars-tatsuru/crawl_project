@@ -6,6 +6,8 @@ import {
   EnqueueStrategy,
   Dataset,
   KeyValueStore,
+  LogLevel,
+  OpenGraphProperty,
 } from "crawlee";
 
 /********************
@@ -13,7 +15,7 @@ import {
  ********************/
 const crawler = new PlaywrightCrawler({
   // Limitation for only 10 requests (do not use if you want to crawl all links)
-  maxRequestsPerCrawl: 10,
+  maxRequestsPerCrawl: 20,
 
   async requestHandler({ request, page, enqueueLinks, log, pushData }) {
     log.info(`crawler: ${page.route}...`);
@@ -24,14 +26,16 @@ const crawler = new PlaywrightCrawler({
     await enqueueLinks({
       // strategy: EnqueueStrategy.SameDomain,
       // strategy: EnqueueStrategy.All,
+
       strategy: EnqueueStrategy.SameOrigin,
     });
 
-    const newUrl = page.url().replace(crawlUrl, "");
+    //TODO: fix magic string
+    const newUrl = page.url().replace("https://www.marsflag.com/", "");
     log.info(`newUrl: ${newUrl}`);
 
     // count "/" in newUrl
-    const level = (newUrl.match(/\//g) || []).length + 1;
+    const level = (newUrl.match(/\//g) || []).length;
     log.info(`level: ${level}`);
 
     // Save the page data to the dataset
