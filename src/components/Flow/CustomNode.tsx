@@ -3,28 +3,29 @@ import { Handle, Position, NodeProps, NodeResizer } from "reactflow";
 
 import styles from "@/styles/Custom.module.scss";
 
-const sourceHandleStyleA: CSSProperties = { left: 50 };
-const sourceHandleStyleB: CSSProperties = {
-  right: 50,
-  left: "auto",
-};
+interface CustomNodeProps {
+  id: string;
+  data: {
+    id: string;
+    title: string;
+    url: string;
+    level: string;
+    sideFlag: boolean;
+  };
+  position: {
+    x: number;
+    y: number;
+  };
+  targetPosition: "Left" | "Top";
+  sourcePosition: "Right" | "Bottom";
+  type: string;
+  className: string;
+}
 
-const CustomNode: FC<NodeProps> = ({ data, xPos, yPos }) => {
+const CustomNode: FC<CustomNodeProps> = ({ data }) => {
   return (
     <>
       <NodeResizer />
-      {/* {data.sideFlag ? (
-        <>
-          <Handle type="source" position={Position.Left} />
-          <Handle type="target" position={Position.Right} />
-        </>
-      ) : (
-        <>
-          <Handle type="source" position={Position.Top} />
-          <Handle type="target" position={Position.Bottom} />
-        </>
-      )} */}
-
       <Handle type="target" position={Position.Top} />
       <Handle type="source" position={Position.Bottom} />
       <div className={styles.card}>
