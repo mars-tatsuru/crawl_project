@@ -13,10 +13,20 @@ const CustomNode: FC<NodeProps> = ({ data, xPos, yPos }) => {
   return (
     <>
       <NodeResizer />
+      {/* {data.sideFlag ? (
+        <>
+          <Handle type="source" position={Position.Left} />
+          <Handle type="target" position={Position.Right} />
+        </>
+      ) : (
+        <>
+          <Handle type="source" position={Position.Top} />
+          <Handle type="target" position={Position.Bottom} />
+        </>
+      )} */}
+
       <Handle type="target" position={Position.Top} />
       <Handle type="source" position={Position.Bottom} />
-      <Handle type="target" position={Position.Right} />
-      <Handle type="source" position={Position.Left} />
       <div className={styles.card}>
         <div className={styles.title}>{data?.title}</div>
         <div className={styles.content}>{data?.level}</div>

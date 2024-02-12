@@ -11,6 +11,7 @@ import ReactFlow, {
   Connection,
   Edge,
   ConnectionLineType,
+  Position,
 } from "reactflow";
 import dagre from "dagre";
 
@@ -49,30 +50,14 @@ const jsonData: Data[] = json;
 // sorting the data by level
 jsonData.sort((a, b) => a.level - b.level);
 
-// create a node for each url
-jsonData.forEach((data, index) => {
-  const newNode = {
-    id: String(index + 1),
-    data: {
-      title: data.title,
-      url: data.url,
-      level: data.level,
-    },
-    position: { x: 0, y: 0 },
-    type: "custom",
-    className: styles.customNode,
-  };
-  initialNodes.push(newNode);
-});
-
 const levelAndUrlArr: LevelAndUrl<Data>[] = jsonData.map((data) => {
   return { level: data.level, url: data.url };
 });
 
 const levelArrProcessed: string[] = [];
-/****************************
+/********************************************************
  * style for the edges(lines)
- *****************************/
+ ********************************************************/
 const defaultEdgeOptions = {
   animated: true,
   type: "smoothstep",
@@ -86,20 +71,22 @@ const initialValue = {
   url: "",
 };
 let count = 1;
-const firstLevelUrl = levelAndUrlArr[0].url;
+let sideFlagArr: boolean[] = [];
 
 // almost success. but not convinced.
 levelAndUrlArr.reduce((acc, curr, index, arr) => {
   if (index === 0) {
     // not empty string
     initialEdges.push({
-      id: "1",
+      id: `${index}`,
       source: "0",
       target: "0",
     });
 
     // first level url is stored as is
     levelArrProcessed.push(`${curr.level}`);
+
+    sideFlagArr.push(true);
 
     return curr;
   }
@@ -111,13 +98,27 @@ levelAndUrlArr.reduce((acc, curr, index, arr) => {
       count = 1;
     }
 
-    levelArrProcessed.push(`${curr.level}${count}`);
+    if (parseInt(String(curr.level)) === parseInt(String(acc.level))) {
+      sideFlagArr.push(true);
 
-    initialEdges.push({
-      id: `${acc.level}->${curr.level}${count}`,
-      source: `${acc.level}`,
-      target: `${curr.level}${count}`,
-    });
+      initialEdges.push({
+        id: `${acc.level}->${curr.level}${count}`,
+        source: `${acc.level}`,
+        target: `${curr.level}${count}`,
+      });
+
+      levelArrProcessed.push(`${curr.level}${count}`);
+    } else {
+      sideFlagArr.push(false);
+
+      initialEdges.push({
+        id: `${acc.level}->${curr.level}${count}`,
+        source: `${acc.level}`,
+        target: `${curr.level}${count}`,
+      });
+
+      levelArrProcessed.push(`${curr.level}${count}`);
+    }
 
     count++;
 
@@ -133,34 +134,31 @@ levelAndUrlArr.reduce((acc, curr, index, arr) => {
   }
 }, initialValue);
 
-// challenge :WIP
-levelAndUrlArr.reduce((acc, curr, index, arr) => {
-  if (index === 0) {
-    // not empty string
-    initialEdges.push({
-      id: "1",
-      source: "0",
-      target: "0",
-    });
+console.log(initialEdges);
 
-    // first level url is stored as is
-    levelArrProcessed.push(`${curr.level}`);
-
-    return curr;
-  }
-
-  initialEdges.push({
-    id: "1",
-    source: "0",
-    target: "0",
-  });
-
-  return curr;
-}, initialValue);
-
-// change the id of initialNodes to levelArrProcessed
-initialNodes.map((node, index) => {
-  node.id = `${levelArrProcessed[index]}`;
+/******************************************
+ *  create a node for each url
+ ******************************************/
+jsonData.forEach((data, index) => {
+  const newNode = {
+    id: `${levelArrProcessed[index]}`,
+    data: {
+      id: `${index + 1}`,
+      title: data.title,
+      url: data.url,
+      level: data.level,
+      sideFlag: sideFlagArr[index],
+    },
+    position: {
+      x: 0,
+      y: 0,
+    },
+    targetPosition: Position.Left,
+    sourcePosition: Position.Right,
+    type: "custom",
+    className: styles.customNode,
+  };
+  initialNodes.push(newNode);
 });
 
 /****************************
@@ -169,12 +167,12 @@ initialNodes.map((node, index) => {
 const dagreGraph = new dagre.graphlib.Graph();
 dagreGraph.setDefaultEdgeLabel(() => ({}));
 
-const nodeWidth = 172;
+const nodeWidth = 200;
 const nodeHeight = 100;
 
 const getLayoutedElements = (
-  nodes: Node[],
-  edges: Edge[],
+  nodes: Node[], // initialNodes
+  edges: Edge[], // initialEdges
   direction = "TB"
 ) => {
   const isHorizontal = direction === "LR";
@@ -190,10 +188,19 @@ const getLayoutedElements = (
 
   dagre.layout(dagreGraph);
 
-  nodes.forEach((node) => {
-    const nodeWithPosition = dagreGraph.node(node.id);
-    // node.targetPosition = isHorizontal ? "left" : "top";
-    // node.sourcePosition = isHorizontal ? "right" : "bottom";
+  nodes.forEach((node, index) => {
+    let nodeWithPosition;
+
+    // if (node.id.length > 1) {
+    //   nodeWithPosition = dagreGraph.node(String(parseInt(String(node.id)[0])));
+    // } else {
+    //   nodeWithPosition = dagreGraph.node(node.id);
+    // }
+
+    nodeWithPosition = dagreGraph.node(node.id);
+
+    node.targetPosition = isHorizontal ? Position.Left : Position.Top;
+    node.sourcePosition = isHorizontal ? Position.Right : Position.Bottom;
 
     // We are shifting the dagre node position (anchor=center center) to the top left
     // so it matches the React Flow node anchor point (top left).
@@ -232,16 +239,16 @@ function Flow() {
     []
   );
 
-  const onLayout = useCallback(
-    (direction: string) => {
-      const { nodes: layoutedNodes, edges: layoutedEdges } =
-        getLayoutedElements(nodes, edges, direction);
+  // const onLayout = useCallback(
+  //   (direction: string) => {
+  //     const { nodes: layoutedNodes, edges: layoutedEdges } =
+  //       getLayoutedElements(nodes, edges, direction);
 
-      setNodes([...layoutedNodes]);
-      setEdges([...layoutedEdges]);
-    },
-    [nodes, edges]
-  );
+  //     setNodes([...layoutedNodes]);
+  //     setEdges([...layoutedEdges]);
+  //   },
+  //   [nodes, edges]
+  // );
 
   return (
     <div className={styles.flow}>
@@ -256,10 +263,10 @@ function Flow() {
         defaultEdgeOptions={defaultEdgeOptions}
         fitView
       >
-        <Panel position="top-right">
+        {/* <Panel position="top-right">
           <button onClick={() => onLayout("TB")}>vertical layout</button>
           <button onClick={() => onLayout("LR")}>horizontal layout</button>
-        </Panel>
+        </Panel> */}
       </ReactFlow>
     </div>
   );
