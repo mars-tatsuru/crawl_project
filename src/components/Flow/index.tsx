@@ -88,6 +88,7 @@ const initialEdges = [
     targetHandle: "b",
     animated: true,
     style: { stroke: "#fff" },
+    type: "custom-edge",
   },
   {
     id: "2->3",
@@ -97,6 +98,7 @@ const initialEdges = [
     targetHandle: "b",
     animated: true,
     style: { stroke: "#fff" },
+    type: "custom-edge",
   },
   {
     id: "2->4",
@@ -106,6 +108,7 @@ const initialEdges = [
     targetHandle: "a",
     animated: true,
     style: { stroke: "#fff" },
+    type: "custom-edge",
   },
 ];
 
@@ -142,14 +145,14 @@ export default function App() {
         style={rfStyle}
         edgeTypes={edgeTypes}
       >
-        <Panel position="top-left">top-left</Panel>
+        {/* <Panel position="top-left">top-left</Panel>
         <Panel position="top-center">top-center</Panel>
         <Panel position="top-right">top-right</Panel>
         <Panel position="bottom-left">bottom-left</Panel>
         <Panel position="bottom-center">bottom-center</Panel>
         <Panel position="bottom-right">bottom-right</Panel>
         <Controls />
-        <MiniMap />
+        <MiniMap /> */}
         <Background variant={backgroundVariant} gap={12} size={1} />
       </ReactFlow>
     </div>
