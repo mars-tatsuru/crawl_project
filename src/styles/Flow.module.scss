@@ -1,6 +1,5 @@
 .flow {
   flex-grow: 1;
-  font-size: 12px;
 }
 
 .customNode {
@@ -10,4 +9,5 @@
   width: 200px;
   overflow-wrap: normal;
   word-break: break-all;
+  border-radius: 5px;
 }

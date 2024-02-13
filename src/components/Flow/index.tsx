@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback } from "react";
+import React, { useCallback, useState, useMemo, useEffect } from "react";
 import ReactFlow, {
   MiniMap,
   Controls,
@@ -10,36 +10,154 @@ import ReactFlow, {
   addEdge,
   BackgroundVariant,
   Panel,
+  SelectionMode,
+  Position,
 } from "reactflow";
 
 import "reactflow/dist/style.css";
 
+import styles from "@/styles/Flow.module.scss";
+
+const rfStyle = {
+  backgroundColor: "#B8CEFF",
+};
+
+import TextUpdaterNode from "@/components/Flow/CustomNode";
+import CustomEdge from "@/components/Flow/CustomEdge";
+
+const nodeTypes = { textUpdater: TextUpdaterNode };
+const edgeTypes = {
+  "custom-edge": CustomEdge,
+};
+
 const initialNodes = [
-  { id: "1", position: { x: 0, y: 0 }, data: { label: "1" } },
-  { id: "2", position: { x: 0, y: 100 }, data: { label: "2" } },
+  {
+    id: "1",
+    type: "textUpdater",
+    data: {
+      url: "https://www.marsflag.com/cn/",
+      title: "MARS FLAG Corporation",
+      level: 1,
+    },
+    position: { x: 0, y: 50 },
+    sourcePosition: Position.Right,
+    className: styles.customNode,
+  },
+  {
+    id: "2",
+    type: "textUpdater",
+    data: {
+      url: "https://www.marsflag.com/ja/",
+      title: "株式会社マーズフラッグ",
+      level: 1,
+    },
+    position: { x: 300, y: 50 },
+    className: styles.customNode,
+  },
+  {
+    id: "3",
+    type: "textUpdater",
+    data: {
+      url: "https://www.marsflag.com/cn/",
+      title: "MARS FLAG Corporation",
+      level: 1,
+    },
+    position: { x: 650, y: 0 },
+    targetPosition: Position.Left,
+    className: styles.customNode,
+  },
+  {
+    id: "4",
+    type: "textUpdater",
+    data: {
+      url: "https://www.marsflag.com/ja/privacy-policy.html",
+      title: "プライバシーポリシー - MARS FLAG",
+      level: 1,
+    },
+    position: { x: 650, y: 100 },
+    targetPosition: Position.Left,
+    className: styles.customNode,
+  },
+  {
+    id: "5",
+    type: "textUpdater",
+    data: {
+      url: "https://www.marsflag.com/ja/contact-us/",
+      title: "お問い合わせ - MARS FLAG",
+      level: 2,
+    },
+    position: { x: 300, y: 200 },
+    targetPosition: Position.Top,
+    className: styles.customNode,
+  },
 ];
-const initialEdges = [{ id: "e1-2", source: "1", target: "2" }];
+
+const initialEdges = [
+  {
+    id: "e1-2",
+    source: "1",
+    target: "2",
+    animated: true,
+    style: { stroke: "#fff" },
+  },
+  {
+    id: "e2a-3",
+    source: "2",
+    target: "3",
+    sourceHandle: "a",
+    animated: true,
+    style: { stroke: "#fff" },
+  },
+  {
+    id: "e2b-4",
+    source: "2",
+    target: "4",
+    sourceHandle: "b",
+    animated: true,
+    style: { stroke: "#fff" },
+  },
+  {
+    id: "e2c-5",
+    source: "2",
+    target: "5",
+    sourceHandle: "c",
+    animated: true,
+    style: { stroke: "#fff" },
+  },
+];
+
+const panOnDrag = [1, 2];
 
 export default function App() {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
   const onConnect = useCallback(
-    (params: any) => setEdges((eds) => addEdge(params, eds)),
+    (connection: any) => {
+      const edge = { ...connection, type: "custom-edge" };
+      setEdges((eds) => addEdge(edge, eds));
+    },
     [setEdges]
   );
 
   const backgroundVariant = BackgroundVariant.Cross;
 
   return (
-    <div style={{ width: "100vw", height: "100vh" }}>
+    <div className={styles.flow}>
       <ReactFlow
         nodes={nodes}
         edges={edges}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
+        panOnScroll
+        selectionOnDrag
+        panOnDrag={panOnDrag}
+        selectionMode={SelectionMode.Partial}
+        nodeTypes={nodeTypes}
         fitView
+        style={rfStyle}
+        edgeTypes={edgeTypes}
       >
         <Panel position="top-left">top-left</Panel>
         <Panel position="top-center">top-center</Panel>
