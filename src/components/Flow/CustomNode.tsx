@@ -8,10 +8,15 @@ export default memo(
     return (
       <>
         <Handle
+          id="a"
+          type="target"
+          position={Position.Top}
+          isConnectable={isConnectable}
+        />
+        <Handle
+          id="b"
           type="target"
           position={Position.Left}
-          style={{ background: "#555" }}
-          onConnect={(params) => console.log("handle onConnect", params)}
           isConnectable={isConnectable}
         />
         <div className={styles.card}>
@@ -22,23 +27,15 @@ export default memo(
           </a>
         </div>
         <Handle
+          id="c"
           type="source"
           position={Position.Right}
-          id="a"
-          style={{ top: 10, background: "#555" }}
           isConnectable={isConnectable}
         />
         <Handle
-          type="source"
-          position={Position.Right}
-          id="b"
-          style={{ bottom: 10, top: "auto", background: "#555" }}
-          isConnectable={isConnectable}
-        />
-        <Handle
+          id="d"
           type="source"
           position={Position.Bottom}
-          id="c"
           isConnectable={isConnectable}
         />
       </>

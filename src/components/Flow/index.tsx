@@ -39,8 +39,7 @@ const initialNodes = [
       title: "MARS FLAG Corporation",
       level: 1,
     },
-    position: { x: 0, y: 50 },
-    sourcePosition: Position.Right,
+    position: { x: 0, y: 0 },
     className: styles.customNode,
   },
   {
@@ -51,14 +50,14 @@ const initialNodes = [
       title: "株式会社マーズフラッグ",
       level: 1,
     },
-    position: { x: 300, y: 50 },
+    position: { x: 300, y: 0 },
     className: styles.customNode,
   },
   {
     id: "3",
     type: "textUpdater",
     data: {
-      url: "https://www.marsflag.com/cn/",
+      url: "https://www.marsflag.com/zn/",
       title: "MARS FLAG Corporation",
       level: 1,
     },
@@ -68,18 +67,6 @@ const initialNodes = [
   },
   {
     id: "4",
-    type: "textUpdater",
-    data: {
-      url: "https://www.marsflag.com/ja/privacy-policy.html",
-      title: "プライバシーポリシー - MARS FLAG",
-      level: 1,
-    },
-    position: { x: 650, y: 100 },
-    targetPosition: Position.Left,
-    className: styles.customNode,
-  },
-  {
-    id: "5",
     type: "textUpdater",
     data: {
       url: "https://www.marsflag.com/ja/contact-us/",
@@ -94,33 +81,29 @@ const initialNodes = [
 
 const initialEdges = [
   {
-    id: "e1-2",
+    id: "1->2",
     source: "1",
     target: "2",
+    sourceHandle: "c",
+    targetHandle: "b",
     animated: true,
     style: { stroke: "#fff" },
   },
   {
-    id: "e2a-3",
+    id: "2->3",
     source: "2",
     target: "3",
-    sourceHandle: "a",
+    sourceHandle: "c",
+    targetHandle: "b",
     animated: true,
     style: { stroke: "#fff" },
   },
   {
-    id: "e2b-4",
+    id: "2->4",
     source: "2",
     target: "4",
-    sourceHandle: "b",
-    animated: true,
-    style: { stroke: "#fff" },
-  },
-  {
-    id: "e2c-5",
-    source: "2",
-    target: "5",
-    sourceHandle: "c",
+    sourceHandle: "d",
+    targetHandle: "a",
     animated: true,
     style: { stroke: "#fff" },
   },
