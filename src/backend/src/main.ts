@@ -47,21 +47,18 @@ const crawler = new PlaywrightCrawler({
  * Open the dataset and save the result of the map to the default Key-value store
  ***************************************************************************************/
 const migration = async () => {
-  const root: Record<string, any> = {};
-  let current = root;
-  const Arr: any[] = [];
+  let pathParts: string[][] = [];
+  let pseudoUrls: any = {};
 
   urls.forEach((url) => {
-    const pathParts = new URL(url).pathname.split("/").filter(Boolean);
-    Arr.push(pathParts);
-
-    pathParts.forEach((part) => {
-      if (!current[part]) {
-        current[part] = {};
-      }
-      current = current[part];
-    });
+    pathParts.push(new URL(url).pathname.split("/").filter(Boolean));
   });
+
+  // pseudoUrls = pathParts.reduce((memo: Record<string, any>, part) => {
+  //   return (memo[part] = memo[part] || {});
+  // }, {});
+
+  console.log("pathParts", pathParts);
 
   const dataset = await Dataset.open<{
     url: string;
@@ -78,7 +75,7 @@ const migration = async () => {
 
   // saving result of map to default Key-value store
   await KeyValueStore.setValue("page_data", dataSetObj);
-  await KeyValueStore.setValue("page_tree", Arr);
+  await KeyValueStore.setValue("page_tree", pseudoUrls);
 };
 
 /**************************************

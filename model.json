@@ -1,0 +1,38 @@
+{
+  "ja": {
+    "url": "https://www.marsflag.com/ja/",
+    "title": "株式会社マーズフラッグ",
+    "services": {
+      "url": "https://www.marsflag.com/ja/services/",
+      "title": "製品・サービス - MARS FLAG",
+      "marsfinder": {
+        "url": "https://www.marsflag.com/ja/services/marsfinder/",
+        "title": "MARS FINDER - MARS FLAG"
+      },
+      "marsemotech": {
+        "url": "https://www.marsflag.com/ja/services/marsemotech/",
+        "title": "MARS EMOTECH - MARS FLAG"
+      },
+      "marsscreen": {
+        "url": "https://www.marsflag.com/ja/services/marsscreen/",
+        "title": "MARS SCREEN - MARS FLAG"
+      },
+      "marsplatform": {
+        "url": "https://www.marsflag.com/ja/services/marsplatform/",
+        "title": "MARS PLATFORM - MARS FLAG"
+      }
+    },
+    "privacy-policy.html": {
+      "url": "https://www.marsflag.com/ja/privacy-policy.html",
+      "title": "プライバシーポリシー - MARS FLAG"
+    },
+    "faq": {
+      "url": "https://www.marsflag.com/ja/faq/",
+      "title": "よくある質問 - MARS FLAG"
+    },
+    "news": {
+      "url": "https://www.marsflag.com/ja/news/",
+      "title": "ニュース - MARS FLAG"
+    }
+  }
+}
