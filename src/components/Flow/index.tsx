@@ -36,6 +36,7 @@ const treeArr: string[] = [];
 
 // create a tree array
 for (const [key, value] of Object.entries(tree)) {
+  console.log(`${key}: ${value}`);
 }
 
 console.log(treeArr);
