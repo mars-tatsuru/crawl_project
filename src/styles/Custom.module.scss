@@ -1,5 +1,10 @@
 .card {
-  width: 100%;
+  width: 150px;
+  background-color: aliceblue;
+  padding: 10px;
+  white-space: wrap;
+  overflow-wrap: break-word;
+  word-break: break-word;
 
   .title {
     color: #333;

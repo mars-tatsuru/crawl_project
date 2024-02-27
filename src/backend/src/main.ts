@@ -47,35 +47,47 @@ const crawler = new PlaywrightCrawler({
  * Open the dataset and save the result of the map to the default Key-value store
  ***************************************************************************************/
 const migration = async () => {
-  let pathParts: string[][] = [];
-  let pseudoUrls: any = {};
-
-  urls.forEach((url) => {
-    pathParts.push(new URL(url).pathname.split("/").filter(Boolean));
-  });
-
-  // pseudoUrls = pathParts.reduce((memo: Record<string, any>, part) => {
-  //   return (memo[part] = memo[part] || {});
-  // }, {});
-
-  console.log("pathParts", pathParts);
-
   const dataset = await Dataset.open<{
     url: string;
     title: string;
   }>();
 
   // calling reduce function and using memo to calculate number of headers
-  const dataSetObj = await dataset.map((value) => {
+  const dataSetObjArr = await dataset.map((value) => {
     return {
       url: value.url,
       title: value.title,
     };
   });
 
+  let pathParts: string[][] = [];
+
+  urls.forEach((url) => {
+    pathParts.push(new URL(url).pathname.split("/").filter(Boolean));
+  });
+
+  const result = {};
+
+  let counter = 0;
+  pathParts.forEach((parts) => {
+    let obj: { [key: string]: any } = result;
+    for (let i = 0; i < parts.length; i++) {
+      const part = parts[i];
+      if (!obj[part]) {
+        obj[part] = {
+          url: dataSetObjArr[counter].url,
+          title: dataSetObjArr[counter].title,
+          level: parts.length,
+        };
+      }
+      obj = obj[part];
+    }
+    counter++;
+  });
+
   // saving result of map to default Key-value store
-  await KeyValueStore.setValue("page_data", dataSetObj);
-  await KeyValueStore.setValue("page_tree", pseudoUrls);
+  await KeyValueStore.setValue("page_data", dataSetObjArr);
+  await KeyValueStore.setValue("site_tree", result);
 };
 
 /**************************************

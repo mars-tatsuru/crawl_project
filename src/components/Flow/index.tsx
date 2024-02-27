@@ -21,8 +21,7 @@ import dagre from "dagre";
 
 import CustomNode from "@/components/Flow/CustomNode";
 import styles from "@/styles/Flow.module.scss";
-import json from "../../backend/storage/key_value_stores/default/page_data.json";
-import tree from "../../backend/storage/key_value_stores/default/page_tree.json";
+import tree from "../../backend/storage/key_value_stores/default/site_tree.json";
 
 /****************************
  *style for the box
@@ -30,34 +29,20 @@ import tree from "../../backend/storage/key_value_stores/default/page_tree.json"
 const nodeTypes = {
   custom: CustomNode,
 };
-
-const initialNodes: Node[] = [];
-const treeArr: string[] = [];
-
-// create a tree array
-for (const [key, value] of Object.entries(tree)) {
-  console.log(`${key}: ${value}`);
-}
-
-console.log(treeArr);
-
 /****************************
  * type of Json data
  ****************************/
 type Data = {
   url: string;
   title: string;
-};
-
-type LevelAndUrl<T extends Data> = {
-  url: T["url"];
+  level: number;
 };
 
 /******************************************
  * processing json data
  ******************************************/
-const jsonData: Data[] = json;
-const levelArrProcessed: string[] = [];
+const siteMapData: any = tree;
+
 /********************************************************
  * style for the edges(lines)
  ********************************************************/
@@ -66,7 +51,28 @@ const defaultEdgeOptions = {
   type: "smoothstep",
 };
 
+const initialNodes: Node[] = [];
 const initialEdges: Edge[] = [];
+
+// siteMapData is the tree structure of the site
+let idCounter = 0;
+for (const [key, value] of Object.entries(siteMapData)) {
+  initialNodes.push({
+    id: `${idCounter + 1}`,
+    type: "custom",
+    position: {
+      x: idCounter * 170,
+      y: ((value as { level: number } | undefined)?.level ?? 0) * 200,
+    },
+    data: {
+      title: (value as { title: string } | undefined)?.title,
+      url: (value as { url: string } | undefined)?.url,
+      level: (value as { level: number } | undefined)?.level,
+    },
+  });
+
+  idCounter++;
+}
 
 function Flow() {
   // Add node or box

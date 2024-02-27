@@ -33,7 +33,7 @@ const CustomNode: FC<NodeProps> = ({ data, isConnectable }) => {
       />
       <div className={styles.card}>
         <div className={styles.title}>{data?.title}</div>
-        <div className={styles.content}>{data?.level}</div>
+        <div className={styles.content}>Level: {data?.level}</div>
         <a className={styles.link} href={data?.url} target="_blank">
           {data?.url}
         </a>
