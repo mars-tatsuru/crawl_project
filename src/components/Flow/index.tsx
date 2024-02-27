@@ -54,7 +54,7 @@ const defaultEdgeOptions = {
 const initialNodes: Node[] = [];
 const initialEdges: Edge[] = [];
 
-// siteMapData is the tree structure of the site
+// TODO: siteMapData is the tree structure of the site
 let idCounter = 0;
 for (const [key, value] of Object.entries(siteMapData)) {
   initialNodes.push({
