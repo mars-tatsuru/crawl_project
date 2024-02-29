@@ -2,43 +2,67 @@ import React, { memo } from "react";
 import { Handle, Position } from "reactflow";
 
 import styles from "@/styles/Custom.module.scss";
+const CustomNode: FC<NodeProps> = ({ data, isConnectable }) => {
+  return (
+    <>
+      <NodeResizer />
+      <Handle
+        id="a"
+        type="target"
+        position={Position.Top}
+        isConnectable={isConnectable}
+      />
+      <Handle
+        id="b"
+        type="source"
+        position={Position.Top}
+        isConnectable={isConnectable}
+      />
+      <Handle
+        id="c"
+        type="target"
+        position={Position.Left}
+        isConnectable={isConnectable}
+      />
+      <Handle
+        id="d"
+        type="source"
+        position={Position.Left}
+        isConnectable={isConnectable}
+      />
+      <div className={styles.card}>
+        <div className={styles.title}>{data?.title}</div>
+        <div className={styles.content}>Level: {data?.level}</div>
+        <a className={styles.link} href={data?.url} target="_blank">
+          {data?.url}
+        </a>
+      </div>
+      <Handle
+        id="e"
+        type="target"
+        position={Position.Right}
+        isConnectable={isConnectable}
+      />
+      <Handle
+        id="f"
+        type="source"
+        position={Position.Right}
+        isConnectable={isConnectable}
+      />
+      <Handle
+        id="g"
+        type="target"
+        position={Position.Bottom}
+        isConnectable={isConnectable}
+      />
+      <Handle
+        id="h"
+        type="source"
+        position={Position.Bottom}
+        isConnectable={isConnectable}
+      />
+    </>
+  );
+};
 
-export default memo(
-  ({ data, isConnectable }: { data: any; isConnectable: boolean }) => {
-    return (
-      <>
-        <Handle
-          id="a"
-          type="target"
-          position={Position.Top}
-          isConnectable={isConnectable}
-        />
-        <Handle
-          id="b"
-          type="target"
-          position={Position.Left}
-          isConnectable={isConnectable}
-        />
-        <div className={styles.card}>
-          <p className={styles.title}>{data.title}</p>
-          <p className={styles.content}>{data.level}</p>
-          <a href="/" className={styles.link}>
-            {data.url}
-          </a>
-        </div>
-        <Handle
-          id="c"
-          type="source"
-          position={Position.Right}
-          isConnectable={isConnectable}
-        />
-        <Handle
-          id="d"
-          type="source"
-          position={Position.Bottom}
-          isConnectable={isConnectable}
-        />
-      </>
-    );
-  }
-);
+export default memo(CustomNode);

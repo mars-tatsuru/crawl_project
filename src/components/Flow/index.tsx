@@ -12,110 +12,73 @@ import ReactFlow, {
   Panel,
   SelectionMode,
   Position,
+  Background,
+  Controls,
+  BackgroundVariant,
+  MiniMap,
 } from "reactflow";
+import dagre from "dagre";
 
-import "reactflow/dist/style.css";
-
+import CustomNode from "@/components/Flow/CustomNode";
 import styles from "@/styles/Flow.module.scss";
+import tree from "../../backend/storage/key_value_stores/default/site_tree.json";
 
-const rfStyle = {
-  backgroundColor: "#B8CEFF",
+/****************************
+ *style for the box
+ *****************************/
+const nodeTypes = {
+  custom: CustomNode,
+};
+/****************************
+ * type of Json data
+ ****************************/
+type Data = {
+  url: string;
+  title: string;
+  level: number;
 };
 
-import TextUpdaterNode from "@/components/Flow/CustomNode";
-import CustomEdge from "@/components/Flow/CustomEdge";
+/******************************************
+ * processing json data
+ ******************************************/
+const siteMapData: any = tree;
 
-const nodeTypes = { textUpdater: TextUpdaterNode };
-const edgeTypes = {
-  "custom-edge": CustomEdge,
+/********************************************************
+ * style for the edges(lines)
+ ********************************************************/
+const defaultEdgeOptions = {
+  animated: true,
+  type: "smoothstep",
 };
 
-const initialNodes = [
-  {
-    id: "1",
-    type: "textUpdater",
-    data: {
-      url: "https://www.marsflag.com/cn/",
-      title: "MARS FLAG Corporation",
-      level: 1,
-    },
-    position: { x: 0, y: 0 },
-    className: styles.customNode,
-  },
-  {
-    id: "2",
-    type: "textUpdater",
-    data: {
-      url: "https://www.marsflag.com/ja/",
-      title: "株式会社マーズフラッグ",
-      level: 1,
-    },
-    position: { x: 300, y: 0 },
-    className: styles.customNode,
-  },
-  {
-    id: "3",
-    type: "textUpdater",
-    data: {
-      url: "https://www.marsflag.com/zn/",
-      title: "MARS FLAG Corporation",
-      level: 1,
-    },
-    position: { x: 650, y: 0 },
-    targetPosition: Position.Left,
-    className: styles.customNode,
-  },
-  {
-    id: "4",
-    type: "textUpdater",
-    data: {
-      url: "https://www.marsflag.com/ja/contact-us/",
-      title: "お問い合わせ - MARS FLAG",
-      level: 2,
-    },
-    position: { x: 300, y: 200 },
-    targetPosition: Position.Top,
-    className: styles.customNode,
-  },
-];
+const initialNodes: Node[] = [];
+const initialEdges: Edge[] = [];
 
-const initialEdges = [
-  {
-    id: "1->2",
-    source: "1",
-    target: "2",
-    sourceHandle: "c",
-    targetHandle: "b",
-    animated: true,
-    style: { stroke: "#fff" },
-    type: "custom-edge",
-  },
-  {
-    id: "2->3",
-    source: "2",
-    target: "3",
-    sourceHandle: "c",
-    targetHandle: "b",
-    animated: true,
-    style: { stroke: "#fff" },
-    type: "custom-edge",
-  },
-  {
-    id: "2->4",
-    source: "2",
-    target: "4",
-    sourceHandle: "d",
-    targetHandle: "a",
-    animated: true,
-    style: { stroke: "#fff" },
-    type: "custom-edge",
-  },
-];
+// TODO: siteMapData is the tree structure of the site
+let idCounter = 0;
+for (const [key, value] of Object.entries(siteMapData)) {
+  initialNodes.push({
+    id: `${idCounter + 1}`,
+    type: "custom",
+    position: {
+      x: idCounter * 170,
+      y: ((value as { level: number } | undefined)?.level ?? 0) * 200,
+    },
+    data: {
+      title: (value as { title: string } | undefined)?.title,
+      url: (value as { url: string } | undefined)?.url,
+      level: (value as { level: number } | undefined)?.level,
+    },
+  });
 
-const panOnDrag = [1, 2];
+  idCounter++;
+}
 
-export default function App() {
+function Flow() {
+  // Add node or box
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+
+  // Add edge or connection
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
   const onConnect = useCallback(
@@ -126,7 +89,13 @@ export default function App() {
     [setEdges]
   );
 
-  const backgroundVariant = BackgroundVariant.Cross;
+  // const onConnect = useCallback(
+  //   (connection: any) => {
+  //     const edge = { ...connection, type: "custom-edge" };
+  //     setEdges((eds) => addEdge(edge, eds));
+  //   },
+  //   [setEdges]
+  // );
 
   return (
     <div className={styles.flow}>
@@ -145,15 +114,7 @@ export default function App() {
         style={rfStyle}
         edgeTypes={edgeTypes}
       >
-        {/* <Panel position="top-left">top-left</Panel>
-        <Panel position="top-center">top-center</Panel>
-        <Panel position="top-right">top-right</Panel>
-        <Panel position="bottom-left">bottom-left</Panel>
-        <Panel position="bottom-center">bottom-center</Panel>
-        <Panel position="bottom-right">bottom-right</Panel>
-        <Controls />
-        <MiniMap /> */}
-        <Background variant={backgroundVariant} gap={12} size={1} />
+        <Background style={{ background: "#bbdbf3" }} />
       </ReactFlow>
     </div>
   );

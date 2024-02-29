@@ -8,17 +8,19 @@ import {
   KeyValueStore,
   LogLevel,
   OpenGraphProperty,
+  constructRegExpObjectsFromPseudoUrls,
 } from "crawlee";
 
 /********************
  * crawler settings
  ********************/
+const urls: string[] = [];
+
 const crawler = new PlaywrightCrawler({
   // Limitation for only 10 requests (do not use if you want to crawl all links)
   maxRequestsPerCrawl: 20,
 
   async requestHandler({ request, page, enqueueLinks, log, pushData }) {
-    log.info(`crawler: ${page.route}...`);
     // Log the URL of the page being crawled
     log.info(`crawling ${request.url}...`);
 
@@ -26,24 +28,17 @@ const crawler = new PlaywrightCrawler({
     await enqueueLinks({
       // strategy: EnqueueStrategy.SameDomain,
       // strategy: EnqueueStrategy.All,
-
       strategy: EnqueueStrategy.SameOrigin,
     });
 
-    //TODO: fix magic string
-    const newUrl = page.url().replace("https://www.marsflag.com/", "");
-    log.info(`newUrl: ${newUrl}`);
-
-    // count "/" in newUrl
-    const level = (newUrl.match(/\//g) || []).length;
-    log.info(`level: ${level}`);
+    const newUrl = page.url();
+    urls.push(newUrl);
 
     // Save the page data to the dataset
     const title = await page.title();
     await pushData({
       title,
       url: request.url,
-      level,
     });
   },
 });
@@ -55,20 +50,47 @@ const migration = async () => {
   const dataset = await Dataset.open<{
     url: string;
     title: string;
-    level: number;
   }>();
 
   // calling reduce function and using memo to calculate number of headers
-  const dataSetObj = await dataset.map((value) => {
+  const dataSetObjArr = await dataset.map((value) => {
     return {
       url: value.url,
       title: value.title,
-      level: value.level,
     };
   });
 
+  let pathParts: string[][] = [];
+
+  urls.forEach((url) => {
+    pathParts.push(new URL(url).pathname.split("/").filter(Boolean));
+  });
+
+  const result = {};
+
+  // TODO: x and y are not used in the frontend
+  let counter = 0;
+  pathParts.forEach((parts) => {
+    let obj: { [key: string]: any } = result;
+    for (let i = 0; i < parts.length; i++) {
+      const part = parts[i];
+      if (!obj[part]) {
+        obj[part] = {
+          url: dataSetObjArr[counter].url,
+          title: dataSetObjArr[counter].title,
+          level: parts.length,
+          // x: dataSetObjArr[counter].x,
+          // y: dataSetObjArr[counter].y,
+        };
+      }
+      obj = obj[part];
+    }
+    counter++;
+  });
+
   // saving result of map to default Key-value store
-  await KeyValueStore.setValue("page_data", dataSetObj);
+  await KeyValueStore.setValue("page_data", dataSetObjArr);
+  await KeyValueStore.setValue("site_tree", result);
 };
 
 /**************************************
