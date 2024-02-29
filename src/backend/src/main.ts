@@ -68,6 +68,7 @@ const migration = async () => {
 
   const result = {};
 
+  // TODO: x and y are not used in the frontend
   let counter = 0;
   pathParts.forEach((parts) => {
     let obj: { [key: string]: any } = result;
@@ -78,6 +79,8 @@ const migration = async () => {
           url: dataSetObjArr[counter].url,
           title: dataSetObjArr[counter].title,
           level: parts.length,
+          x: dataSetObjArr[counter].x,
+          y: dataSetObjArr[counter].y,
         };
       }
       obj = obj[part];
