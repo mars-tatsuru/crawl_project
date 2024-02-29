@@ -79,8 +79,8 @@ const migration = async () => {
           url: dataSetObjArr[counter].url,
           title: dataSetObjArr[counter].title,
           level: parts.length,
-          x: dataSetObjArr[counter].x,
-          y: dataSetObjArr[counter].y,
+          // x: dataSetObjArr[counter].x,
+          // y: dataSetObjArr[counter].y,
         };
       }
       obj = obj[part];
