@@ -74,6 +74,25 @@ for (const [key, value] of Object.entries(siteMapData)) {
   idCounter++;
 }
 
+Object.entries(siteMapData).forEach((parts: any) => {
+  for (let i = 0; i < parts.length; i++) {
+    const part = parts[i];
+    initialNodes.push({
+      id: `${idCounter + 1}`,
+      type: "custom",
+      position: {
+        x: part.x,
+        y: part.y,
+      },
+      data: {
+        title: part.title,
+        url: part.url,
+        level: part.length,
+      },
+    });
+  }
+});
+
 function Flow() {
   // Add node or box
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
