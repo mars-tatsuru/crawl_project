@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useMemo } from "react";
+import { useCallback, useMemo, useEffect } from "react";
 import ReactFlow, {
   ReactFlowProvider,
   Panel,
@@ -23,75 +23,85 @@ import CustomNode from "@/components/Flow/CustomNode";
 import styles from "@/styles/Flow.module.scss";
 import tree from "../../backend/storage/key_value_stores/default/site_tree.json";
 
-/****************************
- *style for the box
- *****************************/
-const nodeTypes = {
-  custom: CustomNode,
-};
-/****************************
- * type of Json data
- ****************************/
 type Data = {
   url: string;
   title: string;
   level: number;
 };
 
-/******************************************
- * processing json data
- ******************************************/
-const siteMapData: any = tree;
+const initialNodes: Node[] = [];
+const initialEdges: Edge[] = [];
 
-/********************************************************
- * style for the edges(lines)
- ********************************************************/
+type TreeNode = {
+  url: string;
+  title: string;
+  level: number;
+  x: number;
+  y: number;
+  [key: string]: any; // To include children nodes
+};
+
+const nodeTypes = {
+  custom: CustomNode,
+};
+
 const defaultEdgeOptions = {
   animated: true,
   type: "smoothstep",
 };
 
-const initialNodes: Node[] = [];
-const initialEdges: Edge[] = [];
-
-// TODO: siteMapData is the tree structure of the site
-let idCounter = 0;
-for (const [key, value] of Object.entries(siteMapData)) {
-  initialNodes.push({
-    id: `${idCounter + 1}`,
-    type: "custom",
-    position: {
-      x: idCounter * 170,
-      y: ((value as { level: number } | undefined)?.level ?? 0) * 200,
-    },
-    data: {
-      title: (value as { title: string } | undefined)?.title,
-      url: (value as { url: string } | undefined)?.url,
-      level: (value as { level: number } | undefined)?.level,
-    },
-  });
-
-  idCounter++;
-}
-
-Object.entries(siteMapData).forEach((parts: any) => {
-  for (let i = 0; i < parts.length; i++) {
-    const part = parts[i];
-    initialNodes.push({
-      id: `${idCounter + 1}`,
-      type: "custom",
-      position: {
-        x: part.x,
-        y: part.y,
-      },
-      data: {
-        title: part.title,
-        url: part.url,
-        level: part.length,
-      },
-    });
-  }
+// Assuming TreeNode, Node, and Edge types are already defined
+// 5 - 1
+const createNode = (id: string, value: TreeNode, parentId?: string): Node => ({
+  id,
+  type: "custom",
+  position: { x: value.x, y: value.y },
+  data: { title: value.title, level: value.level, url: value.url },
 });
+
+// 5 - 2
+const createEdge = (sourceId: string, targetId: string): Edge => ({
+  id: `${sourceId}-${targetId}`,
+  source: sourceId,
+  target: targetId,
+  ...defaultEdgeOptions,
+});
+
+// 3
+const processData = (data: { [key: string]: TreeNode }, parentId?: string) => {
+  let nodes: Node[] = [];
+  let edges: Edge[] = [];
+
+  // 5
+  const processEntry = (key: string, value: TreeNode, processId?: string) => {
+    const nodeId = processId ? `${processId}-${key}` : key;
+    nodes.push(createNode(nodeId, value, processId));
+
+    if (processId) {
+      edges.push(createEdge(processId, nodeId));
+    }
+
+    // Recursively process children 再帰的
+    Object.entries(value).forEach(([childKey, childValue]) => {
+      if (!["url", "title", "level", "x", "y"].includes(childKey)) {
+        // 6 Recursion
+        const childProcessResult = processData(
+          { [childKey]: childValue },
+          nodeId
+        );
+        nodes = nodes.concat(childProcessResult.nodes);
+        edges = edges.concat(childProcessResult.edges);
+      }
+    });
+  };
+
+  // 4
+  Object.entries(data).forEach(([key, value]) =>
+    processEntry(key, value, parentId)
+  );
+
+  return { nodes, edges };
+};
 
 function Flow() {
   // Add node or box
@@ -99,6 +109,15 @@ function Flow() {
 
   // Add edge or connection
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+
+  // 1
+  useEffect(() => {
+    // 2
+    const { nodes: initialNodes, edges: initialEdges } = processData(tree);
+
+    setNodes(initialNodes);
+    setEdges(initialEdges);
+  }, [setNodes, setEdges]);
 
   // Add edge or connection
   const onConnect = useCallback(
@@ -133,7 +152,7 @@ function Flow() {
         defaultEdgeOptions={defaultEdgeOptions}
         fitView
       >
-        <Background style={{ background: "#bbdbf3" }} />
+        <Background style={{ background: "#BBDBF3" }} />
       </ReactFlow>
     </div>
   );

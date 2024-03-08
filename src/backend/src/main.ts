@@ -70,22 +70,41 @@ const migration = async () => {
 
   // TODO: x and y are not used in the frontend
   // TODO: 親(obj[part])を見て、その親の数を見て、その数をかけてxを出す
+  // let counter = 0;
+  // let XCounter = 1;
+  // pathParts.forEach((parts) => {
+  //   let obj: { [key: string]: any } = result;
+  //   for (let i = 0; i < parts.length; i++) {
+  //     // ja
+  //     // ja, services
+  //     const part = parts[i];
+  //     // if (i === parts.length) {
+  //     // }
+  //     if (!obj[part]) {
+  //       obj[part] = {
+  //         url: dataSetObjArr[counter].url,
+  //         title: dataSetObjArr[counter].title,
+  //         level: parts.length,
+  //         x: parts.length * 170,
+  //         y: parts.length * 200 + 200,
+  //       };
+  //     }
+  //     obj = obj[part];
+  //   }
+  //   counter++;
+  // });
+
   let counter = 0;
-  let XCounter = 1;
   pathParts.forEach((parts) => {
     let obj: { [key: string]: any } = result;
     for (let i = 0; i < parts.length; i++) {
-      // ja
-      // ja, services
       const part = parts[i];
-      // if (i === parts.length) {
-      // }
       if (!obj[part]) {
         obj[part] = {
           url: dataSetObjArr[counter].url,
           title: dataSetObjArr[counter].title,
           level: parts.length,
-          x: parts.length * 170,
+          x: counter * 200,
           y: parts.length * 200 + 200,
         };
       }
