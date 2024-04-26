@@ -36,9 +36,10 @@ const crawler = new PlaywrightCrawler({
 
     // Save the page data to the dataset
     const title = await page.title();
+    const url = page.url();
     await pushData({
       title,
-      url: request.url,
+      url,
     });
   },
 });
@@ -70,7 +71,7 @@ const migration = async () => {
   const result = {};
 
   // TODO: x, y, level
-  // create site tree
+  // create site tree data
   let positionXCounter = 0;
   pathParts.forEach((parts, index) => {
     let obj: { [key: string]: any } = result;
