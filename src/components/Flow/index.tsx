@@ -119,7 +119,6 @@ function Flow() {
   useEffect(() => {
     // 2
     const { nodes: initialNodes, edges: initialEdges } = processData(tree);
-    console.log(tree);
 
     setNodes(initialNodes);
     setEdges(initialEdges);
