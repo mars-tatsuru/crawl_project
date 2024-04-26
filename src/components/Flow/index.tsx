@@ -143,7 +143,7 @@ function Flow() {
     <div className={styles.flow}>
       <ReactFlow
         nodes={nodes}
-        edges={edges}
+        // edges={edges}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
@@ -152,7 +152,7 @@ function Flow() {
         defaultEdgeOptions={defaultEdgeOptions}
         fitView
       >
-        <Background style={{ background: "#BBDBF3" }} />
+        <Background style={{ background: "#222" }} />
       </ReactFlow>
     </div>
   );

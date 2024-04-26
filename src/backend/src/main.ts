@@ -61,6 +61,11 @@ const migration = async () => {
     };
   });
 
+  // for object array sorting
+  const sortDataSetObjArr = dataSetObjArr.sort(
+    (a, b) => a.url.split("/").length - b.url.split("/").length
+  );
+
   // ex) https://www.marsflag.com/ja/ => [ 'ja' ]
   let pathParts: string[][] = [];
   urls.forEach((url) => {
@@ -73,29 +78,32 @@ const migration = async () => {
   // TODO: x, y, level
   // create site tree data
   let positionXCounter = 0;
-  pathParts.forEach((parts, index) => {
-    let obj: { [key: string]: any } = result;
+  pathParts
+    .sort((a, b) => a.length - b.length)
+    .map((parts, index) => {
+      console.log(parts);
+      let obj: { [key: string]: any } = result;
 
-    parts.forEach((part, order) => {
-      if (!obj[part]) {
-        obj[part] = {
-          url: dataSetObjArr[index].url,
-          title: dataSetObjArr[index].title,
-          level: parts.length,
-          x: positionXCounter * 200,
-          y: parts.length * 200 + 200,
-        };
-      }
+      parts.map((part, order) => {
+        if (!obj[part]) {
+          obj[part] = {
+            url: sortDataSetObjArr[index].url,
+            title: sortDataSetObjArr[index].title,
+            level: parts.length,
+            x: positionXCounter * 200,
+            y: parts.length * 200 + 200,
+          };
+        }
 
-      if (parts.length !== pathParts[index - 1]?.length) {
-        positionXCounter = 0;
-      }
+        if (parts.length !== pathParts[index - 1]?.length) {
+          positionXCounter = 0;
+        }
 
-      obj = obj[part];
+        obj = obj[part];
+      });
+
+      positionXCounter++;
     });
-
-    positionXCounter++;
-  });
 
   // saving result of map to default Key-value store
   await KeyValueStore.setValue("page_data", dataSetObjArr);
