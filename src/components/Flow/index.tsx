@@ -20,6 +20,7 @@ import ReactFlow, {
 import dagre from "dagre";
 
 import CustomNode from "@/components/Flow/CustomNode";
+import CustomEdge from "@/components/Flow/CustomEdge";
 import styles from "@/styles/Flow.module.scss";
 import tree from "../../backend/storage/key_value_stores/default/site_tree.json";
 
@@ -45,13 +46,16 @@ const nodeTypes = {
   custom: CustomNode,
 };
 
+const edgeTypes = {
+  "custom-edge": CustomEdge,
+};
+
 const defaultEdgeOptions = {
-  animated: true,
-  type: "smoothstep",
+  animated: false,
 };
 
 // Assuming TreeNode, Node, and Edge types are already defined
-// 5 - 1
+// 5-1
 const createNode = (id: string, value: TreeNode, parentId?: string): Node => ({
   id,
   type: "custom",
@@ -59,7 +63,7 @@ const createNode = (id: string, value: TreeNode, parentId?: string): Node => ({
   data: { title: value.title, level: value.level, url: value.url },
 });
 
-// 5 - 2
+// 5-2
 const createEdge = (sourceId: string, targetId: string): Edge => ({
   id: `${sourceId}-${targetId}`,
   source: sourceId,
@@ -74,14 +78,14 @@ const processData = (data: { [key: string]: TreeNode }, parentId?: string) => {
 
   // 5
   const processEntry = (key: string, value: TreeNode, processId?: string) => {
-    const nodeId = processId ? `${processId}-${key}` : key;
+    const nodeId = processId ? `${processId}-${key}` : `${key}`;
     nodes.push(createNode(nodeId, value, processId));
 
     if (processId) {
-      edges.push(createEdge(processId, nodeId));
+      edges.push(createEdge(`${processId}`, `${processId}-${key}`));
     }
 
-    // Recursively process children 再帰的
+    // Recursively process children
     Object.entries(value).forEach(([childKey, childValue]) => {
       if (!["url", "title", "level", "x", "y"].includes(childKey)) {
         // 6 Recursion
@@ -96,10 +100,12 @@ const processData = (data: { [key: string]: TreeNode }, parentId?: string) => {
   };
 
   // 4
-  Object.entries(data).forEach(([key, value]) =>
-    processEntry(key, value, parentId)
-  );
+  Object.entries(data).forEach(([key, value]) => {
+    console.log(key, value);
+    processEntry(key, value, parentId);
+  });
 
+  console.log(edges);
   return { nodes, edges };
 };
 
@@ -117,37 +123,39 @@ function Flow() {
 
     setNodes(initialNodes);
     setEdges(initialEdges);
-  }, [setNodes, setEdges]);
+  }, []);
 
   // Add edge or connection
-  const onConnect = useCallback(
-    (params: Connection | Edge) =>
-      setEdges((eds) =>
-        addEdge(
-          { ...params, type: ConnectionLineType.SmoothStep, animated: true },
-          eds
-        )
-      ),
-    []
-  );
-
   // const onConnect = useCallback(
-  //   (connection: any) => {
-  //     const edge = { ...connection, type: "custom-edge" };
-  //     setEdges((eds) => addEdge(edge, eds));
-  //   },
-  //   [setEdges]
+  //   (params: Connection | Edge) =>
+  //     setEdges((eds) =>
+  //       addEdge(
+  //         { ...params, type: ConnectionLineType.SmoothStep, animated: true },
+  //         eds
+  //       )
+  //     ),
+  //   []
   // );
+
+  // add edge or connection
+  const onConnect = useCallback(
+    (connection: any) => {
+      const edge = { ...connection, type: "custom-edge" };
+      setEdges((eds) => addEdge(edge, eds));
+    },
+    [setEdges]
+  );
 
   return (
     <div className={styles.flow}>
       <ReactFlow
         nodes={nodes}
-        // edges={edges}
+        edges={edges}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
         nodeTypes={nodeTypes}
+        edgeTypes={edgeTypes}
         connectionLineType={ConnectionLineType.SmoothStep}
         defaultEdgeOptions={defaultEdgeOptions}
         fitView
