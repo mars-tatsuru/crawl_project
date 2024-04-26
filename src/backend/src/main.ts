@@ -68,35 +68,11 @@ const migration = async () => {
 
   const result = {};
 
-  // TODO: x and y are not used in the frontend
-  // TODO: 親(obj[part])を見て、その親の数を見て、その数をかけてxを出す
-  // let counter = 0;
-  // let XCounter = 1;
-  // pathParts.forEach((parts) => {
-  //   let obj: { [key: string]: any } = result;
-  //   for (let i = 0; i < parts.length; i++) {
-  //     // ja
-  //     // ja, services
-  //     const part = parts[i];
-  //     // if (i === parts.length) {
-  //     // }
-  //     if (!obj[part]) {
-  //       obj[part] = {
-  //         url: dataSetObjArr[counter].url,
-  //         title: dataSetObjArr[counter].title,
-  //         level: parts.length,
-  //         x: parts.length * 170,
-  //         y: parts.length * 200 + 200,
-  //       };
-  //     }
-  //     obj = obj[part];
-  //   }
-  //   counter++;
-  // });
-
+  // TODO: x, y, level
   let counter = 0;
-  pathParts.forEach((parts) => {
-    let obj: { [key: string]: any } = result;
+  pathParts.reduce((memo, parts, index, arr) => {
+    let obj: { [key: string]: any } = memo;
+
     for (let i = 0; i < parts.length; i++) {
       const part = parts[i];
       if (!obj[part]) {
@@ -108,10 +84,17 @@ const migration = async () => {
           y: parts.length * 200 + 200,
         };
       }
+
+      if (parts.length !== arr[index - 1]?.length) {
+        counter = 0;
+      }
+
       obj = obj[part];
     }
     counter++;
-  });
+    console.log("counter", counter);
+    return memo;
+  }, result);
 
   // saving result of map to default Key-value store
   await KeyValueStore.setValue("page_data", dataSetObjArr);
