@@ -37,6 +37,7 @@ const crawler = new PlaywrightCrawler({
     // Save the page data to the dataset
     const title = await page.title();
     const url = page.url();
+
     await pushData({
       title,
       url,
@@ -68,8 +69,13 @@ const migration = async () => {
 
   // ex) https://www.marsflag.com/ja/ => [ 'ja' ]
   let pathParts: string[][] = [];
-  urls.forEach((url) => {
-    pathParts.push(new URL(url).pathname.split("/").filter(Boolean));
+  dataSetObjArr.forEach((item) => {
+    pathParts.push(
+      item.url
+        .replace("https://www.marsflag.com/", "")
+        .split("/")
+        .filter((part) => part !== "")
+    );
   });
 
   // return the result of the map to the default Key-value store
