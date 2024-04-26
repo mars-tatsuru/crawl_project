@@ -60,41 +60,41 @@ const migration = async () => {
     };
   });
 
+  // ex) https://www.marsflag.com/ja/ => [ 'ja' ]
   let pathParts: string[][] = [];
-
   urls.forEach((url) => {
     pathParts.push(new URL(url).pathname.split("/").filter(Boolean));
   });
 
+  // return the result of the map to the default Key-value store
   const result = {};
 
   // TODO: x, y, level
-  let counter = 0;
-  pathParts.reduce((memo, parts, index, arr) => {
-    let obj: { [key: string]: any } = memo;
+  // create site tree
+  let positionXCounter = 0;
+  pathParts.forEach((parts, index) => {
+    let obj: { [key: string]: any } = result;
 
-    for (let i = 0; i < parts.length; i++) {
-      const part = parts[i];
+    parts.forEach((part, order) => {
       if (!obj[part]) {
         obj[part] = {
-          url: dataSetObjArr[counter].url,
-          title: dataSetObjArr[counter].title,
+          url: dataSetObjArr[index].url,
+          title: dataSetObjArr[index].title,
           level: parts.length,
-          x: counter * 200,
+          x: positionXCounter * 200,
           y: parts.length * 200 + 200,
         };
       }
 
-      if (parts.length !== arr[index - 1]?.length) {
-        counter = 0;
+      if (parts.length !== pathParts[index - 1]?.length) {
+        positionXCounter = 0;
       }
 
       obj = obj[part];
-    }
-    counter++;
-    console.log("counter", counter);
-    return memo;
-  }, result);
+    });
+
+    positionXCounter++;
+  });
 
   // saving result of map to default Key-value store
   await KeyValueStore.setValue("page_data", dataSetObjArr);
