@@ -86,13 +86,14 @@ const processData = (data: { [key: string]: TreeNode }, parentId?: string) => {
     }
 
     // Recursively process children
-    Object.entries(value).forEach(([childKey, childValue]) => {
+    Object.entries(value).map(([childKey, childValue]) => {
       if (!["url", "title", "level", "x", "y"].includes(childKey)) {
         // 6 Recursion
         const childProcessResult = processData(
           { [childKey]: childValue },
           nodeId
         );
+
         nodes = nodes.concat(childProcessResult.nodes);
         edges = edges.concat(childProcessResult.edges);
       }
@@ -100,12 +101,10 @@ const processData = (data: { [key: string]: TreeNode }, parentId?: string) => {
   };
 
   // 4
-  Object.entries(data).forEach(([key, value]) => {
-    console.log(key, value);
+  Object.entries(data).map(([key, value]) => {
     processEntry(key, value, parentId);
   });
 
-  console.log(edges);
   return { nodes, edges };
 };
 
@@ -120,6 +119,7 @@ function Flow() {
   useEffect(() => {
     // 2
     const { nodes: initialNodes, edges: initialEdges } = processData(tree);
+    console.log(tree);
 
     setNodes(initialNodes);
     setEdges(initialEdges);

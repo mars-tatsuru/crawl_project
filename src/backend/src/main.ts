@@ -81,10 +81,9 @@ const migration = async () => {
   pathParts
     .sort((a, b) => a.length - b.length)
     .map((parts, index) => {
-      console.log(parts);
       let obj: { [key: string]: any } = result;
 
-      parts.map((part, order) => {
+      parts.map((part) => {
         if (!obj[part]) {
           obj[part] = {
             url: sortDataSetObjArr[index].url,
