@@ -19,7 +19,7 @@ const crawler = new PlaywrightCrawler({
   // Limitation for only 10 requests (do not use if you want to crawl all links)
   // https://crawlee.dev/api/playwright-crawler/interface/PlaywrightCrawlerOptions#maxRequestsPerCrawl
   // NOTE: In cases of parallel crawling, the actual number of pages visited might be slightly higher than this value.
-  maxRequestsPerCrawl: 30,
+  maxRequestsPerCrawl: 20,
 
   async requestHandler({ request, page, enqueueLinks, log, pushData }) {
     // Log the URL of the page being crawled
@@ -140,7 +140,6 @@ const migration = async () => {
       positionXCounter++;
     });
 
-  console.log("result", result);
   // saving result of map to default Key-value store
   await KeyValueStore.setValue("page_data", dataSetObjArr);
   await KeyValueStore.setValue("site_tree", result);
