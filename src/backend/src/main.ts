@@ -1,6 +1,7 @@
 // https://crawlee.dev/docs/examples/crawl-relative-links
 // const crawlUrl = "https://tatsucreate.com/";
-const crawlUrl = "https://www.marsflag.com/ja/";
+const crawlUrl = "https://www.marsflag.com/";
+// const crawlUrl = "https://ja.vuejs.org/";
 import {
   PlaywrightCrawler,
   EnqueueStrategy,
@@ -16,7 +17,9 @@ import path from "path";
 
 const crawler = new PlaywrightCrawler({
   // Limitation for only 10 requests (do not use if you want to crawl all links)
-  maxRequestsPerCrawl: 20,
+  // https://crawlee.dev/api/playwright-crawler/interface/PlaywrightCrawlerOptions#maxRequestsPerCrawl
+  // NOTE: In cases of parallel crawling, the actual number of pages visited might be slightly higher than this value.
+  maxRequestsPerCrawl: 30,
 
   async requestHandler({ request, page, enqueueLinks, log, pushData }) {
     // Log the URL of the page being crawled
@@ -27,6 +30,7 @@ const crawler = new PlaywrightCrawler({
       // strategy: EnqueueStrategy.SameDomain,
       // strategy: EnqueueStrategy.All,
       strategy: EnqueueStrategy.SameOrigin,
+      // globs: [`${crawlUrl}/*/*`],
     });
 
     // Save the page data to the dataset
@@ -35,10 +39,25 @@ const crawler = new PlaywrightCrawler({
 
     // Capture the screenshot of the page
     const thumbnailFolder = path.join("..", "..", "public", "screenshots");
-    const thumbnailName = `${url
-      .replace("https://www.marsflag.com/", "")
-      .replace(/\//g, "-")}.png`;
+    let thumbnailName = "";
 
+    const renameThumbnailName = () => {
+      if (url.replace(`${crawlUrl}`, "") === "") {
+        thumbnailName = `${url
+          .replace(`${crawlUrl}`, "top")
+          .replace("#", "")
+          .replace(/\//g, "-")
+          .replace(/-$/, "")}.png`;
+      } else {
+        thumbnailName = `${url
+          .replace(`${crawlUrl}`, "")
+          .replace("#", "")
+          .replace(/\//g, "-")
+          .replace(/-$/, "")}.png`;
+      }
+    };
+
+    renameThumbnailName();
     const thumbnailPath = path.join(thumbnailFolder, thumbnailName);
 
     // take a screenshot of the page
@@ -81,7 +100,7 @@ const migration = async () => {
   dataSetObjArr.forEach((item) => {
     pathParts.push(
       item.url
-        .replace("https://www.marsflag.com/", "")
+        .replace(`${crawlUrl}`, "")
         .split("/")
         .filter((part) => part !== "")
     );
@@ -90,7 +109,7 @@ const migration = async () => {
   // return the result of the map to the default Key-value store
   const result = {};
 
-  // TODO: x, y, level
+  // TODO: TOPページの場合の処理を追加する
   // create site tree data
   let positionXCounter = 0;
   pathParts
@@ -106,7 +125,7 @@ const migration = async () => {
             thumbnailPath: sortDataSetObjArr[index].thumbnailPath,
             level: parts.length,
             x: positionXCounter * 200,
-            y: parts.length * 200 + 200,
+            y: parts.length * 300 + 200,
           };
         }
 
