@@ -11,14 +11,17 @@ const CustomNode: FC<NodeProps> = ({ data, isConnectable }) => {
       <Handle type="source" position={Position.Bottom} id="bottom" />
       <Handle type="target" position={Position.Top} id="top" />
       <div className={styles.card}>
-        {/* <div className={styles.image}>
+        <div className={styles.imageContainer}>
           <Image
-            src={`${data?.thumbnailPath}`}
+            className={styles.image}
+            src={data?.thumbnailPath}
+            fill={true}
+            priority={true}
+            style={{ objectFit: "contain" }}
             alt="thumbnail"
-            layout="fill"
-            objectFit="cover"
           />
-        </div> */}
+        </div>
+
         <div className={styles.title}>{data?.title}</div>
         <div className={styles.content}>Level: {data?.level}</div>
         <a className={styles.link} href={data?.url} target="_blank">

@@ -6,6 +6,18 @@
   overflow-wrap: break-word;
   word-break: break-word;
 
+  .imageContainer {
+    > span {
+      position: unset !important;
+    }
+
+    .image {
+      position: relative !important;
+      width: 100% !important;
+      height: unset !important;
+    }
+  }
+
   .title {
     color: #333;
     font-size: 10px;

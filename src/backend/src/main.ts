@@ -6,15 +6,13 @@ import {
   EnqueueStrategy,
   Dataset,
   KeyValueStore,
-  LogLevel,
-  OpenGraphProperty,
-  constructRegExpObjectsFromPseudoUrls,
 } from "crawlee";
 
 /********************
  * crawler settings
  ********************/
 const urls: string[] = [];
+import path from "path";
 
 const crawler = new PlaywrightCrawler({
   // Limitation for only 10 requests (do not use if you want to crawl all links)
@@ -36,18 +34,20 @@ const crawler = new PlaywrightCrawler({
     const url = page.url();
 
     // Capture the screenshot of the page
-    const thumbnailPath = `screenshots/${request.url.replace(
-      /[^a-zA-Z0-9]/g,
-      "_"
-    )}.png`;
-    await page.screenshot({
-      path: thumbnailPath,
-    });
+    const thumbnailFolder = path.join("..", "..", "public", "screenshots");
+    const thumbnailName = `${url
+      .replace("https://www.marsflag.com/", "")
+      .replace(/\//g, "-")}.png`;
+
+    const thumbnailPath = path.join(thumbnailFolder, thumbnailName);
+
+    // take a screenshot of the page
+    await page.screenshot({ path: thumbnailPath });
 
     await pushData({
       title,
       url,
-      thumbnailPath: `${thumbnailPath}`,
+      thumbnailPath: `/screenshots/${thumbnailName}`,
     });
   },
 });
