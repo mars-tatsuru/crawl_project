@@ -30,7 +30,7 @@ const crawler = new PlaywrightCrawler({
       // strategy: EnqueueStrategy.SameDomain,
       // strategy: EnqueueStrategy.All,
       strategy: EnqueueStrategy.SameOrigin,
-      // globs: [`${crawlUrl}/*/*`],
+      // globs: [`${crawlUrl}/*/*/*`],
     });
 
     // Save the page data to the dataset
@@ -59,6 +59,8 @@ const crawler = new PlaywrightCrawler({
 
     renameThumbnailName();
     const thumbnailPath = path.join(thumbnailFolder, thumbnailName);
+
+    await page.waitForLoadState("networkidle");
 
     // take a screenshot of the page
     await page.screenshot({ path: thumbnailPath });
@@ -109,7 +111,6 @@ const migration = async () => {
   // return the result of the map to the default Key-value store
   const result = {};
 
-  // TODO: TOPページの場合の処理を追加する
   // create site tree data
   let positionXCounter = 0;
   pathParts
@@ -139,6 +140,7 @@ const migration = async () => {
       positionXCounter++;
     });
 
+  console.log("result", result);
   // saving result of map to default Key-value store
   await KeyValueStore.setValue("page_data", dataSetObjArr);
   await KeyValueStore.setValue("site_tree", result);
