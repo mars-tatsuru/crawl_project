@@ -31,16 +31,23 @@ const crawler = new PlaywrightCrawler({
       strategy: EnqueueStrategy.SameOrigin,
     });
 
-    const newUrl = page.url();
-    urls.push(newUrl);
-
     // Save the page data to the dataset
     const title = await page.title();
     const url = page.url();
 
+    // Capture the screenshot of the page
+    const thumbnailPath = `screenshots/${request.url.replace(
+      /[^a-zA-Z0-9]/g,
+      "_"
+    )}.png`;
+    await page.screenshot({
+      path: thumbnailPath,
+    });
+
     await pushData({
       title,
       url,
+      thumbnailPath,
     });
   },
 });
@@ -52,6 +59,7 @@ const migration = async () => {
   const dataset = await Dataset.open<{
     url: string;
     title: string;
+    thumbnailPath: string;
   }>();
 
   // calling reduce function and using memo to calculate number of headers
@@ -59,6 +67,7 @@ const migration = async () => {
     return {
       url: value.url,
       title: value.title,
+      thumbnailPath: value.thumbnailPath,
     };
   });
 
@@ -94,6 +103,7 @@ const migration = async () => {
           obj[part] = {
             url: sortDataSetObjArr[index].url,
             title: sortDataSetObjArr[index].title,
+            thumbnailPath: sortDataSetObjArr[index].thumbnailPath,
             level: parts.length,
             x: positionXCounter * 200,
             y: parts.length * 200 + 200,
