@@ -7,6 +7,8 @@
   word-break: break-word;
 
   .imageContainer {
+    position: relative;
+
     > span {
       position: unset !important;
     }

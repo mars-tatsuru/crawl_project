@@ -16,6 +16,7 @@ const CustomNode: FC<NodeProps> = ({ data, isConnectable }) => {
             className={styles.image}
             src={data?.thumbnailPath}
             fill={true}
+            sizes="(max-width: 768px) 100vw, 33vw"
             priority={true}
             style={{ objectFit: "contain" }}
             alt="thumbnail"
