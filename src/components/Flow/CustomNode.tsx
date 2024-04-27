@@ -1,5 +1,6 @@
 import { memo, FC, CSSProperties } from "react";
 import { Handle, Position, NodeProps, NodeResizer } from "reactflow";
+import Image from "next/image";
 
 import styles from "@/styles/Custom.module.scss";
 
@@ -10,6 +11,14 @@ const CustomNode: FC<NodeProps> = ({ data, isConnectable }) => {
       <Handle type="source" position={Position.Bottom} id="bottom" />
       <Handle type="target" position={Position.Top} id="top" />
       <div className={styles.card}>
+        {/* <div className={styles.image}>
+          <Image
+            src={`${data?.thumbnailPath}`}
+            alt="thumbnail"
+            layout="fill"
+            objectFit="cover"
+          />
+        </div> */}
         <div className={styles.title}>{data?.title}</div>
         <div className={styles.content}>Level: {data?.level}</div>
         <a className={styles.link} href={data?.url} target="_blank">

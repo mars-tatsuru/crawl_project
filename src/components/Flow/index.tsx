@@ -60,7 +60,12 @@ const createNode = (id: string, value: TreeNode, parentId?: string): Node => ({
   id,
   type: "custom",
   position: { x: value.x, y: value.y },
-  data: { title: value.title, level: value.level, url: value.url },
+  data: {
+    title: value.title,
+    level: value.level,
+    url: value.url,
+    thumbnailPath: value.thumbnailPath,
+  },
 });
 
 // 5-2
@@ -87,7 +92,9 @@ const processData = (data: { [key: string]: TreeNode }, parentId?: string) => {
 
     // Recursively process children
     Object.entries(value).map(([childKey, childValue]) => {
-      if (!["url", "title", "level", "x", "y"].includes(childKey)) {
+      if (
+        !["url", "title", "thumbnailPath", "level", "x", "y"].includes(childKey)
+      ) {
         // 6 Recursion
         const childProcessResult = processData(
           { [childKey]: childValue },
@@ -123,18 +130,6 @@ function Flow() {
     setNodes(initialNodes);
     setEdges(initialEdges);
   }, []);
-
-  // Add edge or connection
-  // const onConnect = useCallback(
-  //   (params: Connection | Edge) =>
-  //     setEdges((eds) =>
-  //       addEdge(
-  //         { ...params, type: ConnectionLineType.SmoothStep, animated: true },
-  //         eds
-  //       )
-  //     ),
-  //   []
-  // );
 
   // add edge or connection
   const onConnect = useCallback(

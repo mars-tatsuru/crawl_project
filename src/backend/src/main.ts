@@ -47,7 +47,7 @@ const crawler = new PlaywrightCrawler({
     await pushData({
       title,
       url,
-      thumbnailPath,
+      thumbnailPath: `${thumbnailPath}`,
     });
   },
 });
