@@ -84,7 +84,11 @@ const processData = (data: { [key: string]: TreeNode }, parentId?: string) => {
   // 5
   const processEntry = (key: string, value: TreeNode, processId?: string) => {
     const nodeId = processId ? `${processId}-${key}` : `${key}`;
-    nodes.push(createNode(nodeId, value, processId));
+
+    if (value.url) {
+      console.log("value", value);
+      nodes.push(createNode(nodeId, value, processId));
+    }
 
     if (processId) {
       edges.push(createEdge(`${processId}`, `${processId}-${key}`));
