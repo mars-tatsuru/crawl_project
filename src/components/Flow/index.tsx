@@ -69,6 +69,7 @@ const createNode = (id: string, value: TreeNode, parentId?: string): Node => ({
 });
 
 // 5-2
+// TODO: refactor this function because it is wrong.
 const createEdge = (sourceId: string, targetId: string): Edge => ({
   id: `${sourceId}-${targetId}`,
   source: sourceId,
@@ -86,7 +87,6 @@ const processData = (data: { [key: string]: TreeNode }, parentId?: string) => {
     const nodeId = processId ? `${processId}-${key}` : `${key}`;
 
     if (value.url) {
-      console.log("value", value);
       nodes.push(createNode(nodeId, value, processId));
     }
 
@@ -116,6 +116,7 @@ const processData = (data: { [key: string]: TreeNode }, parentId?: string) => {
     processEntry(key, value, parentId);
   });
 
+  console.log("edges", edges);
   return { nodes, edges };
 };
 
