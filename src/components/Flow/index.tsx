@@ -34,11 +34,11 @@ const initialNodes: Node[] = [];
 const initialEdges: Edge[] = [];
 
 type TreeNode = {
-  url: string;
-  title: string;
-  level: number;
-  x: number;
-  y: number;
+  url?: string;
+  title?: string;
+  level?: number;
+  x?: number;
+  y?: number;
   [key: string]: any; // To include children nodes
 };
 
@@ -59,7 +59,7 @@ const defaultEdgeOptions = {
 const createNode = (id: string, value: TreeNode, parentId?: string): Node => ({
   id,
   type: "custom",
-  position: { x: value.x, y: value.y },
+  position: { x: value.x!, y: value.y! },
   data: {
     title: value.title,
     level: value.level,

@@ -1,7 +1,7 @@
 // https://crawlee.dev/docs/examples/crawl-relative-links
-// const crawlUrl = "https://tatsucreate.com/";
+const crawlUrl = "https://tatsucreate.com/";
 // const crawlUrl = "https://www.marsflag.com/";
-const crawlUrl = "https://ja.vuejs.org/";
+// const crawlUrl = "https://ja.vuejs.org/";
 import {
   PlaywrightCrawler,
   EnqueueStrategy,
@@ -19,7 +19,7 @@ const crawler = new PlaywrightCrawler({
   // Limitation for only 10 requests (do not use if you want to crawl all links)
   // https://crawlee.dev/api/playwright-crawler/interface/PlaywrightCrawlerOptions#maxRequestsPerCrawl
   // NOTE: In cases of parallel crawling, the actual number of pages visited might be slightly higher than this value.
-  maxRequestsPerCrawl: 5,
+  maxRequestsPerCrawl: 3,
 
   async requestHandler({ request, page, enqueueLinks, log, pushData }) {
     // Log the URL of the page being crawled
@@ -98,11 +98,9 @@ const migration = async () => {
     (a, b) => a.url.split("/").length - b.url.split("/").length
   );
 
-  // console.log("sortDataSetObjArr", sortDataSetObjArr);
-
   // ex) https://www.marsflag.com/ja/ => [ 'ja' ]
   let pathParts: string[][] = [];
-  dataSetObjArr.forEach((item) => {
+  sortDataSetObjArr.forEach((item) => {
     pathParts.push(
       item.url
         .replace(`${crawlUrl}`, "")
@@ -128,16 +126,20 @@ const migration = async () => {
     .map((parts, index) => {
       let obj: { [key: string]: any } = result;
 
-      parts.map((part) => {
+      parts.map((part, partOrder) => {
         if (!obj[part]) {
-          obj[part] = {
-            url: sortDataSetObjArr[index].url,
-            title: sortDataSetObjArr[index].title,
-            thumbnailPath: sortDataSetObjArr[index].thumbnailPath,
-            level: parts.length,
-            x: positionXCounter * 200,
-            y: parts.length * 300 + 200,
-          };
+          if (partOrder === parts.length - 1) {
+            obj[part] = {
+              url: sortDataSetObjArr[index].url,
+              title: sortDataSetObjArr[index].title,
+              thumbnailPath: sortDataSetObjArr[index].thumbnailPath,
+              level: parts.length,
+              x: positionXCounter * 200,
+              y: parts.length * 300 + 200,
+            };
+          } else {
+            obj[part] = {};
+          }
         }
 
         if (parts.length !== pathParts[index - 1]?.length) {
