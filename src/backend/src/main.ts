@@ -1,7 +1,7 @@
 // https://crawlee.dev/docs/examples/crawl-relative-links
 // const crawlUrl = "https://tatsucreate.com/";
-const crawlUrl = "https://www.marsflag.com/";
-// const crawlUrl = "https://ja.vuejs.org/";
+// const crawlUrl = "https://www.marsflag.com/";
+const crawlUrl = "https://ja.vuejs.org/";
 import {
   PlaywrightCrawler,
   EnqueueStrategy,
@@ -19,7 +19,7 @@ const crawler = new PlaywrightCrawler({
   // Limitation for only 10 requests (do not use if you want to crawl all links)
   // https://crawlee.dev/api/playwright-crawler/interface/PlaywrightCrawlerOptions#maxRequestsPerCrawl
   // NOTE: In cases of parallel crawling, the actual number of pages visited might be slightly higher than this value.
-  maxRequestsPerCrawl: 20,
+  maxRequestsPerCrawl: 5,
 
   async requestHandler({ request, page, enqueueLinks, log, pushData }) {
     // Log the URL of the page being crawled
@@ -60,6 +60,7 @@ const crawler = new PlaywrightCrawler({
     renameThumbnailName();
     const thumbnailPath = path.join(thumbnailFolder, thumbnailName);
 
+    //TODO: Check if the file already exists
     await page.waitForLoadState("networkidle");
 
     // take a screenshot of the page
@@ -97,6 +98,8 @@ const migration = async () => {
     (a, b) => a.url.split("/").length - b.url.split("/").length
   );
 
+  // console.log("sortDataSetObjArr", sortDataSetObjArr);
+
   // ex) https://www.marsflag.com/ja/ => [ 'ja' ]
   let pathParts: string[][] = [];
   dataSetObjArr.forEach((item) => {
@@ -106,6 +109,13 @@ const migration = async () => {
         .split("/")
         .filter((part) => part !== "")
     );
+  });
+
+  // when the path is empty, set the default value to "top"
+  pathParts.map((parts) => {
+    if (parts.length === 0) {
+      parts.push("top");
+    }
   });
 
   // return the result of the map to the default Key-value store
