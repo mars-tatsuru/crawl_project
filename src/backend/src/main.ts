@@ -19,7 +19,7 @@ const crawler = new PlaywrightCrawler({
   // Limitation for only 10 requests (do not use if you want to crawl all links)
   // https://crawlee.dev/api/playwright-crawler/interface/PlaywrightCrawlerOptions#maxRequestsPerCrawl
   // NOTE: In cases of parallel crawling, the actual number of pages visited might be slightly higher than this value.
-  maxRequestsPerCrawl: 50,
+  maxRequestsPerCrawl: 20,
 
   async requestHandler({ request, page, enqueueLinks, log, pushData }) {
     // Log the URL of the page being crawled
@@ -63,10 +63,6 @@ const crawler = new PlaywrightCrawler({
     //TODO: Check if the file already exists
     await page.waitForLoadState("networkidle");
 
-    // TODO: refactor this to use the waitForSelector method
-    // wait for visible all img elements if exists
-    await page.waitForSelector("img", { state: "visible" });
-
     // take a screenshot of the page
     await page.screenshot({ path: thumbnailPath });
 
@@ -100,14 +96,19 @@ const migration = async () => {
   // for object array sorting and
   //ja , ja/about , en , en/about
   const sortDataSetObjArr = dataSetObjArr
-    .sort((a, b) => {
-      return a.url.localeCompare(b.url);
-    })
-    .sort((a, b) => a.url.split("/").length - b.url.split("/").length)
     .filter(
       (value, index, self) =>
         self.findIndex((v) => v.url === value.url) === index
-    );
+    )
+    //TODO: 辞書順でソートすると、ja/aboutがenよりも前に来てしまう。
+    // .sort((a, b) => {
+    //   return a.url.localeCompare(b.url);
+    // })
+    // TODO: sortDataSetObjArrをurlの"/"の数とurlの文字数でソートする。
+    .sort((a, b) => a.url.split("/").length - b.url.split("/").length)
+    .sort((a, b) => {
+      return a.url.length - b.url.length;
+    });
 
   // ex) https://www.marsflag.com/ja/ => [ 'ja' ]
   // sort the pathParts array by length and parent-child relationship
@@ -121,58 +122,54 @@ const migration = async () => {
     pathParts.push(path);
   });
 
-  // TODO: sort pathParts like below example
-  // From: pathParts = [["top", "cn"],["top", "en"],["top", "ja"],["top", "tw"],["top", "ja", "privacy-policy.html"],["top", "en", "services"]]
-  // To: pathParts = [["top", "cn"],["top", "en"],["top", "en", "services"],["top", "ja"],["top", "ja", "privacy-policy.html"],["top", "tw"]]
-
   // return the result of the map to the default Key-value store
   const result = {};
 
   // create site tree data
   let positionXCounter = 0;
-  pathParts
-    .sort((a, b) => a.length - b.length)
-    .map((parts, index) => {
-      let obj: { [key: string]: any } = result;
+  pathParts.map((parts, index) => {
+    let obj: { [key: string]: any } = result;
 
-      // if the path is empty, add "top" to the path
-      if (parts.filter((part) => part !== "top") && parts.length === 0) {
-        parts.push("top");
+    // if the path is empty, add "top" to the path
+    if (parts.filter((part) => part !== "top") && parts.length === 0) {
+      parts.push("top");
+    }
+
+    // if the path is not starting with "top", add "top" to the path
+    if (parts.length >= 1 && parts[0] !== "top") {
+      parts.unshift("top");
+    }
+
+    // create site tree data
+    parts.map((part, partOrder) => {
+      if (!obj[part]) {
+        // If partOrder is the last index of parts, add the url, title, and thumbnailPath
+        if (partOrder === parts.length - 1) {
+          obj[part] = {
+            url: sortDataSetObjArr[index].url,
+            title: sortDataSetObjArr[index].title,
+            thumbnailPath: sortDataSetObjArr[index].thumbnailPath,
+            level: parts.length - 1,
+            x: positionXCounter * 200,
+            y: parts.length * 300 + 150,
+          };
+        } else {
+          obj[part] = {};
+        }
       }
 
-      // if the path is not starting with "top", add "top" to the path
-      if (parts.length >= 1 && parts[0] !== "top") {
-        parts.unshift("top");
+      // if the parts length is different from the previous parts length, reset the positionXCounter
+      if (parts.length !== pathParts[index - 1]?.length) {
+        positionXCounter = 0;
       }
 
-      // create site tree data
-      parts.map((part, partOrder) => {
-        if (!obj[part]) {
-          // If partOrder is the last index of parts, add the url, title, and thumbnailPath
-          if (partOrder === parts.length - 1) {
-            obj[part] = {
-              url: sortDataSetObjArr[index].url,
-              title: sortDataSetObjArr[index].title,
-              thumbnailPath: sortDataSetObjArr[index].thumbnailPath,
-              level: parts.length - 1,
-              x: positionXCounter * 200,
-              y: parts.length * 300 + 150,
-            };
-          } else {
-            obj[part] = {};
-          }
-        }
+      // partsの同階層のobjを取得
 
-        // if the parts length is different from the previous parts length, reset the positionXCounter
-        if (parts.length !== pathParts[index - 1]?.length) {
-          positionXCounter = 0;
-        }
-
-        obj = obj[part];
-      });
-
-      positionXCounter++;
+      obj = obj[part];
     });
+
+    positionXCounter++;
+  });
 
   // saving result of map to default Key-value store
   await KeyValueStore.setValue("page_data", dataSetObjArr);
