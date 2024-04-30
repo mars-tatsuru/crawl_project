@@ -116,7 +116,6 @@ const processData = (data: { [key: string]: TreeNode }, parentId?: string) => {
     processEntry(key, value, parentId);
   });
 
-  console.log("edges", edges);
   return { nodes, edges };
 };
 

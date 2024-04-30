@@ -2,6 +2,7 @@
 // const crawlUrl = "https://tatsucreate.com/";
 const crawlUrl = "https://www.marsflag.com/";
 // const crawlUrl = "https://ja.vuejs.org/";
+// const crawlUrl = "https://www.endo-bag.co.jp/";
 import {
   PlaywrightCrawler,
   EnqueueStrategy,
@@ -60,7 +61,7 @@ const crawler = new PlaywrightCrawler({
     renameThumbnailName();
     const thumbnailPath = path.join(thumbnailFolder, thumbnailName);
 
-    //TODO: Check if the file already exists
+    // Check if the file already exists
     await page.waitForLoadState("networkidle");
 
     // take a screenshot of the page
@@ -100,11 +101,6 @@ const migration = async () => {
       (value, index, self) =>
         self.findIndex((v) => v.url === value.url) === index
     )
-    //TODO: 辞書順でソートすると、ja/aboutがenよりも前に来てしまう。
-    // .sort((a, b) => {
-    //   return a.url.localeCompare(b.url);
-    // })
-    // TODO: sortDataSetObjArrをurlの"/"の数とurlの文字数でソートする。
     .sort((a, b) => a.url.split("/").length - b.url.split("/").length)
     .sort((a, b) => {
       return a.url.length - b.url.length;
@@ -127,49 +123,50 @@ const migration = async () => {
 
   // create site tree data
   let positionXCounter = 0;
-  pathParts.map((parts, index) => {
-    let obj: { [key: string]: any } = result;
+  pathParts
+    // .sort((a, b) => a.length - b.length)
+    .map((parts, index) => {
+      let obj: { [key: string]: any } = result;
 
-    // if the path is empty, add "top" to the path
-    if (parts.filter((part) => part !== "top") && parts.length === 0) {
-      parts.push("top");
-    }
+      // if the path is empty, add "top" to the path
+      if (parts.filter((part) => part !== "top") && parts.length === 0) {
+        parts.push("top");
+      }
 
-    // if the path is not starting with "top", add "top" to the path
-    if (parts.length >= 1 && parts[0] !== "top") {
-      parts.unshift("top");
-    }
+      // if the path is not starting with "top", add "top" to the path
+      if (parts.length >= 1 && parts[0] !== "top") {
+        parts.unshift("top");
+      }
 
-    // create site tree data
-    parts.map((part, partOrder) => {
-      if (!obj[part]) {
-        // If partOrder is the last index of parts, add the url, title, and thumbnailPath
-        if (partOrder === parts.length - 1) {
-          obj[part] = {
-            url: sortDataSetObjArr[index].url,
-            title: sortDataSetObjArr[index].title,
-            thumbnailPath: sortDataSetObjArr[index].thumbnailPath,
-            level: parts.length - 1,
-            x: positionXCounter * 200,
-            y: parts.length * 300 + 150,
-          };
-        } else {
-          obj[part] = {};
+      // create site tree data
+      parts.map((part, partOrder) => {
+        if (!obj[part]) {
+          // If partOrder is the last index of parts, add the url, title, and thumbnailPath
+          if (partOrder === parts.length - 1) {
+            obj[part] = {
+              url: sortDataSetObjArr[index].url,
+              title: sortDataSetObjArr[index].title,
+              thumbnailPath: sortDataSetObjArr[index].thumbnailPath,
+              level: parts.length - 1,
+              // TODO: I have to consider about the positionXCounter for rendering
+              x: positionXCounter * 200,
+              y: parts.length * 300 + 150,
+            };
+          } else {
+            obj[part] = {};
+          }
         }
-      }
 
-      // if the parts length is different from the previous parts length, reset the positionXCounter
-      if (parts.length !== pathParts[index - 1]?.length) {
-        positionXCounter = 0;
-      }
+        // TODO:if the parts length is different from the previous parts length, reset the positionXCounter
+        if (parts.length > pathParts[index - 1]?.length) {
+          positionXCounter = 0;
+        }
 
-      // partsの同階層のobjを取得
+        obj = obj[part];
+      });
 
-      obj = obj[part];
+      positionXCounter++;
     });
-
-    positionXCounter++;
-  });
 
   // saving result of map to default Key-value store
   await KeyValueStore.setValue("page_data", dataSetObjArr);
