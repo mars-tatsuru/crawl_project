@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useMemo, useEffect } from "react";
+import { useCallback, useMemo, useEffect, useState } from "react";
 import ReactFlow, {
   ReactFlowProvider,
   Panel,
@@ -18,6 +18,7 @@ import ReactFlow, {
   MiniMap,
   ControlButton,
   useReactFlow,
+  useNodesInitialized,
 } from "reactflow";
 
 import Dagre from "@dagrejs/dagre";
@@ -29,10 +30,12 @@ import tree from "../../backend/storage/key_value_stores/default/site_tree.json"
 /************************************************
  * 1. use Darge to layout the nodes and edges
  *************************************************/
-
-const g = new Dagre.graphlib.Graph().setDefaultEdgeLabel(() => ({}));
+const dagreGraph = new Dagre.graphlib.Graph().setDefaultEdgeLabel(() => ({}));
 const initialNodes: Node[] = [];
 const initialEdges: Edge[] = [];
+
+const nodeWidth = 172;
+const nodeHeight = 300;
 
 type Data = {
   url: string;
@@ -61,48 +64,73 @@ const defaultEdgeOptions = {
   animated: false,
 };
 
-const getLayoutedElements = (
-  nodes: any[],
-  edges: any[],
-  options: { direction: any }
-) => {
-  g.setGraph({ rankdir: options.direction });
+const getLayoutedElements = (nodes: any, edges: any, direction = "TB") => {
+  const isHorizontal = direction === "LR";
+  dagreGraph.setGraph({ rankdir: direction });
 
-  edges.map((edge) => g.setEdge(edge.source, edge.target));
-  nodes.map((node) => {
-    g.setNode(node.id, node);
+  nodes.forEach((node: any) => {
+    dagreGraph.setNode(node.id, { width: nodeWidth, height: nodeHeight });
   });
 
-  Dagre.layout(g);
+  edges.forEach((edge: any) => {
+    dagreGraph.setEdge(edge.source, edge.target);
+  });
 
-  return {
-    nodes: nodes.map((node) => {
-      const { x, y } = g.node(node.id);
+  Dagre.layout(dagreGraph);
 
-      return { ...node, position: { x, y } };
-    }),
-    edges,
-  };
+  nodes.forEach((node: any) => {
+    const nodeWithPosition = dagreGraph.node(node.id);
+    node.targetPosition = isHorizontal ? "left" : "top";
+    node.sourcePosition = isHorizontal ? "right" : "bottom";
+
+    // We are shifting the dagre node position (anchor=center center) to the top left
+    // so it matches the React Flow node anchor point (top left).
+    node.position = {
+      x: nodeWithPosition.x - nodeWidth / 2,
+      y: nodeWithPosition.y - nodeHeight / 2,
+    };
+
+    return node;
+  });
+
+  return { nodes, edges };
 };
 
 const LayoutFlow = () => {
   const { fitView } = useReactFlow();
-
   // Add node or box
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-
   // Add edge or connection
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+
+  // new click event function
+  const onLayout = useCallback(
+    (direction: string) => {
+      const { nodes: layoutedNodes, edges: layoutedEdges } =
+        getLayoutedElements(nodes, edges, direction);
+
+      setNodes([...layoutedNodes]);
+      setEdges([...layoutedEdges]);
+    },
+    [nodes, edges]
+  );
 
   // 1
   useEffect(() => {
     // 2
     const { nodes: initialNodes, edges: initialEdges } = processData(tree);
 
-    console.log(initialNodes);
+    const { nodes: layoutedNodes, edges: layoutedEdges } = getLayoutedElements(
+      initialNodes,
+      initialEdges
+    );
 
-    setNodes(initialNodes);
-    setEdges(initialEdges);
+    setNodes([...layoutedNodes]);
+    setEdges([...layoutedEdges]);
+
+    window.requestAnimationFrame(() => {
+      fitView();
+    });
   }, []);
 
   // add edge or connection
@@ -132,7 +160,6 @@ const LayoutFlow = () => {
   });
 
   // 5-2
-  // TODO: refactor this function because it is wrong.
   const createEdge = (sourceId: string, targetId: string): Edge => ({
     id: `${sourceId}-${targetId}`,
     source: sourceId,
@@ -187,23 +214,6 @@ const LayoutFlow = () => {
     return { nodes, edges };
   };
 
-  // new click event function
-  const onLayout = useCallback(
-    (direction: string) => {
-      const { nodes: initialNodes, edges: initialEdges } = processData(tree);
-
-      const layouted = getLayoutedElements(nodes, edges, { direction });
-
-      setNodes([...layouted.nodes]);
-      setEdges([...layouted.edges]);
-
-      window.requestAnimationFrame(() => {
-        fitView();
-      });
-    },
-    [nodes, edges]
-  );
-
   return (
     <ReactFlow
       nodes={nodes}
@@ -218,8 +228,7 @@ const LayoutFlow = () => {
       fitView
     >
       <Background style={{ background: "#222" }} />
-      {/* <Panel position="bottom-center">bottom-center</Panel> */}
-      {/* <MiniMap nodeStrokeWidth={3} /> */}
+      <MiniMap nodeStrokeWidth={3} />
       <Panel position="top-right">
         <button onClick={() => onLayout("TB")}>vertical layout</button>
         <button onClick={() => onLayout("LR")}>horizontal layout</button>
