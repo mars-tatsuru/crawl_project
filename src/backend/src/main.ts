@@ -101,10 +101,10 @@ const migration = async () => {
       (value, index, self) =>
         self.findIndex((v) => v.url === value.url) === index
     )
-    .sort((a, b) => a.url.split("/").length - b.url.split("/").length)
     .sort((a, b) => {
       return a.url.length - b.url.length;
-    });
+    })
+    .sort((a, b) => a.url.split("/").length - b.url.split("/").length);
 
   // ex) https://www.marsflag.com/ja/ => [ 'ja' ]
   // sort the pathParts array by length and parent-child relationship
@@ -124,7 +124,7 @@ const migration = async () => {
   // create site tree data
   let positionXCounter = 0;
   pathParts
-    // .sort((a, b) => a.length - b.length)
+    .sort((a, b) => a.length - b.length)
     .map((parts, index) => {
       let obj: { [key: string]: any } = result;
 
@@ -157,7 +157,6 @@ const migration = async () => {
           }
         }
 
-        // TODO:if the parts length is different from the previous parts length, reset the positionXCounter
         if (parts.length > pathParts[index - 1]?.length) {
           positionXCounter = 0;
         }
