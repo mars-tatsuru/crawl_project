@@ -1,8 +1,13 @@
 // https://crawlee.dev/docs/examples/crawl-relative-links
 // const crawlUrl = "https://tatsucreate.com/";
-const crawlUrl = "https://www.marsflag.com/";
+// const crawlUrl = "https://www.marsflag.com/";
 // const crawlUrl = "https://ja.vuejs.org/";
 // const crawlUrl = "https://www.endo-bag.co.jp/";
+// const crawlUrl = "https://vuild.co.jp/";
+// const crawlUrl = "https://illupinojapan.jp/";
+// const crawlUrl = "https://roseaupensant.jp/";
+// const crawlUrl = "https://chot-inc.com/";
+const crawlUrl = "https://www.marsflag.com/";
 import {
   PlaywrightCrawler,
   EnqueueStrategy,
@@ -148,23 +153,23 @@ const migration = async () => {
               title: sortDataSetObjArr[index].title,
               thumbnailPath: sortDataSetObjArr[index].thumbnailPath,
               level: parts.length - 1,
-              // TODO: I have to consider about the positionXCounter for rendering
-              x: positionXCounter * 200,
-              y: parts.length * 300 + 150,
+              // TODO: unnecessary positionXCounter and positionYCounter
+              // x: positionXCounter * 200,
+              // y: parts.length * 300 + 150,
             };
           } else {
             obj[part] = {};
           }
         }
 
-        if (parts.length > pathParts[index - 1]?.length) {
-          positionXCounter = 0;
-        }
+        // if (parts.length > pathParts[index - 1]?.length) {
+        //   positionXCounter = 0;
+        // }
 
         obj = obj[part];
       });
 
-      positionXCounter++;
+      // positionXCounter++;
     });
 
   // saving result of map to default Key-value store
