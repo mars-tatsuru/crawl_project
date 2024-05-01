@@ -1,6 +1,6 @@
 // https://crawlee.dev/docs/examples/crawl-relative-links
 // const crawlUrl = "https://tatsucreate.com/";
-const crawlUrl = "https://www.marsflag.com/ja/";
+const crawlUrl = "https://www.marsflag.com/";
 // const crawlUrl = "https://ja.vuejs.org/";
 // const crawlUrl = "https://www.endo-bag.co.jp/";
 import {
@@ -124,7 +124,7 @@ const migration = async () => {
   // create site tree data
   let positionXCounter = 0;
   pathParts
-    .sort((a, b) => a.length - b.length)
+    // .sort((a, b) => a.length - b.length)
     .map((parts, index) => {
       let obj: { [key: string]: any } = result;
 
