@@ -1,6 +1,6 @@
 // https://crawlee.dev/docs/examples/crawl-relative-links
 // const crawlUrl = "https://tatsucreate.com/";
-const crawlUrl = "https://www.marsflag.com/";
+const crawlUrl = "https://www.marsflag.com/ja/";
 // const crawlUrl = "https://ja.vuejs.org/";
 // const crawlUrl = "https://www.endo-bag.co.jp/";
 import {
@@ -20,7 +20,7 @@ const crawler = new PlaywrightCrawler({
   // Limitation for only 10 requests (do not use if you want to crawl all links)
   // https://crawlee.dev/api/playwright-crawler/interface/PlaywrightCrawlerOptions#maxRequestsPerCrawl
   // NOTE: In cases of parallel crawling, the actual number of pages visited might be slightly higher than this value.
-  maxRequestsPerCrawl: 20,
+  maxRequestsPerCrawl: 50,
 
   async requestHandler({ request, page, enqueueLinks, log, pushData }) {
     // Log the URL of the page being crawled

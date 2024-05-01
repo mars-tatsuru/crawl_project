@@ -16,6 +16,7 @@ import ReactFlow, {
   Controls,
   BackgroundVariant,
   MiniMap,
+  ControlButton,
 } from "reactflow";
 import dagre from "dagre";
 
@@ -157,8 +158,13 @@ function Flow() {
         connectionLineType={ConnectionLineType.SmoothStep}
         defaultEdgeOptions={defaultEdgeOptions}
         fitView
+        // defaultViewport={{ x: 200, y: -200, zoom: -1.5 }}
+        // defaultViewport={{ x: 200, y: -150, zoom: -3 }}
       >
         <Background style={{ background: "#222" }} />
+        <Panel position="bottom-center">bottom-center</Panel>
+        <MiniMap nodeStrokeWidth={3} />
+        <Controls />
       </ReactFlow>
     </div>
   );
