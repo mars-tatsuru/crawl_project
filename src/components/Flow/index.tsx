@@ -211,6 +211,7 @@ const LayoutFlow = () => {
       processEntry(key, value, parentId);
     });
 
+    console.log(nodes, edges);
     return { nodes, edges };
   };
 
@@ -230,7 +231,9 @@ const LayoutFlow = () => {
       <Background style={{ background: "#222" }} />
       <MiniMap nodeStrokeWidth={3} />
       <Panel position="top-right">
-        <button onClick={() => onLayout("TB")}>vertical layout</button>
+        <button style={{ marginRight: "10px" }} onClick={() => onLayout("TB")}>
+          vertical layout
+        </button>
         <button onClick={() => onLayout("LR")}>horizontal layout</button>
       </Panel>
       <Controls />

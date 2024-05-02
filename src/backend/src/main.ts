@@ -14,6 +14,7 @@ import {
   Dataset,
   KeyValueStore,
 } from "crawlee";
+import { url } from "inspector";
 
 /********************
  * crawler settings
@@ -158,7 +159,15 @@ const migration = async () => {
               // y: parts.length * 300 + 150,
             };
           } else {
-            obj[part] = {};
+            if (part === "top") {
+              obj[part] = {};
+            } else {
+              obj[part] = {
+                title: part,
+                url: parts.slice(0, partOrder + 1).join("/"),
+                level: parts.length - 2,
+              };
+            }
           }
         }
 
