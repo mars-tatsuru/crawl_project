@@ -66,8 +66,12 @@ const defaultEdgeOptions = {
 };
 
 const getLayoutedElements = (nodes: any, edges: any, direction = "TB") => {
+  //Dagre: https://github.com/dagrejs/dagre/wiki#an-example-layout
   const isHorizontal = direction === "LR";
-  dagreGraph.setGraph({ rankdir: direction });
+  dagreGraph.setGraph({
+    rankdir: direction,
+    ranker: "network-simplex",
+  });
 
   nodes.forEach((node: any) => {
     dagreGraph.setNode(node.id, { width: nodeWidth, height: nodeHeight });
@@ -98,7 +102,6 @@ const getLayoutedElements = (nodes: any, edges: any, direction = "TB") => {
 };
 
 const LayoutFlow = () => {
-  const { fitView } = useReactFlow();
   // Add node or box
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   // Add edge or connection
@@ -128,10 +131,6 @@ const LayoutFlow = () => {
 
     setNodes([...layoutedNodes]);
     setEdges([...layoutedEdges]);
-
-    window.requestAnimationFrame(() => {
-      fitView();
-    });
   }, []);
 
   // add edge or connection
@@ -215,11 +214,12 @@ const LayoutFlow = () => {
     return { nodes, edges };
   };
 
-  // set position y to 0
-  const topNode = useMemo(() => nodes.find((n) => n.data.level === 1), [nodes]);
-
   // position x and y
   const { x, y, zoom } = useViewport();
+
+  //TODO: set position y to 0
+  const topNode = nodes.find((n) => n.data.level === 1);
+  console.log("nodes", nodes);
 
   return (
     <ReactFlow
@@ -232,11 +232,17 @@ const LayoutFlow = () => {
       edgeTypes={edgeTypes}
       connectionLineType={ConnectionLineType.SmoothStep}
       defaultEdgeOptions={defaultEdgeOptions}
-      fitView
-      fitViewOptions={{
-        nodes: topNode ? [topNode] : [],
-        minZoom: 1,
-        maxZoom: 0.5,
+      // fitView
+      // fitViewOptions={{
+      //   nodes: topNode ? [topNode] : [],
+      //   minZoom: 1,
+      //   maxZoom: 0.4,
+      // }}
+      //TODO: fitViewOptions not working
+      defaultViewport={{
+        x: topNode ? -topNode?.position?.x : -19500,
+        y: 100,
+        zoom: 0.5,
       }}
     >
       <Background style={{ background: "#222" }} />
