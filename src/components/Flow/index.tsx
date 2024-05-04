@@ -1,6 +1,12 @@
 "use client";
 
-import { useCallback, useMemo, useEffect, useState } from "react";
+import {
+  useCallback,
+  useMemo,
+  useEffect,
+  useState,
+  useLayoutEffect,
+} from "react";
 import ReactFlow, {
   ReactFlowProvider,
   Panel,
@@ -20,6 +26,7 @@ import ReactFlow, {
   useReactFlow,
   useNodesInitialized,
   useViewport,
+  Viewport,
 } from "reactflow";
 
 import Dagre from "@dagrejs/dagre";
@@ -37,12 +44,6 @@ const initialEdges: Edge[] = [];
 
 const nodeWidth = 172;
 const nodeHeight = 300;
-
-type Data = {
-  url: string;
-  title: string;
-  level: number;
-};
 
 type TreeNode = {
   url?: string;
@@ -63,6 +64,15 @@ const edgeTypes = {
 
 const defaultEdgeOptions = {
   animated: false,
+};
+
+// TODO: topNode の存在をチェックしてデフォルトの位置を設定する
+let defaultViewport: Viewport | undefined;
+const initialPositionCalc = (nodes: Node[]) => {
+  const topNode = nodes.find((n) => n.data.level === 1);
+  return topNode
+    ? { x: -topNode.position.x, y: 100, zoom: 0.5 }
+    : { x: -19500, y: 100, zoom: 0.5 };
 };
 
 const getLayoutedElements = (nodes: any, edges: any, direction = "TB") => {
@@ -104,6 +114,7 @@ const getLayoutedElements = (nodes: any, edges: any, direction = "TB") => {
 const LayoutFlow = () => {
   // Add node or box
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+
   // Add edge or connection
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
@@ -217,10 +228,6 @@ const LayoutFlow = () => {
   // position x and y
   const { x, y, zoom } = useViewport();
 
-  //TODO: set position y to 0
-  const topNode = nodes.find((n) => n.data.level === 1);
-  console.log("nodes", nodes);
-
   return (
     <ReactFlow
       nodes={nodes}
@@ -239,11 +246,7 @@ const LayoutFlow = () => {
       //   maxZoom: 0.4,
       // }}
       //TODO: fitViewOptions not working
-      defaultViewport={{
-        x: topNode ? -topNode?.position?.x : -19500,
-        y: 100,
-        zoom: 0.5,
-      }}
+      defaultViewport={defaultViewport}
     >
       <Background style={{ background: "#222" }} />
       <MiniMap nodeStrokeWidth={3} />
