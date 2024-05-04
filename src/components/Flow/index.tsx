@@ -19,6 +19,7 @@ import ReactFlow, {
   ControlButton,
   useReactFlow,
   useNodesInitialized,
+  useViewport,
 } from "reactflow";
 
 import Dagre from "@dagrejs/dagre";
@@ -211,9 +212,14 @@ const LayoutFlow = () => {
       processEntry(key, value, parentId);
     });
 
-    console.log(nodes, edges);
     return { nodes, edges };
   };
+
+  // set position y to 0
+  const topNode = useMemo(() => nodes.find((n) => n.data.level === 1), [nodes]);
+
+  // position x and y
+  const { x, y, zoom } = useViewport();
 
   return (
     <ReactFlow
@@ -227,6 +233,11 @@ const LayoutFlow = () => {
       connectionLineType={ConnectionLineType.SmoothStep}
       defaultEdgeOptions={defaultEdgeOptions}
       fitView
+      fitViewOptions={{
+        nodes: topNode ? [topNode] : [],
+        minZoom: 1,
+        maxZoom: 0.5,
+      }}
     >
       <Background style={{ background: "#222" }} />
       <MiniMap nodeStrokeWidth={3} />
@@ -235,6 +246,9 @@ const LayoutFlow = () => {
           vertical layout
         </button>
         <button onClick={() => onLayout("LR")}>horizontal layout</button>
+        <p>
+          The viewport is currently at ({x}, {y}) and zoomed to {zoom}.
+        </p>
       </Panel>
       <Controls />
     </ReactFlow>
