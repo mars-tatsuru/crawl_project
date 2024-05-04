@@ -66,15 +66,6 @@ const defaultEdgeOptions = {
   animated: false,
 };
 
-// TODO: topNode の存在をチェックしてデフォルトの位置を設定する
-let defaultViewport: Viewport | undefined;
-const initialPositionCalc = (nodes: Node[]) => {
-  const topNode = nodes.find((n) => n.data.level === 1);
-  return topNode
-    ? { x: -topNode.position.x, y: 100, zoom: 0.5 }
-    : { x: -19500, y: 100, zoom: 0.5 };
-};
-
 const getLayoutedElements = (nodes: any, edges: any, direction = "TB") => {
   //Dagre: https://github.com/dagrejs/dagre/wiki#an-example-layout
   const isHorizontal = direction === "LR";
@@ -118,6 +109,17 @@ const LayoutFlow = () => {
   // Add edge or connection
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
+  // TODO: Center the view on the first node
+  // The default viewport is currently {x: 0, y: 0, zoom: 1} on initial render
+  const defaultViewport: Viewport = useMemo(() => {
+    const firstNode = nodes[0];
+    return {
+      x: firstNode?.position.x || -19500,
+      y: 100,
+      zoom: 0.5,
+    };
+  }, [nodes]);
+
   // new click event function
   const onLayout = useCallback(
     (direction: string) => {
@@ -130,9 +132,10 @@ const LayoutFlow = () => {
     [nodes, edges]
   );
 
-  // 1
+  /************************************************
+   * 1 useEffect
+   ************************************************/
   useEffect(() => {
-    // 2
     const { nodes: initialNodes, edges: initialEdges } = processData(tree);
 
     const { nodes: layoutedNodes, edges: layoutedEdges } = getLayoutedElements(
@@ -144,7 +147,9 @@ const LayoutFlow = () => {
     setEdges([...layoutedEdges]);
   }, []);
 
-  // add edge or connection
+  /************************************************
+   * Add edge or connection
+   ************************************************/
   const onConnect = useCallback(
     (connection: any) => {
       const edge = { ...connection, type: "custom-edge" };
@@ -153,6 +158,9 @@ const LayoutFlow = () => {
     [setEdges]
   );
 
+  /************************************************
+   * HELPER FUNCTIONS
+   ************************************************/
   //5-1: Assuming TreeNode, Node, and Edge types are already defined
   const createNode = (
     id: string,
@@ -228,6 +236,9 @@ const LayoutFlow = () => {
   // position x and y
   const { x, y, zoom } = useViewport();
 
+  /************************************************
+   * MAIN COMPONENT
+   ************************************************/
   return (
     <ReactFlow
       nodes={nodes}
@@ -241,11 +252,11 @@ const LayoutFlow = () => {
       defaultEdgeOptions={defaultEdgeOptions}
       // fitView
       // fitViewOptions={{
-      //   nodes: topNode ? [topNode] : [],
+      //   nodes: [{ id: nodes[0]?.id }],
       //   minZoom: 1,
       //   maxZoom: 0.4,
       // }}
-      //TODO: fitViewOptions not working
+      //TODO: defaultViewport not working
       defaultViewport={defaultViewport}
     >
       <Background style={{ background: "#222" }} />
