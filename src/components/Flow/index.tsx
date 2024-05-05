@@ -7,6 +7,7 @@ import {
   useState,
   useLayoutEffect,
 } from "react";
+
 import ReactFlow, {
   ReactFlowProvider,
   Panel,
@@ -108,17 +109,6 @@ const LayoutFlow = () => {
 
   // Add edge or connection
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
-
-  // TODO: Center the view on the first node
-  // The default viewport is currently {x: 0, y: 0, zoom: 1} on initial render
-  const defaultViewport: Viewport = useMemo(() => {
-    const firstNode = nodes[0];
-    return {
-      x: firstNode?.position.x || -19500,
-      y: 100,
-      zoom: 0.5,
-    };
-  }, [nodes]);
 
   // new click event function
   const onLayout = useCallback(
@@ -237,6 +227,29 @@ const LayoutFlow = () => {
   const { x, y, zoom } = useViewport();
 
   /************************************************
+   * move to first node after layout
+   ************************************************/
+  const { setViewport } = useReactFlow();
+  useEffect(() => {
+    const firstNodeTest = nodes[0];
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+    const clientRect = firstNodeTest?.position;
+
+    if (clientRect) {
+      // set to the first node
+      setViewport(
+        {
+          x: -clientRect.x / 2 + windowWidth / 2,
+          y: clientRect.y + windowHeight / 6,
+          zoom: 0.5,
+        },
+        { duration: 1000 }
+      );
+    }
+  }, [nodes]);
+
+  /************************************************
    * MAIN COMPONENT
    ************************************************/
   return (
@@ -252,12 +265,15 @@ const LayoutFlow = () => {
       defaultEdgeOptions={defaultEdgeOptions}
       // fitView
       // fitViewOptions={{
-      //   nodes: [{ id: nodes[0]?.id }],
+      //   nodes: [
+      //     {
+      //       id: nodes[0]?.id,
+      //     },
+      //   ],
       //   minZoom: 1,
       //   maxZoom: 0.4,
       // }}
-      //TODO: defaultViewport not working
-      defaultViewport={defaultViewport}
+      // defaultViewport={defaultViewport}
     >
       <Background style={{ background: "#222" }} />
       <MiniMap nodeStrokeWidth={3} />
@@ -267,7 +283,7 @@ const LayoutFlow = () => {
         </button>
         <button onClick={() => onLayout("LR")}>horizontal layout</button>
         <p>
-          The viewport is currently at ({x}, {y}) and zoomed to {zoom}.
+          The viewport is currently at ({x}, {y}) and zoomed to {zoom}
         </p>
       </Panel>
       <Controls />
