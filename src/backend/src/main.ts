@@ -8,6 +8,7 @@
 // const crawlUrl = "https://roseaupensant.jp/";
 // const crawlUrl = "https://chot-inc.com/";
 const crawlUrl = "https://www.marsflag.com/";
+// const crawlUrl = "https://www.wismettac.com/ja/group/group/wfoods.html";
 import {
   PlaywrightCrawler,
   EnqueueStrategy,
@@ -19,6 +20,7 @@ import { url } from "inspector";
 /********************
  * crawler settings
  ********************/
+// TODO: except pdf and zip files
 const urls: string[] = [];
 import path from "path";
 

@@ -241,7 +241,7 @@ const LayoutFlow = () => {
       setViewport(
         {
           x: -clientRect.x / 2 + windowWidth / 2,
-          y: clientRect.y + windowHeight / 6,
+          y: clientRect.y + windowHeight / 100,
           zoom: 0.5,
         },
         { duration: 1000 }
@@ -263,16 +263,16 @@ const LayoutFlow = () => {
       edgeTypes={edgeTypes}
       connectionLineType={ConnectionLineType.SmoothStep}
       defaultEdgeOptions={defaultEdgeOptions}
-      // fitView
-      // fitViewOptions={{
-      //   nodes: [
-      //     {
-      //       id: nodes[0]?.id,
-      //     },
-      //   ],
-      //   minZoom: 1,
-      //   maxZoom: 0.4,
-      // }}
+      fitView
+      fitViewOptions={{
+        nodes: [
+          {
+            id: nodes[0]?.id,
+          },
+        ],
+        minZoom: 1,
+        maxZoom: 0.4,
+      }}
       // defaultViewport={defaultViewport}
     >
       <Background style={{ background: "#222" }} />
