@@ -8,7 +8,7 @@
 // const crawlUrl = "https://roseaupensant.jp/";
 // const crawlUrl = "https://chot-inc.com/";
 const crawlUrl = "https://www.marsflag.com/";
-// const crawlUrl = "https://www.wismettac.com/ja/group/group/wfoods.html";
+// const crawlUrl = "https://www.wismettac.com/";
 import {
   PlaywrightCrawler,
   EnqueueStrategy,
@@ -40,6 +40,11 @@ const crawler = new PlaywrightCrawler({
       // strategy: EnqueueStrategy.All,
       strategy: EnqueueStrategy.SameOrigin,
       // globs: [`${crawlUrl}/*/*/*`],
+      transformRequestFunction(req) {
+        // ignore all links ending with `.pdf`
+        if (req.url.endsWith(".pdf")) return false;
+        return req;
+      },
     });
 
     // Save the page data to the dataset

@@ -122,6 +122,25 @@ const LayoutFlow = () => {
     [nodes, edges]
   );
 
+  //TODO: 他にも引数にnodeの名前を入れて、検索してzoomする関数を作る
+  const moveToFirstNode = useCallback(() => {
+    const firstNode = nodes[0];
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+    const clientRect = firstNode?.position;
+
+    if (clientRect) {
+      setViewport(
+        {
+          x: -clientRect.x / 2 + windowWidth / 2,
+          y: clientRect.y + windowHeight / 100,
+          zoom: 0.5,
+        },
+        { duration: 1000 }
+      );
+    }
+  }, [nodes[0]]);
+
   /************************************************
    * 1 useEffect
    ************************************************/
@@ -276,17 +295,20 @@ const LayoutFlow = () => {
       // defaultViewport={defaultViewport}
     >
       <Background style={{ background: "#222" }} />
-      <MiniMap nodeStrokeWidth={3} />
+      {/* <MiniMap nodeStrokeWidth={3} /> */}
       <Panel position="top-right">
-        <button style={{ marginRight: "10px" }} onClick={() => onLayout("TB")}>
+        {/* <button style={{ marginRight: "10px" }} onClick={() => onLayout("TB")}>
           vertical layout
-        </button>
+        </button> */}
         {/* <button onClick={() => onLayout("LR")}>horizontal layout</button> */}
+        <button style={{ marginRight: "10px" }} onClick={moveToFirstNode}>
+          move to top level
+        </button>
         <p>
           The viewport is currently at ({x}, {y}) and zoomed to {zoom}
         </p>
       </Panel>
-      <Controls />
+      {/* <Controls /> */}
     </ReactFlow>
   );
 };
