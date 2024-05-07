@@ -247,7 +247,7 @@ const LayoutFlow = () => {
         { duration: 1000 }
       );
     }
-  }, [nodes]);
+  }, [nodes[0]]);
 
   /************************************************
    * MAIN COMPONENT
@@ -281,7 +281,7 @@ const LayoutFlow = () => {
         <button style={{ marginRight: "10px" }} onClick={() => onLayout("TB")}>
           vertical layout
         </button>
-        <button onClick={() => onLayout("LR")}>horizontal layout</button>
+        {/* <button onClick={() => onLayout("LR")}>horizontal layout</button> */}
         <p>
           The viewport is currently at ({x}, {y}) and zoomed to {zoom}
         </p>
