@@ -123,23 +123,23 @@ const LayoutFlow = () => {
   );
 
   //TODO: 他にも引数にnodeの名前を入れて、検索してzoomする関数を作る
-  const moveToFirstNode = useCallback(() => {
-    const firstNode = nodes[0];
-    const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
-    const clientRect = firstNode?.position;
+  // const moveToFirstNode = useCallback(() => {
+  //   const firstNode = nodes[0];
+  //   const windowWidth = window.innerWidth;
+  //   const windowHeight = window.innerHeight;
+  //   const clientRect = firstNode?.position;
 
-    if (clientRect) {
-      setViewport(
-        {
-          x: -clientRect.x / 2 + windowWidth / 2,
-          y: clientRect.y + windowHeight / 100,
-          zoom: 0.5,
-        },
-        { duration: 1000 }
-      );
-    }
-  }, [nodes[0]]);
+  //   if (clientRect) {
+  //     setViewport(
+  //       {
+  //         x: -clientRect.x / 2 + windowWidth / 2,
+  //         y: clientRect.y,
+  //         zoom: 0.5,
+  //       },
+  //       { duration: 1000 }
+  //     );
+  //   }
+  // }, [nodes]);
 
   /************************************************
    * 1 useEffect
@@ -249,7 +249,10 @@ const LayoutFlow = () => {
    * move to first node after layout
    ************************************************/
   const { setViewport } = useReactFlow();
-  useEffect(() => {
+  // listen to nodes initialized. this means all nodes have been rendered.
+  const nodesInitialized = useNodesInitialized();
+
+  useLayoutEffect(() => {
     const firstNodeTest = nodes[0];
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
@@ -260,13 +263,13 @@ const LayoutFlow = () => {
       setViewport(
         {
           x: -clientRect.x / 2 + windowWidth / 2,
-          y: clientRect.y + windowHeight / 100,
+          y: clientRect.y,
           zoom: 0.5,
         },
         { duration: 1000 }
       );
     }
-  }, [nodes[0]]);
+  }, [nodesInitialized]);
 
   /************************************************
    * MAIN COMPONENT
@@ -294,18 +297,18 @@ const LayoutFlow = () => {
       }}
       // defaultViewport={defaultViewport}
     >
-      <Background style={{ background: "#222" }} />
+      <Background style={{ background: "#333" }} />
       {/* <MiniMap nodeStrokeWidth={3} /> */}
       <Panel position="top-right">
         {/* <button style={{ marginRight: "10px" }} onClick={() => onLayout("TB")}>
           vertical layout
         </button> */}
         {/* <button onClick={() => onLayout("LR")}>horizontal layout</button> */}
-        <button style={{ marginRight: "10px" }} onClick={moveToFirstNode}>
+        {/* <button style={{ marginRight: "10px" }} onClick={moveToFirstNode}>
           move to top level
-        </button>
+        </button> */}
         <p>
-          The viewport is currently at ({x}, {y}) and zoomed to {zoom}
+          Current: positionX:{x}, positionY:{y}, zoom:{zoom}
         </p>
       </Panel>
       {/* <Controls /> */}
