@@ -1,0 +1,1941 @@
+{
+  "top": {
+    "ja": {
+      "url": "https://www.marsflag.com/ja/",
+      "title": "株式会社マーズフラッグ",
+      "thumbnailPath": "/screenshots/ja.png",
+      "level": 1,
+      "privacy-policy.html": {
+        "url": "https://www.marsflag.com/ja/privacy-policy.html",
+        "title": "プライバシーポリシー - MARS FLAG",
+        "thumbnailPath": "/screenshots/ja-privacy-policy.html.png",
+        "level": 2
+      },
+      "faq": {
+        "url": "https://www.marsflag.com/ja/faq/",
+        "title": "サポート・よくあるご質問 - MARS FLAG",
+        "thumbnailPath": "/screenshots/ja-faq.png",
+        "level": 2,
+        "marsfinder.html": {
+          "url": "https://www.marsflag.com/ja/faq/marsfinder.html",
+          "title": "MARS FINDER よくあるご質問 - MARS FLAG",
+          "thumbnailPath": "/screenshots/ja-faq-marsfinder.html.png",
+          "level": 3
+        },
+        "marsscreen.html": {
+          "url": "https://www.marsflag.com/ja/faq/marsscreen.html",
+          "title": "MARS SCREEN よくあるご質問 - MARS FLAG",
+          "thumbnailPath": "/screenshots/ja-faq-marsscreen.html.png",
+          "level": 3
+        },
+        "marsquality.html": {
+          "url": "https://www.marsflag.com/ja/faq/marsquality.html",
+          "title": "MARS QUALITY よくあるご質問 - MARS FLAG",
+          "thumbnailPath": "/screenshots/ja-faq-marsquality.html.png",
+          "level": 3
+        }
+      },
+      "news": {
+        "2006": {
+          "title": "2006",
+          "url": "top/ja/news/2006",
+          "level": 3,
+          "20060822-mitsubishielectric.html": {
+            "url": "https://www.marsflag.com/ja/news/2006/20060822-mitsubishielectric.html",
+            "title": "サイト内検索「MARS FINDER」販売開始 三菱電機株式会社様が導入第一号 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2006-20060822-mitsubishielectric.html.png",
+            "level": 4
+          }
+        },
+        "2007": {
+          "title": "2007",
+          "url": "top/ja/news/2007",
+          "level": 3,
+          "20071002-mufg.html": {
+            "url": "https://www.marsflag.com/ja/news/2007/20071002-mufg.html",
+            "title": "三菱UFJフィナンシャル・グループ、MARS FINDERを導入 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2007-20071002-mufg.html.png",
+            "level": 4
+          },
+          "20071029-epson.html": {
+            "url": "https://www.marsflag.com/ja/news/2007/20071029-epson.html",
+            "title": "エプソン、MARS FINDER を導入 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2007-20071029-epson.html.png",
+            "level": 4
+          },
+          "20070903-honda.html": {
+            "url": "https://www.marsflag.com/ja/news/2007/20070903-honda.html",
+            "title": "Honda、サイト内検索にタイル表示を追加 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2007-20070903-honda.html.png",
+            "level": 4
+          },
+          "20070411-leben.html": {
+            "url": "https://www.marsflag.com/ja/news/2007/20070411-leben.html",
+            "title": "新商品「MF-Professional」を販売開始 本日導入第一号となる、タカラレーベン様を公開 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2007-20070411-leben.html.png",
+            "level": 4
+          },
+          "20070116-canon.html": {
+            "url": "https://www.marsflag.com/ja/news/2007/20070116-canon.html",
+            "title": "マーズフラッグ、サイト内検索「MARS FINDER」をキヤノンに導入 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2007-20070116-canon.html.png",
+            "level": 4
+          },
+          "20070109-honda.html": {
+            "url": "https://www.marsflag.com/ja/news/2007/20070109-honda.html",
+            "title": "ビジュアルで見やすい検索エンジンMARS FINDERを本田技研工業に導入 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2007-20070109-honda.html.png",
+            "level": 4
+          },
+          "20070903-fujitv.html": {
+            "url": "https://www.marsflag.com/ja/news/2007/20070903-fujitv.html",
+            "title": "フジテレビジョン、MARS FINDERを導入 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2007-20070903-fujitv.html.png",
+            "level": 4
+          },
+          "20070723-necsoft.html": {
+            "url": "https://www.marsflag.com/ja/news/2007/20070723-necsoft.html",
+            "title": "MARS FINDERを、NECソフト株式会社様のサイトに導入 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2007-20070723-necsoft.html.png",
+            "level": 4
+          }
+        },
+        "2008": {
+          "title": "2008",
+          "url": "top/ja/news/2008",
+          "level": 3,
+          "20081105-iij.html": {
+            "url": "https://www.marsflag.com/ja/news/2008/20081105-iij.html",
+            "title": "IIJが「見える化」サイト内検索MARS FINDERを導入 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2008-20081105-iij.html.png",
+            "level": 4
+          },
+          "20081210-sony.html": {
+            "url": "https://www.marsflag.com/ja/news/2008/20081210-sony.html",
+            "title": "マーズフラッグ、ソニーの\"bit-driveに\"「見える化」サイト内検索MARS FINDERを導入 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2008-20081210-sony.html.png",
+            "level": 4
+          },
+          "20080416-sony.html": {
+            "url": "https://www.marsflag.com/ja/news/2008/20080416-sony.html",
+            "title": "マーズフラッグ、ソニーに「見える化」サイト内検索MARS FINDERを導入 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2008-20080416-sony.html.png",
+            "level": 4
+          },
+          "20081007-asahibeer.html": {
+            "url": "https://www.marsflag.com/ja/news/2008/20081007-asahibeer.html",
+            "title": "アサヒビールが「見える化」サイト内検索MARS FINDERを導入 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2008-20081007-asahibeer.html.png",
+            "level": 4
+          },
+          "20080402-squareenix.html": {
+            "url": "https://www.marsflag.com/ja/news/2008/20080402-squareenix.html",
+            "title": "スクウェア・エニックスへ「見える化」サイト内検索サービスを提供 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2008-20080402-squareenix.html.png",
+            "level": 4
+          },
+          "20080425-mitsubishielectric.html": {
+            "url": "https://www.marsflag.com/ja/news/2008/20080425-mitsubishielectric.html",
+            "title": "マーズフラッグ、三菱電機サイトにPDF「見える化」サービスを提供 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2008-20080425-mitsubishielectric.html.png",
+            "level": 4
+          },
+          "20081104-marssiteperformance.html": {
+            "url": "https://www.marsflag.com/ja/news/2008/20081104-marssiteperformance.html",
+            "title": "コーポレートサイトの問題点を見える化する「MARS SITE PERFORMANCE」を販売開始 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2008-20081104-marssiteperformance.html.png",
+            "level": 4
+          }
+        },
+        "2009": {
+          "title": "2009",
+          "url": "top/ja/news/2009",
+          "level": 3,
+          "20091203-honda.html": {
+            "url": "https://www.marsflag.com/ja/news/2009/20091203-honda.html",
+            "title": "ホンダ iPhoneアプリ「Honda Shake」にお楽しみ機能を追加 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2009-20091203-honda.html.png",
+            "level": 4
+          },
+          "20090617-honda.html": {
+            "url": "https://www.marsflag.com/ja/news/2009/20090617-honda.html",
+            "title": "マーズフラッグ、ホンダのプロモーション用に類似画像検索iPhoneアプリを提供 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2009-20090617-honda.html.png",
+            "level": 4
+          },
+          "20090401-ricoh.html": {
+            "url": "https://www.marsflag.com/ja/news/2009/20090401-ricoh.html",
+            "title": "マーズフラッグ、リコーグループにMARS FINDER HOLDINGSを導入 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2009-20090401-ricoh.html.png",
+            "level": 4
+          },
+          "20090312-kirin.html": {
+            "url": "https://www.marsflag.com/ja/news/2009/20090312-kirin.html",
+            "title": "マーズフラッグ、キリングループにサイト内検索MARS FINDER HOLDINGSを導入 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2009-20090312-kirin.html.png",
+            "level": 4
+          },
+          "20090205-toray.html": {
+            "url": "https://www.marsflag.com/ja/news/2009/20090205-toray.html",
+            "title": "マーズフラッグ、東レにサイト内検索MARS FINDERを導入 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2009-20090205-toray.html.png",
+            "level": 4
+          },
+          "20090227-matsui.html": {
+            "url": "https://www.marsflag.com/ja/news/2009/20090227-matsui.html",
+            "title": "松井証券が「見える化」サイト内検索MARS FINDERを導入 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2009-20090227-matsui.html.png",
+            "level": 4
+          },
+          "20090722-yokogawa.html": {
+            "url": "https://www.marsflag.com/ja/news/2009/20090722-yokogawa.html",
+            "title": "横河電機IA事業部ネットワークソリューション事業センター MARS FINDERを導入 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2009-20090722-yokogawa.html.png",
+            "level": 4
+          },
+          "20090623-shiseido.html": {
+            "url": "https://www.marsflag.com/ja/news/2009/20090623-shiseido.html",
+            "title": "資生堂がWebサイト内検索をリニューアル、MARS FINDERを導入 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2009-20090623-shiseido.html.png",
+            "level": 4
+          },
+          "20090701-yamahamotor.html": {
+            "url": "https://www.marsflag.com/ja/news/2009/20090701-yamahamotor.html",
+            "title": "マーズフラッグ、類似画像検索ASPサービス「MARS Similar」をヤマハ発動機に導入 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2009-20090701-yamahamotor.html.png",
+            "level": 4
+          },
+          "20090319-fujielectric.html": {
+            "url": "https://www.marsflag.com/ja/news/2009/20090319-fujielectric.html",
+            "title": "マーズフラッグ、富士電機にPDF情報の「見える化」新サービスを提供 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2009-20090319-fujielectric.html.png",
+            "level": 4
+          }
+        },
+        "2010": {
+          "title": "2010",
+          "url": "top/ja/news/2010",
+          "level": 3,
+          "20101001-nec.html": {
+            "url": "https://www.marsflag.com/ja/news/2010/20101001-nec.html",
+            "title": "サイト内検索エンジンMARS FINDERをNECに提供 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2010-20101001-nec.html.png",
+            "level": 4
+          },
+          "20100831-dhbk.html": {
+            "url": "https://www.marsflag.com/ja/news/2010/20100831-dhbk.html",
+            "title": "第四銀行、サイト内検索エンジンにMARS FINDERを採用 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2010-20100831-dhbk.html.png",
+            "level": 4
+          },
+          "20100330-nissan.html": {
+            "url": "https://www.marsflag.com/ja/news/2010/20100330-nissan.html",
+            "title": "日産自動車がWebサイト内検索をリニューアル、MARS FINDERを導入 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2010-20100330-nissan.html.png",
+            "level": 4
+          },
+          "20100302-nikkei.html": {
+            "url": "https://www.marsflag.com/ja/news/2010/20100302-nikkei.html",
+            "title": "日経産業新聞2010年3月2日(9面)に武井の記事が掲載されました - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2010-20100302-nikkei.html.png",
+            "level": 4
+          },
+          "20101207-bunshun.html": {
+            "url": "https://www.marsflag.com/ja/news/2010/20101207-bunshun.html",
+            "title": "文藝春秋、サイト内検索エンジンMARS FINDERを「Number Web」で採用 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2010-20101207-bunshun.html.png",
+            "level": 4
+          },
+          "20101109-kodansha.html": {
+            "url": "https://www.marsflag.com/ja/news/2010/20101109-kodansha.html",
+            "title": "講談社、サイト内検索エンジンMARS FINDERをJOSEISHI.NETで採用 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2010-20101109-kodansha.html.png",
+            "level": 4
+          },
+          "20100810-softbank.html": {
+            "url": "https://www.marsflag.com/ja/news/2010/20100810-softbank.html",
+            "title": "「SoftBank FanSite」内の検索エンジンとしてMARS FINDERを提供 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2010-20100810-softbank.html.png",
+            "level": 4
+          },
+          "20101216-marsfinder.html": {
+            "url": "https://www.marsflag.com/ja/news/2010/20101216-marsfinder.html",
+            "title": "マーズフラッグ、サイト内検索サービスMARS FINDERをIPv6ネイティブ接続に対応 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2010-20101216-marsfinder.html.png",
+            "level": 4
+          },
+          "20100804-marsfinder.html": {
+            "url": "https://www.marsflag.com/ja/news/2010/20100804-marsfinder.html",
+            "title": "MARSFLAG、「インテリ・アドバイザー」に関する特許権を日本で取得 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2010-20100804-marsfinder.html.png",
+            "level": 4
+          },
+          "20100301-rakutensec.html": {
+            "url": "https://www.marsflag.com/ja/news/2010/20100301-rakutensec.html",
+            "title": "楽天証券がWebサイト内検索をリニューアル、MARS FINDERを導入 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2010-20100301-rakutensec.html.png",
+            "level": 4
+          }
+        },
+        "2011": {
+          "title": "2011",
+          "url": "top/ja/news/2011",
+          "level": 3,
+          "20110203-canon.html": {
+            "url": "https://www.marsflag.com/ja/news/2011/20110203-canon.html",
+            "title": "キヤノンの国内ポータル\"canon.jp\"、サポートサイトでMARS FINDERを採用 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2011-20110203-canon.html.png",
+            "level": 4
+          },
+          "20110118-canon.html": {
+            "url": "https://www.marsflag.com/ja/news/2011/20110118-canon.html",
+            "title": "キヤノン、Globalサイトで「MARS WORLD NAVIGATOR」を採用 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2011-20110118-canon.html.png",
+            "level": 4
+          },
+          "20110628-menard.html": {
+            "url": "https://www.marsflag.com/ja/news/2011/20110628-menard.html",
+            "title": "日本メナード化粧品、サイト内検索エンジンMARS FINDERを採用 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2011-20110628-menard.html.png",
+            "level": 4
+          },
+          "20110419-dentsu.html": {
+            "url": "https://www.marsflag.com/ja/news/2011/20110419-dentsu.html",
+            "title": "電通、Webサイト内検索でMARS FINDERを採用 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2011-20110419-dentsu.html.png",
+            "level": 4
+          },
+          "20110118-wingarc.html": {
+            "url": "https://www.marsflag.com/ja/news/2011/20110118-wingarc.html",
+            "title": "ウイングアーク テクノロジーズ、サイト内検索サービスMARS FINDERを採用 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2011-20110118-wingarc.html.png",
+            "level": 4
+          },
+          "20110112-sapporobeer.html": {
+            "url": "https://www.marsflag.com/ja/news/2011/20110112-sapporobeer.html",
+            "title": "サッポロビール、サイト内検索サービスMARS FINDERを採用 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2011-20110112-sapporobeer.html.png",
+            "level": 4
+          }
+        },
+        "2012": {
+          "title": "2012",
+          "url": "top/ja/news/2012",
+          "level": 3,
+          "20121218-nec.html": {
+            "url": "https://www.marsflag.com/ja/news/2012/20121218-nec.html",
+            "title": "サイト内検索サービスMARS FINDER、NECのグローバルサイトに導入開始 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2012-20121218-nec.html.png",
+            "level": 4
+          },
+          "20120507-logo.html": {
+            "url": "https://www.marsflag.com/ja/news/2012/20120507-logo.html",
+            "title": "CI変更ならびにオフィス移転のお知らせ - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2012-20120507-logo.html.png",
+            "level": 4
+          },
+          "20121211-canon.html": {
+            "url": "https://www.marsflag.com/ja/news/2012/20121211-canon.html",
+            "title": "Webサイト品質管理サービス「MARS QUALITY」、キヤノン中国のコーポレートサイトに採用 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2012-20121211-canon.html.png",
+            "level": 4
+          },
+          "20120531-portal.html": {
+            "url": "https://www.marsflag.com/ja/news/2012/20120531-portal.html",
+            "title": "「検索ポータルサイトMARS FLAG」「お気に入り保管サービスFACE」サービス終了のお知らせ - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2012-20120531-portal.html.png",
+            "level": 4
+          },
+          "20120328-jvckenwood.html": {
+            "url": "https://www.marsflag.com/ja/news/2012/20120328-jvckenwood.html",
+            "title": "サイト内検索サービスMARS FINDER、JVCの海外サイト向けに多言語展開を実現 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2012-20120328-jvckenwood.html.png",
+            "level": 4
+          },
+          "20121029-marsquality.html": {
+            "url": "https://www.marsflag.com/ja/news/2012/20121029-marsquality.html",
+            "title": "Webサイト品質管理サービス「MARS QUALITY」提供開始 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2012-20121029-marsquality.html.png",
+            "level": 4
+          }
+        },
+        "2013": {
+          "title": "2013",
+          "url": "top/ja/news/2013",
+          "level": 3,
+          "20130528-nec.html": {
+            "url": "https://www.marsflag.com/ja/news/2013/20130528-nec.html",
+            "title": "韓国NECとマーズフラッグ、韓国市場展開で協業 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2013-20130528-nec.html.png",
+            "level": 4
+          },
+          "20130326-orico.html": {
+            "url": "https://www.marsflag.com/ja/news/2013/20130326-orico.html",
+            "title": "オリコ サイト内検索サービス「MARS FINDER」を導入 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2013-20130326-orico.html.png",
+            "level": 4
+          },
+          "20130312-chugin.html": {
+            "url": "https://www.marsflag.com/ja/news/2013/20130312-chugin.html",
+            "title": "中国銀行、サイト内検索サービスMARS FINDER を採用 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2013-20130312-chugin.html.png",
+            "level": 4
+          },
+          "20130305-rakuten.html": {
+            "url": "https://www.marsflag.com/ja/news/2013/20130305-rakuten.html",
+            "title": "サイト内検索サービス「MARS FINDER」、楽天のコーポレートサイトに採用 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2013-20130305-rakuten.html.png",
+            "level": 4
+          },
+          "20130827-ashisuto.html": {
+            "url": "https://www.marsflag.com/ja/news/2013/20130827-ashisuto.html",
+            "title": "アシスト、FAQ検索サービスに検索ソリューションを導入 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2013-20130827-ashisuto.html.png",
+            "level": 4
+          },
+          "20131010-singapore.html": {
+            "url": "https://www.marsflag.com/ja/news/2013/20131010-singapore.html",
+            "title": "シンガポール・オフィス 開設のお知らせ - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2013-20131010-singapore.html.png",
+            "level": 4
+          },
+          "20131001-marsfinder.html": {
+            "url": "https://www.marsflag.com/ja/news/2013/20131001-marsfinder.html",
+            "title": "サイト内検索 MARS FINDER が「見える」から「解る」へ進化 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2013-20131001-marsfinder.html.png",
+            "level": 4
+          },
+          "20130820-yamahamotor.html": {
+            "url": "https://www.marsflag.com/ja/news/2013/20130820-yamahamotor.html",
+            "title": "ヤマハ発動機、検索ソリューション「MARS FINDER SOLUTION」を導入 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2013-20130820-yamahamotor.html.png",
+            "level": 4
+          }
+        },
+        "2014": {
+          "title": "2014",
+          "url": "top/ja/news/2014",
+          "level": 3,
+          "20141113-toray.html": {
+            "url": "https://www.marsflag.com/ja/news/2014/20141113-toray.html",
+            "title": "BtoB企業におけるオウンドメディア活用セミナー ～企業のWebサイトをビジネスにどう役立てるのか～ - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2014-20141113-toray.html.png",
+            "level": 4
+          },
+          "20140130-toray.html": {
+            "url": "https://www.marsflag.com/ja/news/2014/20140130-toray.html",
+            "title": "アジアで成功するためのオウンドメディア戦略セミナー - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2014-20140130-toray.html.png",
+            "level": 4
+          },
+          "20140528-mapcamera.html": {
+            "url": "https://www.marsflag.com/ja/news/2014/20140528-mapcamera.html",
+            "title": "シュッピン ECサイト「MapCamera」に 新サービス「MARS DIRECT」を導入 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2014-20140528-mapcamera.html.png",
+            "level": 4
+          }
+        },
+        "2015": {
+          "title": "2015",
+          "url": "top/ja/news/2015",
+          "level": 3,
+          "20151019-toray.html": {
+            "url": "https://www.marsflag.com/ja/news/2015/20151019-toray.html",
+            "title": "BtoB企業向けオウンドメディア活用セミナー ～企業のWebサイトをビジネスにどう役立てるのか～ - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2015-20151019-toray.html.png",
+            "level": 4
+          },
+          "20150930-honda.html": {
+            "url": "https://www.marsflag.com/ja/news/2015/20150930-honda.html",
+            "title": "本田技研工業とマーズフラッグが日本マニュアルコンテスト2015「部門優良賞」を受賞 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2015-20150930-honda.html.png",
+            "level": 4
+          },
+          "20150917-marsfinder.html": {
+            "url": "https://www.marsflag.com/ja/news/2015/20150917-marsfinder.html",
+            "title": "MARS FINDER 新機能追加・バージョンアップ - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2015-20150917-marsfinder.html.png",
+            "level": 4
+          },
+          "20150616-marsfinder.html": {
+            "url": "https://www.marsflag.com/ja/news/2015/20150616-marsfinder.html",
+            "title": "MARS FINDER バージョンアップ - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2015-20150616-marsfinder.html.png",
+            "level": 4
+          },
+          "20150525-marsfinder.html": {
+            "url": "https://www.marsflag.com/ja/news/2015/20150525-marsfinder.html",
+            "title": "MARS FINDER / MARS QUALITY バージョンアップ - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2015-20150525-marsfinder.html.png",
+            "level": 4
+          },
+          "20150421-yukakohata.html": {
+            "url": "https://www.marsflag.com/ja/news/2015/20150421-yukakohata.html",
+            "title": "パラトライアスロン2016年日本代表を目指し 秦 由加子選手とマーズフラッグがスポンサー契約を締結 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2015-20150421-yukakohata.html.png",
+            "level": 4
+          },
+          "20150609-mitsubishielectric.html": {
+            "url": "https://www.marsflag.com/ja/news/2015/20150609-mitsubishielectric.html",
+            "title": "三菱電機「暮らしと設備」にマーズフラッグの検索ソリューションを導入 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2015-20150609-mitsubishielectric.html.png",
+            "level": 4
+          }
+        },
+        "2016": {
+          "title": "2016",
+          "url": "top/ja/news/2016",
+          "level": 3,
+          "20160615-marsfinder.html": {
+            "url": "https://www.marsflag.com/ja/news/2016/20160615-marsfinder.html",
+            "title": "[Sirius Update] サイト内検索MARS FINDERのバージョンアップをおこないました - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2016-20160615-marsfinder.html.png",
+            "level": 4
+          },
+          "20160608-marsfinder.html": {
+            "url": "https://www.marsflag.com/ja/news/2016/20160608-marsfinder.html",
+            "title": "[参加無料] MARS FINDER 管理画面セミナーのご案内 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2016-20160608-marsfinder.html.png",
+            "level": 4
+          },
+          "20160912-marsfinder10th.html": {
+            "url": "https://www.marsflag.com/ja/news/2016/20160912-marsfinder10th.html",
+            "title": "MARS FINDER 10周年記念ユーザ会 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2016-20160912-marsfinder10th.html.png",
+            "level": 4
+          }
+        },
+        "2017": {
+          "title": "2017",
+          "url": "top/ja/news/2017",
+          "level": 3,
+          "20170622-honda.html": {
+            "url": "https://www.marsflag.com/ja/news/2017/20170622-honda.html",
+            "title": "本田技研工業がWebサイトでの顧客コミュニケーションを強化 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2017-20170622-honda.html.png",
+            "level": 4
+          },
+          "20170627-yukakohata.html": {
+            "url": "https://www.marsflag.com/ja/news/2017/20170627-yukakohata.html",
+            "title": "秦 由加子×武井 信也 スペシャル対談[Vol.3]を公開しました。 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2017-20170627-yukakohata.html.png",
+            "level": 4
+          },
+          "20170523-yukakohata.html": {
+            "url": "https://www.marsflag.com/ja/news/2017/20170523-yukakohata.html",
+            "title": "秦 由加子×武井 信也 スペシャル対談[Vol.2]を公開しました。 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2017-20170523-yukakohata.html.png",
+            "level": 4
+          },
+          "20170425-yukakohata.html": {
+            "url": "https://www.marsflag.com/ja/news/2017/20170425-yukakohata.html",
+            "title": "秦 由加子×武井 信也 スペシャル対談[Vol.1]を公開しました。 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2017-20170425-yukakohata.html.png",
+            "level": 4
+          },
+          "20171120-marsquality.html": {
+            "url": "https://www.marsflag.com/ja/news/2017/20171120-marsquality.html",
+            "title": "「保護されていない通信」は自動検出できる！ 今からでも遅くないChrome62＆ブラウザ警告対策 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2017-20171120-marsquality.html.png",
+            "level": 4
+          },
+          "20170818-mitsubishielectric.html": {
+            "url": "https://www.marsflag.com/ja/news/2017/20170818-mitsubishielectric.html",
+            "title": "「リーディングカンパニーに学ぶ！BtoBサイト内検索・マーケティングセミナー」開催のご案内 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2017-20170818-mitsubishielectric.html.png",
+            "level": 4
+          },
+          "newsimg": {
+            "title": "newsimg",
+            "url": "top/ja/news/2017/newsimg",
+            "level": 4,
+            "flyer_201709.jpg": {
+              "url": "https://www.marsflag.com/ja/news/2017/newsimg/flyer_201709.jpg",
+              "title": "flyer_201709.jpg (995×1399)",
+              "thumbnailPath": "/screenshots/ja-news-2017-newsimg-flyer_201709.jpg.png",
+              "level": 5
+            }
+          }
+        },
+        "2018": {
+          "title": "2018",
+          "url": "top/ja/news/2018",
+          "level": 3,
+          "20180606-jra.html": {
+            "url": "https://www.marsflag.com/ja/news/2018/20180606-jra.html",
+            "title": "JRA日本中央競馬会様 サイト内検索MARS FINDER導入インタビューを公開 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2018-20180606-jra.html.png",
+            "level": 4
+          },
+          "20180516-nec.html": {
+            "url": "https://www.marsflag.com/ja/news/2018/20180516-nec.html",
+            "title": "デジタルマーケティング戦略最前線セミナー」クアラルンプール&バンコク2都市開催のお知らせ - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2018-20180516-nec.html.png",
+            "level": 4
+          },
+          "20180405-nta.html": {
+            "url": "https://www.marsflag.com/ja/news/2018/20180405-nta.html",
+            "title": "国税庁Webサイトのサイト内検索サービスを緊急設置 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2018-20180405-nta.html.png",
+            "level": 4
+          },
+          "20181105-office.html": {
+            "url": "https://www.marsflag.com/ja/news/2018/20181105-office.html",
+            "title": "オフィス移転のお知らせ - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2018-20181105-office.html.png",
+            "level": 4
+          },
+          "20181108-hamastar.html": {
+            "url": "https://www.marsflag.com/ja/news/2018/20181108-hamastar.html",
+            "title": "哈瑪星科技とMARS FLAG、台湾市場展開で協業 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2018-20181108-hamastar.html.png",
+            "level": 4
+          },
+          "20180607-marsfinder.html": {
+            "url": "https://www.marsflag.com/ja/news/2018/20180607-marsfinder.html",
+            "title": "MARS FINDERがサイト内検索の国内トップシェアを獲得 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2018-20180607-marsfinder.html.png",
+            "level": 4
+          },
+          "20181022-marsflag20th.html": {
+            "url": "https://www.marsflag.com/ja/news/2018/20181022-marsflag20th.html",
+            "title": "設立20周年記念パーティーを開催 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2018-20181022-marsflag20th.html.png",
+            "level": 4
+          },
+          "newsimg": {
+            "title": "newsimg",
+            "url": "top/ja/news/2018/newsimg",
+            "level": 4,
+            "mf-ex.png": {
+              "url": "https://www.marsflag.com/ja/news/2018/newsimg/mf-ex.png",
+              "title": "mf-ex.png (1300×1004)",
+              "thumbnailPath": "/screenshots/ja-news-2018-newsimg-mf-ex.png.png",
+              "level": 5
+            }
+          }
+        },
+        "2019": {
+          "title": "2019",
+          "url": "top/ja/news/2019",
+          "level": 3,
+          "20191113-nhk.html": {
+            "url": "https://www.marsflag.com/ja/news/2019/20191113-nhk.html",
+            "title": "「NHKクローズアップ現代+」の取材を受けました - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2019-20191113-nhk.html.png",
+            "level": 4
+          },
+          "20190805-dmi.html": {
+            "url": "https://www.marsflag.com/ja/news/2019/20190805-dmi.html",
+            "title": "Web広告研究会のセミナーに登壇します - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2019-20190805-dmi.html.png",
+            "level": 4
+          },
+          "20190822-osaka.html": {
+            "url": "https://www.marsflag.com/ja/news/2019/20190822-osaka.html",
+            "title": "大阪営業所の設立および営業開始のお知らせ - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2019-20190822-osaka.html.png",
+            "level": 4
+          },
+          "20191112-inageh.html": {
+            "url": "https://www.marsflag.com/ja/news/2019/20191112-inageh.html",
+            "title": "千葉市立稲毛高等学校 40周年記念式典に登壇します！ - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2019-20191112-inageh.html.png",
+            "level": 4
+          },
+          "20190927-wework.html": {
+            "url": "https://www.marsflag.com/ja/news/2019/20190927-wework.html",
+            "title": "急成長スタートアップが考えるオフィス戦略セミナーに登壇します - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2019-20190927-wework.html.png",
+            "level": 4
+          },
+          "20190829-hitachi.html": {
+            "url": "https://www.marsflag.com/ja/news/2019/20190829-hitachi.html",
+            "title": "日立製作所様 サイト内検索MARS FINDER導入インタビューを公開 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2019-20190829-hitachi.html.png",
+            "level": 4
+          },
+          "20190524-marketersgo.html": {
+            "url": "https://www.marsflag.com/ja/news/2019/20190524-marketersgo.html",
+            "title": "台湾情報メディア「行銷人(シンシァォレン)」の取材を受けました - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2019-20190524-marketersgo.html.png",
+            "level": 4
+          },
+          "20190101-privacypolicy.html": {
+            "url": "https://www.marsflag.com/ja/news/2019/20190101-privacypolicy.html",
+            "title": "データ管理者情報(住所)を更新(プライバシーポリシー) - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2019-20190101-privacypolicy.html.png",
+            "level": 4
+          },
+          "20191206-marsproductsearch.html": {
+            "url": "https://www.marsflag.com/ja/news/2019/20191206-marsproductsearch.html",
+            "title": "【制作会社様向け】MARS FLAG セミナー 終了報告 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2019-20191206-marsproductsearch.html.png",
+            "level": 4
+          },
+          "20191007-findabilitysciences.html": {
+            "url": "https://www.marsflag.com/ja/news/2019/20191007-findabilitysciences.html",
+            "title": "検索エンジン & AIエンジン活用術セミナー(大阪) 終了報告 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2019-20191007-findabilitysciences.html.png",
+            "level": 4
+          },
+          "20190528-findabilitysciences.html": {
+            "url": "https://www.marsflag.com/ja/news/2019/20190528-findabilitysciences.html",
+            "title": "米国AI × 日本Search！セミナー終了報告 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2019-20190528-findabilitysciences.html.png",
+            "level": 4
+          },
+          "newsimg": {
+            "title": "newsimg",
+            "url": "top/ja/news/2019/newsimg",
+            "level": 4,
+            "201911_inage.jpg": {
+              "url": "https://www.marsflag.com/ja/news/2019/newsimg/201911_inage.jpg",
+              "title": "201911_inage.jpg (1440×724)",
+              "thumbnailPath": "/screenshots/ja-news-2019-newsimg-201911_inage.jpg.png",
+              "level": 5
+            }
+          }
+        },
+        "2020": {
+          "title": "2020",
+          "url": "top/ja/news/2020",
+          "level": 3,
+          "20200204-ntv.html": {
+            "url": "https://www.marsflag.com/ja/news/2020/20200204-ntv.html",
+            "title": "日本テレビ「スッキリ」の取材を受けました - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2020-20200204-ntv.html.png",
+            "level": 4
+          },
+          "20200121-tbs.html": {
+            "url": "https://www.marsflag.com/ja/news/2020/20200121-tbs.html",
+            "title": "TBS「グッとラック！」の取材を受けました - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2020-20200121-tbs.html.png",
+            "level": 4
+          },
+          "20200709-cisa.html": {
+            "url": "https://www.marsflag.com/ja/news/2020/20200709-cisa.html",
+            "title": "台湾 CISA(中華民国情報サービス産業協会)のセミナーに登壇しました - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2020-20200709-cisa.html.png",
+            "level": 4
+          },
+          "20200601-logo.html": {
+            "url": "https://www.marsflag.com/ja/news/2020/20200601-logo.html",
+            "title": "コーポレートロゴを一新 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2020-20200601-logo.html.png",
+            "level": 4
+          },
+          "20200625-wework.html": {
+            "url": "https://www.marsflag.com/ja/news/2020/20200625-wework.html",
+            "title": "「企業が考えるべき『新時代のワークプレイス』とは？」セミナーに登壇しました - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2020-20200625-wework.html.png",
+            "level": 4
+          },
+          "20201006-diamond.html": {
+            "url": "https://www.marsflag.com/ja/news/2020/20201006-diamond.html",
+            "title": "DIAMOND SIGNALにインタビュー記事が掲載されました - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2020-20201006-diamond.html.png",
+            "level": 4
+          },
+          "20200601-renewal.html": {
+            "url": "https://www.marsflag.com/ja/news/2020/20200601-renewal.html",
+            "title": "Webサイトを全面リニューアルしました - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2020-20200601-renewal.html.png",
+            "level": 4
+          },
+          "20201214-panasonic.html": {
+            "url": "https://www.marsflag.com/ja/news/2020/20201214-panasonic.html",
+            "title": "パナソニック様 MARS SCREEN導入インタビュー公開 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2020-20201214-panasonic.html.png",
+            "level": 4
+          },
+          "20201214-marsscreen.html": {
+            "url": "https://www.marsflag.com/ja/news/2020/20201214-marsscreen.html",
+            "title": "Webカタログ検索 MARS SCREEN サービス提供開始 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2020-20201214-marsscreen.html.png",
+            "level": 4
+          },
+          "20201204-marsfinder.html": {
+            "url": "https://www.marsflag.com/ja/news/2020/20201204-marsfinder.html",
+            "title": "サイト内検索 MARS FINDERに新機能「自動ずばケン」がデビュー - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2020-20201204-marsfinder.html.png",
+            "level": 4
+          },
+          "20200413-marsfinder.html": {
+            "url": "https://www.marsflag.com/ja/news/2020/20200413-marsfinder.html",
+            "title": "新型コロナウイルスの影響でサーチクエリが急増 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2020-20200413-marsfinder.html.png",
+            "level": 4
+          },
+          "newsimg": {
+            "title": "newsimg",
+            "url": "top/ja/news/2020/newsimg",
+            "level": 4,
+            "202004_graph.png": {
+              "url": "https://www.marsflag.com/ja/news/2020/newsimg/202004_graph.png",
+              "title": "202004_graph.png (1252×708)",
+              "thumbnailPath": "/screenshots/ja-news-2020-newsimg-202004_graph.png.png",
+              "level": 5
+            }
+          }
+        },
+        "2021": {
+          "title": "2021",
+          "url": "top/ja/news/2021",
+          "level": 3,
+          "20210921-nhk.html": {
+            "url": "https://www.marsflag.com/ja/news/2021/20210921-nhk.html",
+            "title": "NHK「NEWS おはよう日本」で放送されました - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2021-20210921-nhk.html.png",
+            "level": 4
+          },
+          "20211220-flick.html": {
+            "url": "https://www.marsflag.com/ja/news/2021/20211220-flick.html",
+            "title": "flick!(フリック)にインタビュー記事が掲載されました - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2021-20211220-flick.html.png",
+            "level": 4
+          },
+          "20211209-asahi.html": {
+            "url": "https://www.marsflag.com/ja/news/2021/20211209-asahi.html",
+            "title": "朝日新聞GLOBE＋の特集記事に掲載されました - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2021-20211209-asahi.html.png",
+            "level": 4
+          },
+          "20211205-asahi.html": {
+            "url": "https://www.marsflag.com/ja/news/2021/20211205-asahi.html",
+            "title": "朝日新聞GLOBEにインタビュー記事が掲載されました - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2021-20211205-asahi.html.png",
+            "level": 4
+          },
+          "20211020-asahi.html": {
+            "url": "https://www.marsflag.com/ja/news/2021/20211020-asahi.html",
+            "title": "朝日新聞の取材を受けました - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2021-20211020-asahi.html.png",
+            "level": 4
+          },
+          "20211222-nikkei.html": {
+            "url": "https://www.marsflag.com/ja/news/2021/20211222-nikkei.html",
+            "title": "日本経済新聞の取材を受けました - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2021-20211222-nikkei.html.png",
+            "level": 4
+          },
+          "20210527-notice.html": {
+            "url": "https://www.marsflag.com/ja/news/2021/20210527-notice.html",
+            "title": "ご契約社様向けお問い合わせ窓口に関するお知らせ - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2021-20210527-notice.html.png",
+            "level": 4
+          },
+          "20210419-utokyo.html": {
+            "url": "https://www.marsflag.com/ja/news/2021/20210419-utokyo.html",
+            "title": "当社の代表 武井が東京大学大学院情報理工学系研究科 UMP-JUSTプロジェクト iPI ( industrial Principal Investigator )に就任しました - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2021-20210419-utokyo.html.png",
+            "level": 4
+          },
+          "20210908-impress.html": {
+            "url": "https://www.marsflag.com/ja/news/2021/20210908-impress.html",
+            "title": "Impress デジカメ Watchにインタビュー記事が掲載されました - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2021-20210908-impress.html.png",
+            "level": 4
+          },
+          "20210604-tvtokyo.html": {
+            "url": "https://www.marsflag.com/ja/news/2021/20210604-tvtokyo.html",
+            "title": "テレビ東京の取材を受けました - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2021-20210604-tvtokyo.html.png",
+            "level": 4
+          },
+          "20211215-hokkaido.html": {
+            "url": "https://www.marsflag.com/ja/news/2021/20211215-hokkaido.html",
+            "title": "北海道新聞の取材を受けました - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2021-20211215-hokkaido.html.png",
+            "level": 4
+          },
+          "20210927-jvckenwood.html": {
+            "url": "https://www.marsflag.com/ja/news/2021/20210927-jvckenwood.html",
+            "title": "JVCケンウッド様 MARS FINDER導入インタビュー公開 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2021-20210927-jvckenwood.html.png",
+            "level": 4
+          },
+          "20210720-aimyscreen.html": {
+            "url": "https://www.marsflag.com/ja/news/2021/20210720-aimyscreen.html",
+            "title": "AIMY Screenのプロモーション動画を公開 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2021-20210720-aimyscreen.html.png",
+            "level": 4
+          },
+          "20210201-aimyscreen.html": {
+            "url": "https://www.marsflag.com/ja/news/2021/20210201-aimyscreen.html",
+            "title": "次世代型DXソリューション「AIMY Screen(エイミースクリーン) β版」サービス提供開始 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2021-20210201-aimyscreen.html.png",
+            "level": 4
+          },
+          "20210824-marsplatform.html": {
+            "url": "https://www.marsflag.com/ja/news/2021/20210824-marsplatform.html",
+            "title": "MARS Platformに新APIを追加 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2021-20210824-marsplatform.html.png",
+            "level": 4
+          },
+          "20210608-marsplatform.html": {
+            "url": "https://www.marsflag.com/ja/news/2021/20210608-marsplatform.html",
+            "title": "MARS Platform サービス提供開始 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2021-20210608-marsplatform.html.png",
+            "level": 4
+          },
+          "newsimg": {
+            "title": "newsimg",
+            "url": "top/ja/news/2021/newsimg",
+            "level": 4,
+            "AIMYScreen_before_after.jpg": {
+              "url": "https://www.marsflag.com/ja/news/2021/newsimg/AIMYScreen_before_after.jpg",
+              "title": "AIMYScreen_before_after.jpg (1536×939)",
+              "thumbnailPath": "/screenshots/ja-news-2021-newsimg-AIMYScreen_before_after.jpg.png",
+              "level": 5
+            }
+          }
+        },
+        "2022": {
+          "title": "2022",
+          "url": "top/ja/news/2022",
+          "level": 3,
+          "20221216-utokyo.html": {
+            "url": "https://www.marsflag.com/ja/news/2022/20221216-utokyo.html",
+            "title": "東京大学大学院「グローバル・クリエイティブリーダー講義X(未来創造イノベーションの実践)」に登壇しました - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2022-20221216-utokyo.html.png",
+            "level": 4
+          },
+          "20220622-kaishi.html": {
+            "url": "https://www.marsflag.com/ja/news/2022/20220622-kaishi.html",
+            "title": "開志専門職大学「クラウド技術概論」に登壇します - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2022-20220622-kaishi.html.png",
+            "level": 4
+          },
+          "20220510-utokyo.html": {
+            "url": "https://www.marsflag.com/ja/news/2022/20220510-utokyo.html",
+            "title": "東京大学大学院「ICTと産業」に登壇します - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2022-20220510-utokyo.html.png",
+            "level": 4
+          },
+          "20220101-nikkei.html": {
+            "url": "https://www.marsflag.com/ja/news/2022/20220101-nikkei.html",
+            "title": "日本経済新聞にインタビュー記事が掲載されました - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2022-20220101-nikkei.html.png",
+            "level": 4
+          },
+          "20220921-ideathon.html": {
+            "url": "https://www.marsflag.com/ja/news/2022/20220921-ideathon.html",
+            "title": "プノンペンでのアイデアソン終了報告 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2022-20220921-ideathon.html.png",
+            "level": 4
+          },
+          "20220830-ideathon.html": {
+            "url": "https://www.marsflag.com/ja/news/2022/20220830-ideathon.html",
+            "title": "プノンペンでアイデアソンを開催します - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2022-20220830-ideathon.html.png",
+            "level": 4
+          },
+          "20220615-mogukatsu.html": {
+            "url": "https://www.marsflag.com/ja/news/2022/20220615-mogukatsu.html",
+            "title": "もぐカツチャンネルを公開 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2022-20220615-mogukatsu.html.png",
+            "level": 4
+          },
+          "20220309-marketing.html": {
+            "url": "https://www.marsflag.com/ja/news/2022/20220309-marketing.html",
+            "title": "マーケティングメンバー募集 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2022-20220309-marketing.html.png",
+            "level": 4
+          }
+        },
+        "2023": {
+          "title": "2023",
+          "url": "top/ja/news/2023",
+          "level": 3,
+          "20231130-awoo.html": {
+            "url": "https://www.marsflag.com/ja/news/2023/20231130-awoo.html",
+            "title": "awoo AIがMARS Platformとシステム連携 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2023-20231130-awoo.html.png",
+            "level": 4
+          },
+          "20230619-kaishi.html": {
+            "url": "https://www.marsflag.com/ja/news/2023/20230619-kaishi.html",
+            "title": "開志専門職大学「クラウド技術概論」に登壇しました - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2023-20230619-kaishi.html.png",
+            "level": 4
+          },
+          "20230207-renewal.html": {
+            "url": "https://www.marsflag.com/ja/news/2023/20230207-renewal.html",
+            "title": "Webサイトを全面リニューアルしました - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2023-20230207-renewal.html.png",
+            "level": 4
+          },
+          "20230216-seminar.html": {
+            "url": "https://www.marsflag.com/ja/news/2023/20230216-seminar.html",
+            "title": "女性管理職の異業種交流会に登壇しました - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2023-20230216-seminar.html.png",
+            "level": 4
+          },
+          "20230317-marsgpt.html": {
+            "url": "https://www.marsflag.com/ja/news/2023/20230317-marsgpt.html",
+            "title": "Generative AI技術を採用したMARS GPTを開発、α版を公開 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2023-20230317-marsgpt.html.png",
+            "level": 4
+          },
+          "20230426-mars---.html": {
+            "url": "https://www.marsflag.com/ja/news/2023/20230426-mars---.html",
+            "title": "MARS GPTのサービス名称アップデートの検討を開始 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2023-20230426-mars---.html.png",
+            "level": 4
+          },
+          "20231010-ideathon.html": {
+            "url": "https://www.marsflag.com/ja/news/2023/20231010-ideathon.html",
+            "title": "Ideathon CAMBODIA 2023 終了報告 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2023-20231010-ideathon.html.png",
+            "level": 4
+          },
+          "20230706-ideathon.html": {
+            "url": "https://www.marsflag.com/ja/news/2023/20230706-ideathon.html",
+            "title": "Ideathon CAMBODIA 2023 開催決定 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2023-20230706-ideathon.html.png",
+            "level": 4
+          },
+          "20230213-nemophila.html": {
+            "url": "https://www.marsflag.com/ja/news/2023/20230213-nemophila.html",
+            "title": "ネモフィラ様 MARS Platform導入インタビュー公開 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2023-20230213-nemophila.html.png",
+            "level": 4
+          },
+          "20230810-marsfinder.html": {
+            "url": "https://www.marsflag.com/ja/news/2023/20230810-marsfinder.html",
+            "title": "MARS FINDER パートナー様向け説明会開催のお知らせ - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2023-20230810-marsfinder.html.png",
+            "level": 4
+          },
+          "20230601-marsfinder.html": {
+            "url": "https://www.marsflag.com/ja/news/2023/20230601-marsfinder.html",
+            "title": "サイト内検索 MARS FINDERがメジャーバージョンアップ - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2023-20230601-marsfinder.html.png",
+            "level": 4
+          },
+          "20230501-marsfinder.html": {
+            "url": "https://www.marsflag.com/ja/news/2023/20230501-marsfinder.html",
+            "title": "当社サービスへのネガティブセールスに関する注意喚起 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2023-20230501-marsfinder.html.png",
+            "level": 4
+          },
+          "20230616-marsemotech.html": {
+            "url": "https://www.marsflag.com/ja/news/2023/20230616-marsemotech.html",
+            "title": "チャット型AI対話サービス MARS EmoTechのサービス紹介ページ公開 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2023-20230616-marsemotech.html.png",
+            "level": 4
+          },
+          "20230606-marsemotech.html": {
+            "url": "https://www.marsflag.com/ja/news/2023/20230606-marsemotech.html",
+            "title": "チャット型AI対話サービス MARS EmoTechのサービスロゴが決定 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2023-20230606-marsemotech.html.png",
+            "level": 4
+          },
+          "20230523-marsemotech.html": {
+            "url": "https://www.marsflag.com/ja/news/2023/20230523-marsemotech.html",
+            "title": "チャット型AI対話サービスの新サービス名称がMARS EmoTechに - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2023-20230523-marsemotech.html.png",
+            "level": 4
+          },
+          "20231101-marsplatform.html": {
+            "url": "https://www.marsflag.com/ja/news/2023/20231101-marsplatform.html",
+            "title": "MARS Platformが銀行決済に対応 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2023-20231101-marsplatform.html.png",
+            "level": 4
+          },
+          "20230620-marsplatform.html": {
+            "url": "https://www.marsflag.com/ja/news/2023/20230620-marsplatform.html",
+            "title": "API連携クラウドサービス MARS Platformに新APIが追加 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2023-20230620-marsplatform.html.png",
+            "level": 4
+          },
+          "20231011-majicamajical.html": {
+            "url": "https://www.marsflag.com/ja/news/2023/20231011-majicamajical.html",
+            "title": "マジカマジカルにIdeathon CAMBODIA 2023が紹介されました - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2023-20231011-majicamajical.html.png",
+            "level": 4
+          }
+        },
+        "2024": {
+          "title": "2024",
+          "url": "top/ja/news/2024",
+          "level": 3,
+          "20240410-gw.html": {
+            "url": "https://www.marsflag.com/ja/news/2024/20240410-gw.html",
+            "title": "ゴールデンウィーク休業のお知らせ - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2024-20240410-gw.html.png",
+            "level": 4
+          },
+          "20240127-kaishi.html": {
+            "url": "https://www.marsflag.com/ja/news/2024/20240127-kaishi.html",
+            "title": "当社の代表 武井が開志専門職大学の客員教授に就任しました - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2024-20240127-kaishi.html.png",
+            "level": 4
+          },
+          "20240305-aptwomen.html": {
+            "url": "https://www.marsflag.com/ja/news/2024/20240305-aptwomen.html",
+            "title": "当社の代表 武井がAPT Womenの講師に就任しました - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2024-20240305-aptwomen.html.png",
+            "level": 4
+          },
+          "20240130-privtech.html": {
+            "url": "https://www.marsflag.com/ja/news/2024/20240130-privtech.html",
+            "title": "「プライバシーとユーザーエンゲージメント : 離脱率低下と回遊率向上の最新手法」セミナー開催 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2024-20240130-privtech.html.png",
+            "level": 4
+          },
+          "20240327-marsfinder.html": {
+            "url": "https://www.marsflag.com/ja/news/2024/20240327-marsfinder.html",
+            "title": "MARS FINDERの検索DB作成に新方式を採用 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2024-20240327-marsfinder.html.png",
+            "level": 4
+          },
+          "20240201-marsfinder.html": {
+            "url": "https://www.marsflag.com/ja/news/2024/20240201-marsfinder.html",
+            "title": "MARS FINDER 無料トライアルキャンペーンを開始 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-news-2024-20240201-marsfinder.html.png",
+            "level": 4
+          }
+        },
+        "url": "https://www.marsflag.com/ja/news/",
+        "title": "ニュース・お知らせ - MARS FLAG",
+        "thumbnailPath": "/screenshots/ja-news.png",
+        "level": 2
+      },
+      "services": {
+        "url": "https://www.marsflag.com/ja/services/",
+        "title": "製品・サービス - MARS FLAG",
+        "thumbnailPath": "/screenshots/ja-services.png",
+        "level": 2,
+        "marsfinder": {
+          "url": "https://www.marsflag.com/ja/services/marsfinder/",
+          "title": "サイト内検索 MARS FINDER - MARS FLAG",
+          "thumbnailPath": "/screenshots/ja-services-marsfinder.png",
+          "level": 3,
+          "why.html": {
+            "url": "https://www.marsflag.com/ja/services/marsfinder/why.html",
+            "title": "サイト内検索 MARS FINDER 選ばれる理由 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-services-marsfinder-why.html.png",
+            "level": 4
+          },
+          "flow.html": {
+            "url": "https://www.marsflag.com/ja/services/marsfinder/flow.html",
+            "title": "サイト内検索 MARS FINDER ご利用までの流れ - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-services-marsfinder-flow.html.png",
+            "level": 4
+          },
+          "reason.html": {
+            "url": "https://www.marsflag.com/ja/services/marsfinder/reason.html",
+            "title": "サイト内検索 MARS FINDER サイト内検索の重要性 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-services-marsfinder-reason.html.png",
+            "level": 4
+          },
+          "narrow.html": {
+            "url": "https://www.marsflag.com/ja/services/marsfinder/narrow.html",
+            "title": "サイト内検索 MARS FINDER 絞り込み機能 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-services-marsfinder-narrow.html.png",
+            "level": 4
+          },
+          "wakaru.html": {
+            "url": "https://www.marsflag.com/ja/services/marsfinder/wakaru.html",
+            "title": "404 Not Found - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-services-marsfinder-wakaru.html.png",
+            "level": 4
+          },
+          "details.html": {
+            "url": "https://www.marsflag.com/ja/services/marsfinder/details.html",
+            "title": "サイト内検索 MARS FINDER 特長・機能 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-services-marsfinder-details.html.png",
+            "level": 4
+          },
+          "intelli.html": {
+            "url": "https://www.marsflag.com/ja/services/marsfinder/intelli.html",
+            "title": "サイト内検索 MARS FINDER インテリ・アドバイザー(サジェスト機能) - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-services-marsfinder-intelli.html.png",
+            "level": 4
+          },
+          "results.html": {
+            "url": "https://www.marsflag.com/ja/services/marsfinder/results.html",
+            "title": "404 Not Found - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-services-marsfinder-results.html.png",
+            "level": 4
+          },
+          "snippet.html": {
+            "url": "https://www.marsflag.com/ja/services/marsfinder/snippet.html",
+            "title": "404 Not Found - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-services-marsfinder-snippet.html.png",
+            "level": 4
+          },
+          "featured.html": {
+            "url": "https://www.marsflag.com/ja/services/marsfinder/featured.html",
+            "title": "サイト内検索 MARS FINDER おすすめコンテンツ - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-services-marsfinder-featured.html.png",
+            "level": 4
+          },
+          "excursion.html": {
+            "url": "https://www.marsflag.com/ja/services/marsfinder/excursion.html",
+            "title": "サイト内検索 MARS FINDER 回遊率向上機能 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-services-marsfinder-excursion.html.png",
+            "level": 4
+          },
+          "convenience.html": {
+            "url": "https://www.marsflag.com/ja/services/marsfinder/convenience.html",
+            "title": "サイト内検索 MARS FINDER 利便性向上機能 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-services-marsfinder-convenience.html.png",
+            "level": 4
+          }
+        },
+        "marsscreen": {
+          "url": "https://www.marsflag.com/ja/services/marsscreen/",
+          "title": "製品検索プラットフォーム MARS SCREEN - MARS FLAG",
+          "thumbnailPath": "/screenshots/ja-services-marsscreen.png",
+          "level": 3,
+          "search.html": {
+            "url": "https://www.marsflag.com/ja/services/marsscreen/search.html",
+            "title": "製品検索プラットフォーム MARS SCREEN 多彩で便利な検索機能 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-services-marsscreen-search.html.png",
+            "level": 4
+          },
+          "compare.html": {
+            "url": "https://www.marsflag.com/ja/services/marsscreen/compare.html",
+            "title": "製品検索プラットフォーム MARS SCREEN 把握しやすい比較機能 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-services-marsscreen-compare.html.png",
+            "level": 4
+          },
+          "structure.html": {
+            "url": "https://www.marsflag.com/ja/services/marsscreen/structure.html",
+            "title": "製品検索プラットフォーム MARS SCREEN 仕組み - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-services-marsscreen-structure.html.png",
+            "level": 4
+          }
+        },
+        "marsemotech": {
+          "url": "https://www.marsflag.com/ja/services/marsemotech/",
+          "title": "チャット型AI対話サービス MARS EmoTech - MARS FLAG",
+          "thumbnailPath": "/screenshots/ja-services-marsemotech.png",
+          "level": 3
+        },
+        "marsquality": {
+          "url": "https://www.marsflag.com/ja/services/marsquality/",
+          "title": "Webサイト品質管理 MARS QUALITY - MARS FLAG",
+          "thumbnailPath": "/screenshots/ja-services-marsquality.png",
+          "level": 3,
+          "check.html": {
+            "url": "https://www.marsflag.com/ja/services/marsquality/check.html",
+            "title": "Webサイト品質管理 MARS QUALITY サイト品質のチェック - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-services-marsquality-check.html.png",
+            "level": 4
+          },
+          "crawl.html": {
+            "url": "https://www.marsflag.com/ja/services/marsquality/crawl.html",
+            "title": "Webサイト品質管理 MARS QUALITY 自動チェック・グループで活用 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-services-marsquality-crawl.html.png",
+            "level": 4
+          },
+          "report.html": {
+            "url": "https://www.marsflag.com/ja/services/marsquality/report.html",
+            "title": "Webサイト品質管理 MARS QUALITY チェック結果のレポート表示 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-services-marsquality-report.html.png",
+            "level": 4
+          },
+          "details.html": {
+            "url": "https://www.marsflag.com/ja/services/marsquality/details.html",
+            "title": "Webサイト品質管理 MARS QUALITY 効果・機能 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-services-marsquality-details.html.png",
+            "level": 4
+          },
+          "structure.html": {
+            "url": "https://www.marsflag.com/ja/services/marsquality/structure.html",
+            "title": "Webサイト品質管理 MARS QUALITY サイト全体像の把握 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-services-marsquality-structure.html.png",
+            "level": 4
+          }
+        },
+        "marsplatform": {
+          "url": "https://www.marsflag.com/ja/services/marsplatform/",
+          "title": "API連携クラウドサービス MARS Platform - MARS FLAG",
+          "thumbnailPath": "/screenshots/ja-services-marsplatform.png",
+          "level": 3,
+          "details.html": {
+            "url": "https://www.marsflag.com/ja/services/marsplatform/details.html",
+            "title": "API連携クラウドサービス MARS Platform 活用事例 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-services-marsplatform-details.html.png",
+            "level": 4
+          }
+        },
+        "marsexplorer": {
+          "url": "https://www.marsflag.com/ja/services/marsexplorer/",
+          "title": "検索窓おすすめ表示 MARS EXPLORER - MARS FLAG",
+          "thumbnailPath": "/screenshots/ja-services-marsexplorer.png",
+          "level": 3,
+          "benefit.html": {
+            "url": "https://www.marsflag.com/ja/services/marsexplorer/benefit.html",
+            "title": "検索窓おすすめ表示 MARS EXPLORER 導入の効果 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-services-marsexplorer-benefit.html.png",
+            "level": 4
+          },
+          "function.html": {
+            "url": "https://www.marsflag.com/ja/services/marsexplorer/function.html",
+            "title": "検索窓おすすめ表示 MARS EXPLORER 機能 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-services-marsexplorer-function.html.png",
+            "level": 4
+          }
+        }
+      },
+      "about-us": {
+        "url": "https://www.marsflag.com/ja/about-us/",
+        "title": "会社情報 - MARS FLAG",
+        "thumbnailPath": "/screenshots/ja-about-us.png",
+        "level": 2,
+        "careers": {
+          "url": "https://www.marsflag.com/ja/about-us/careers/",
+          "title": "採用情報 - MARS FLAG",
+          "thumbnailPath": "/screenshots/ja-about-us-careers.png",
+          "level": 3
+        }
+      },
+      "solutions": {
+        "url": "https://www.marsflag.com/ja/solutions/",
+        "title": "MARS FLAGが解決する課題 - MARS FLAG",
+        "thumbnailPath": "/screenshots/ja-solutions.png",
+        "level": 2
+      },
+      "contact-us": {
+        "url": "https://www.marsflag.com/ja/contact-us/",
+        "title": "お問い合わせ - MARS FLAG",
+        "thumbnailPath": "/screenshots/ja-contact-us.png",
+        "level": 2,
+        "etc.html": {
+          "url": "https://www.marsflag.com/ja/contact-us/etc.html",
+          "title": "お問い合わせ - MARS FLAG",
+          "thumbnailPath": "/screenshots/ja-contact-us-etc.html.png",
+          "level": 3
+        }
+      },
+      "yukakohata": {
+        "url": "https://www.marsflag.com/ja/yukakohata/",
+        "title": "パラトライアスリート 秦 由加子選手 - MARS FLAG",
+        "thumbnailPath": "/screenshots/ja-yukakohata.png",
+        "level": 2,
+        "interview2017": {
+          "url": "https://www.marsflag.com/ja/yukakohata/interview2017/",
+          "title": "秦 由加子 × 武井 信也 スペシャル対談 Vol.1 - MARS FLAG",
+          "thumbnailPath": "/screenshots/ja-yukakohata-interview2017.png",
+          "level": 3,
+          "article02.html": {
+            "url": "https://www.marsflag.com/ja/yukakohata/interview2017/article02.html",
+            "title": "秦 由加子 × 武井 信也 スペシャル対談 Vol.2 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-yukakohata-interview2017-article02.html.png",
+            "level": 4
+          },
+          "article03.html": {
+            "url": "https://www.marsflag.com/ja/yukakohata/interview2017/article03.html",
+            "title": "秦 由加子 × 武井 信也 スペシャル対談 Vol.3 - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-yukakohata-interview2017-article03.html.png",
+            "level": 4
+          }
+        }
+      },
+      "case-studies": {
+        "url": "https://www.marsflag.com/ja/case-studies/",
+        "title": "導入事例 - MARS FLAG",
+        "thumbnailPath": "/screenshots/ja-case-studies.png",
+        "level": 2,
+        "marsfinder": {
+          "title": "marsfinder",
+          "url": "top/ja/case-studies/marsfinder",
+          "level": 3,
+          "jra.html": {
+            "url": "https://www.marsflag.com/ja/case-studies/marsfinder/jra.html",
+            "title": "JRA日本中央競馬会様 導入インタビュー - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-case-studies-marsfinder-jra.html.png",
+            "level": 4
+          },
+          "hitachi.html": {
+            "url": "https://www.marsflag.com/ja/case-studies/marsfinder/hitachi.html",
+            "title": "株式会社 日立製作所様 導入インタビュー - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-case-studies-marsfinder-hitachi.html.png",
+            "level": 4
+          },
+          "jvckenwood.html": {
+            "url": "https://www.marsflag.com/ja/case-studies/marsfinder/jvckenwood.html",
+            "title": "株式会社JVCケンウッド様 導入インタビュー - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-case-studies-marsfinder-jvckenwood.html.png",
+            "level": 4
+          }
+        },
+        "marsscreen": {
+          "title": "marsscreen",
+          "url": "top/ja/case-studies/marsscreen",
+          "level": 3,
+          "panasonic.html": {
+            "url": "https://www.marsflag.com/ja/case-studies/marsscreen/panasonic.html",
+            "title": "パナソニック株式会社様 導入インタビュー - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-case-studies-marsscreen-panasonic.html.png",
+            "level": 4
+          }
+        },
+        "marsplatform": {
+          "title": "marsplatform",
+          "url": "top/ja/case-studies/marsplatform",
+          "level": 3,
+          "nemophila.html": {
+            "url": "https://www.marsflag.com/ja/case-studies/marsplatform/nemophila.html",
+            "title": "株式会社ネモフィラ様 導入インタビュー - MARS FLAG",
+            "thumbnailPath": "/screenshots/ja-case-studies-marsplatform-nemophila.html.png",
+            "level": 4
+          }
+        }
+      }
+    },
+    "en": {
+      "url": "https://www.marsflag.com/en/",
+      "title": "MARS FLAG Corporation",
+      "thumbnailPath": "/screenshots/en.png",
+      "level": 1,
+      "privacy-policy.html": {
+        "url": "https://www.marsflag.com/en/privacy-policy.html",
+        "title": "Privacy Policy - MARS FLAG",
+        "thumbnailPath": "/screenshots/en-privacy-policy.html.png",
+        "level": 2
+      },
+      "services": {
+        "url": "https://www.marsflag.com/en/services/",
+        "title": "OUR SERVICES - MARS FLAG",
+        "thumbnailPath": "/screenshots/en-services.png",
+        "level": 2,
+        "marsfinder": {
+          "url": "https://www.marsflag.com/en/services/marsfinder/",
+          "title": "Website Search MARS FINDER - MARS FLAG",
+          "thumbnailPath": "/screenshots/en-services-marsfinder.png",
+          "level": 3,
+          "why.html": {
+            "url": "https://www.marsflag.com/en/services/marsfinder/why.html",
+            "title": "Website Search MARS FINDER Why choose MARS FINDER? - MARS FLAG",
+            "thumbnailPath": "/screenshots/en-services-marsfinder-why.html.png",
+            "level": 4
+          },
+          "flow.html": {
+            "url": "https://www.marsflag.com/en/services/marsfinder/flow.html",
+            "title": "Website Search MARS FINDER How to start using the service - MARS FLAG",
+            "thumbnailPath": "/screenshots/en-services-marsfinder-flow.html.png",
+            "level": 4
+          },
+          "reason.html": {
+            "url": "https://www.marsflag.com/en/services/marsfinder/reason.html",
+            "title": "Website Search MARS FINDER Importance of website searches - MARS FLAG",
+            "thumbnailPath": "/screenshots/en-services-marsfinder-reason.html.png",
+            "level": 4
+          },
+          "narrow.html": {
+            "url": "https://www.marsflag.com/en/services/marsfinder/narrow.html",
+            "title": "Website Search MARS FINDER Refinement function - MARS FLAG",
+            "thumbnailPath": "/screenshots/en-services-marsfinder-narrow.html.png",
+            "level": 4
+          },
+          "details.html": {
+            "url": "https://www.marsflag.com/en/services/marsfinder/details.html",
+            "title": "Website Search MARS FINDER Features・Functions - MARS FLAG",
+            "thumbnailPath": "/screenshots/en-services-marsfinder-details.html.png",
+            "level": 4
+          },
+          "intelli.html": {
+            "url": "https://www.marsflag.com/en/services/marsfinder/intelli.html",
+            "title": "Website Search MARS FINDER Intelligent Advisor(Suggest function) - MARS FLAG",
+            "thumbnailPath": "/screenshots/en-services-marsfinder-intelli.html.png",
+            "level": 4
+          },
+          "featured.html": {
+            "url": "https://www.marsflag.com/en/services/marsfinder/featured.html",
+            "title": "Website Search MARS FINDER Recommendation - MARS FLAG",
+            "thumbnailPath": "/screenshots/en-services-marsfinder-featured.html.png",
+            "level": 4
+          },
+          "excursion.html": {
+            "url": "https://www.marsflag.com/en/services/marsfinder/excursion.html",
+            "title": "Website Search MARS FINDER Migration rate improvement function - MARS FLAG",
+            "thumbnailPath": "/screenshots/en-services-marsfinder-excursion.html.png",
+            "level": 4
+          },
+          "convenience.html": {
+            "url": "https://www.marsflag.com/en/services/marsfinder/convenience.html",
+            "title": "Website Search MARS FINDER Convenience improvement function - MARS FLAG",
+            "thumbnailPath": "/screenshots/en-services-marsfinder-convenience.html.png",
+            "level": 4
+          }
+        },
+        "marsscreen": {
+          "url": "https://www.marsflag.com/en/services/marsscreen/",
+          "title": "Product Search Platform MARS SCREEN - MARS FLAG",
+          "thumbnailPath": "/screenshots/en-services-marsscreen.png",
+          "level": 3,
+          "search.html": {
+            "url": "https://www.marsflag.com/en/services/marsscreen/search.html",
+            "title": "Product Search Platform MARS SCREEN Versatile and convenient search functions - MARS FLAG",
+            "thumbnailPath": "/screenshots/en-services-marsscreen-search.html.png",
+            "level": 4
+          },
+          "compare.html": {
+            "url": "https://www.marsflag.com/en/services/marsscreen/compare.html",
+            "title": "Product Search Platform MARS SCREEN Easy-to-understand comparison function - MARS FLAG",
+            "thumbnailPath": "/screenshots/en-services-marsscreen-compare.html.png",
+            "level": 4
+          },
+          "structure.html": {
+            "url": "https://www.marsflag.com/en/services/marsscreen/structure.html",
+            "title": "Product Search Platform MARS SCREEN How it works - MARS FLAG",
+            "thumbnailPath": "/screenshots/en-services-marsscreen-structure.html.png",
+            "level": 4
+          }
+        },
+        "marsquality": {
+          "url": "https://www.marsflag.com/en/services/marsquality/",
+          "title": "Website Quality Management MARS QUALITY - MARS FLAG",
+          "thumbnailPath": "/screenshots/en-services-marsquality.png",
+          "level": 3,
+          "details.html": {
+            "url": "https://www.marsflag.com/en/services/marsquality/details.html",
+            "title": "Website Quality Management MARS QUALITY Effect/Function - MARS FLAG",
+            "thumbnailPath": "/screenshots/en-services-marsquality-details.html.png",
+            "level": 4
+          }
+        },
+        "marsemotech": {
+          "url": "https://www.marsflag.com/en/services/marsemotech/",
+          "title": "AI Chatbot Service MARS EmoTech - MARS FLAG",
+          "thumbnailPath": "/screenshots/en-services-marsemotech.png",
+          "level": 3
+        },
+        "marsplatform": {
+          "url": "https://www.marsflag.com/en/services/marsplatform/",
+          "title": "API Integration Cloud Service MARS Platform - MARS FLAG",
+          "thumbnailPath": "/screenshots/en-services-marsplatform.png",
+          "level": 3,
+          "details.html": {
+            "url": "https://www.marsflag.com/en/services/marsplatform/details.html",
+            "title": "API Integration Cloud Service MARS Platform Examples of utilization - MARS FLAG",
+            "thumbnailPath": "/screenshots/en-services-marsplatform-details.html.png",
+            "level": 4
+          }
+        },
+        "marsexplorer": {
+          "url": "https://www.marsflag.com/en/services/marsexplorer/",
+          "title": "Search Box Recommendation MARS EXPLORER - MARS FLAG",
+          "thumbnailPath": "/screenshots/en-services-marsexplorer.png",
+          "level": 3,
+          "benefit.html": {
+            "url": "https://www.marsflag.com/en/services/marsexplorer/benefit.html",
+            "title": "Search Box Recommendation MARS EXPLORER Effects of installation - MARS FLAG",
+            "thumbnailPath": "/screenshots/en-services-marsexplorer-benefit.html.png",
+            "level": 4
+          },
+          "function.html": {
+            "url": "https://www.marsflag.com/en/services/marsexplorer/function.html",
+            "title": "Search Box Recommendation MARS EXPLORER Functions - MARS FLAG",
+            "thumbnailPath": "/screenshots/en-services-marsexplorer-function.html.png",
+            "level": 4
+          }
+        }
+      },
+      "about-us": {
+        "url": "https://www.marsflag.com/en/about-us/",
+        "title": "ABOUT US - MARS FLAG",
+        "thumbnailPath": "/screenshots/en-about-us.png",
+        "level": 2
+      },
+      "solutions": {
+        "url": "https://www.marsflag.com/en/solutions/",
+        "title": "SOLVING CHALLENGES - MARS FLAG",
+        "thumbnailPath": "/screenshots/en-solutions.png",
+        "level": 2
+      },
+      "contact-us": {
+        "url": "https://www.marsflag.com/en/contact-us/",
+        "title": "CONTACT US - MARS FLAG",
+        "thumbnailPath": "/screenshots/en-contact-us.png",
+        "level": 2,
+        "etc.html": {
+          "url": "https://www.marsflag.com/en/contact-us/etc.html",
+          "title": "CONTACT US - MARS FLAG",
+          "thumbnailPath": "/screenshots/en-contact-us-etc.html.png",
+          "level": 3
+        }
+      },
+      "case-studies": {
+        "url": "https://www.marsflag.com/en/case-studies/",
+        "title": "CASE STUDIES - MARS FLAG",
+        "thumbnailPath": "/screenshots/en-case-studies.png",
+        "level": 2
+      }
+    },
+    "tw": {
+      "url": "https://www.marsflag.com/tw/",
+      "title": "MARS FLAG Corporation",
+      "thumbnailPath": "/screenshots/tw.png",
+      "level": 1,
+      "news": {
+        "2019": {
+          "title": "2019",
+          "url": "top/tw/news/2019",
+          "level": 3,
+          "20190524-marketersgo.html": {
+            "url": "https://www.marsflag.com/tw/news/2019/20190524-marketersgo.html",
+            "title": "MARS FLAG以站內搜尋達人身分受媒體「行銷人」專訪 - MARS FLAG",
+            "thumbnailPath": "/screenshots/tw-news-2019-20190524-marketersgo.html.png",
+            "level": 4
+          }
+        },
+        "2020": {
+          "title": "2020",
+          "url": "top/tw/news/2020",
+          "level": 3,
+          "20200709-cisa.html": {
+            "url": "https://www.marsflag.com/tw/news/2020/20200709-cisa.html",
+            "title": "中華軟協「臺日零距離・線上商機交流會」 - MARS FLAG",
+            "thumbnailPath": "/screenshots/tw-news-2020-20200709-cisa.html.png",
+            "level": 4
+          },
+          "20200601-logo.html": {
+            "url": "https://www.marsflag.com/tw/news/2020/20200601-logo.html",
+            "title": "MARS FLAG新logo公開 - MARS FLAG",
+            "thumbnailPath": "/screenshots/tw-news-2020-20200601-logo.html.png",
+            "level": 4
+          },
+          "20200625-wework.html": {
+            "url": "https://www.marsflag.com/tw/news/2020/20200625-wework.html",
+            "title": "企業必須思考的『新時代工作環境』線上研討會分享 - MARS FLAG",
+            "thumbnailPath": "/screenshots/tw-news-2020-20200625-wework.html.png",
+            "level": 4
+          },
+          "20200413-marsfinder.html": {
+            "url": "https://www.marsflag.com/tw/news/2020/20200413-marsfinder.html",
+            "title": "由於COVID-19的影響，站內搜尋的使用急速增加 - MARS FLAG",
+            "thumbnailPath": "/screenshots/tw-news-2020-20200413-marsfinder.html.png",
+            "level": 4
+          },
+          "newsimg": {
+            "title": "newsimg",
+            "url": "top/tw/news/2020/newsimg",
+            "level": 4,
+            "202004_graph.png": {
+              "url": "https://www.marsflag.com/tw/news/2020/newsimg/202004_graph.png",
+              "title": "202004_graph.png (1252×708)",
+              "thumbnailPath": "/screenshots/tw-news-2020-newsimg-202004_graph.png.png",
+              "level": 5
+            }
+          }
+        },
+        "2021": {
+          "title": "2021",
+          "url": "top/tw/news/2021",
+          "level": 3,
+          "20210419-utokyo.html": {
+            "url": "https://www.marsflag.com/tw/news/2021/20210419-utokyo.html",
+            "title": "本公司法人代表武井就任東京大學研究生院情報理工學系研究科UMP-JUST項目 iPI ( industrial Principal Investigator ) - MARS FLAG",
+            "thumbnailPath": "/screenshots/tw-news-2021-20210419-utokyo.html.png",
+            "level": 4
+          },
+          "20210608-marsplatform.html": {
+            "url": "https://www.marsflag.com/tw/news/2021/20210608-marsplatform.html",
+            "title": "開始提供MARS Platform 服務 - MARS FLAG",
+            "thumbnailPath": "/screenshots/tw-news-2021-20210608-marsplatform.html.png",
+            "level": 4
+          }
+        },
+        "2022": {
+          "title": "2022",
+          "url": "top/tw/news/2022",
+          "level": 3,
+          "20220921-ideathon.html": {
+            "url": "https://www.marsflag.com/tw/news/2022/20220921-ideathon.html",
+            "title": "金邊舉辦的點子松結束報告 - MARS FLAG",
+            "thumbnailPath": "/screenshots/tw-news-2022-20220921-ideathon.html.png",
+            "level": 4
+          }
+        },
+        "2023": {
+          "title": "2023",
+          "url": "top/tw/news/2023",
+          "level": 3,
+          "20230207-renewal.html": {
+            "url": "https://www.marsflag.com/tw/news/2023/20230207-renewal.html",
+            "title": "官網全新改版上線 - MARS FLAG",
+            "thumbnailPath": "/screenshots/tw-news-2023-20230207-renewal.html.png",
+            "level": 4
+          }
+        },
+        "url": "https://www.marsflag.com/tw/news/",
+        "title": "最新消息 - MARS FLAG",
+        "thumbnailPath": "/screenshots/tw-news.png",
+        "level": 2
+      },
+      "services": {
+        "url": "https://www.marsflag.com/tw/services/",
+        "title": "產品・服務 - MARS FLAG",
+        "thumbnailPath": "/screenshots/tw-services.png",
+        "level": 2,
+        "marsfinder": {
+          "url": "https://www.marsflag.com/tw/services/marsfinder/",
+          "title": "站內搜尋 MARS FINDER - MARS FLAG",
+          "thumbnailPath": "/screenshots/tw-services-marsfinder.png",
+          "level": 3,
+          "details.html": {
+            "url": "https://www.marsflag.com/tw/services/marsfinder/details.html",
+            "title": "站內搜尋 MARS FINDER 特色・功能 - MARS FLAG",
+            "thumbnailPath": "/screenshots/tw-services-marsfinder-details.html.png",
+            "level": 4
+          }
+        },
+        "marsscreen": {
+          "url": "https://www.marsflag.com/tw/services/marsscreen/",
+          "title": "產品搜尋功能 MARS SCREEN - MARS FLAG",
+          "thumbnailPath": "/screenshots/tw-services-marsscreen.png",
+          "level": 3,
+          "search.html": {
+            "url": "https://www.marsflag.com/tw/services/marsscreen/search.html",
+            "title": "產品搜尋功能 MARS SCREEN 豐富且便利的搜尋功能 - MARS FLAG",
+            "thumbnailPath": "/screenshots/tw-services-marsscreen-search.html.png",
+            "level": 4
+          },
+          "compare.html": {
+            "url": "https://www.marsflag.com/tw/services/marsscreen/compare.html",
+            "title": "產品搜尋功能 MARS SCREEN 一目了然的比較功能 - MARS FLAG",
+            "thumbnailPath": "/screenshots/tw-services-marsscreen-compare.html.png",
+            "level": 4
+          },
+          "structure.html": {
+            "url": "https://www.marsflag.com/tw/services/marsscreen/structure.html",
+            "title": "產品搜尋功能 MARS SCREEN 機制 - MARS FLAG",
+            "thumbnailPath": "/screenshots/tw-services-marsscreen-structure.html.png",
+            "level": 4
+          }
+        },
+        "marsemotech": {
+          "url": "https://www.marsflag.com/tw/services/marsemotech/",
+          "title": "線上聊天型 AI對話服務 MARS EmoTech - MARS FLAG",
+          "thumbnailPath": "/screenshots/tw-services-marsemotech.png",
+          "level": 3
+        },
+        "marsquality": {
+          "url": "https://www.marsflag.com/tw/services/marsquality/",
+          "title": "網站品質管理服務 MARS QUALITY - MARS FLAG",
+          "thumbnailPath": "/screenshots/tw-services-marsquality.png",
+          "level": 3,
+          "details.html": {
+            "url": "https://www.marsflag.com/tw/services/marsquality/details.html",
+            "title": "網站品質管理服務 MARS QUALITY 效果與功能 - MARS FLAG",
+            "thumbnailPath": "/screenshots/tw-services-marsquality-details.html.png",
+            "level": 4
+          }
+        },
+        "marsplatform": {
+          "url": "https://www.marsflag.com/tw/services/marsplatform/",
+          "title": "API雲端串接服務 MARS Platform - MARS FLAG",
+          "thumbnailPath": "/screenshots/tw-services-marsplatform.png",
+          "level": 3,
+          "details.html": {
+            "url": "https://www.marsflag.com/tw/services/marsplatform/details.html",
+            "title": "API雲端串接服務 MARS Platform 運用案例 - MARS FLAG",
+            "thumbnailPath": "/screenshots/tw-services-marsplatform-details.html.png",
+            "level": 4
+          }
+        },
+        "marsexplorer": {
+          "url": "https://www.marsflag.com/tw/services/marsexplorer/",
+          "title": "智慧搜尋推薦顯示 MARS EXPLORER - MARS FLAG",
+          "thumbnailPath": "/screenshots/tw-services-marsexplorer.png",
+          "level": 3,
+          "benefit.html": {
+            "url": "https://www.marsflag.com/tw/services/marsexplorer/benefit.html",
+            "title": "智慧搜尋推薦顯示 MARS EXPLORER 導入的效果 - MARS FLAG",
+            "thumbnailPath": "/screenshots/tw-services-marsexplorer-benefit.html.png",
+            "level": 4
+          },
+          "function.html": {
+            "url": "https://www.marsflag.com/tw/services/marsexplorer/function.html",
+            "title": "智慧搜尋推薦顯示 MARS EXPLORER 功能 - MARS FLAG",
+            "thumbnailPath": "/screenshots/tw-services-marsexplorer-function.html.png",
+            "level": 4
+          }
+        }
+      },
+      "about-us": {
+        "url": "https://www.marsflag.com/tw/about-us/",
+        "title": "關於我們 - MARS FLAG",
+        "thumbnailPath": "/screenshots/tw-about-us.png",
+        "level": 2
+      },
+      "solutions": {
+        "url": "https://www.marsflag.com/tw/solutions/",
+        "title": "MARS FLAG解決的問題 - MARS FLAG",
+        "thumbnailPath": "/screenshots/tw-solutions.png",
+        "level": 2
+      },
+      "contact-us": {
+        "url": "https://www.marsflag.com/tw/contact-us/",
+        "title": "產品諮詢 - MARS FLAG",
+        "thumbnailPath": "/screenshots/tw-contact-us.png",
+        "level": 2,
+        "etc.html": {
+          "url": "https://www.marsflag.com/tw/contact-us/etc.html",
+          "title": "產品諮詢 - MARS FLAG",
+          "thumbnailPath": "/screenshots/tw-contact-us-etc.html.png",
+          "level": 3
+        }
+      },
+      "case-studies": {
+        "url": "https://www.marsflag.com/tw/case-studies/",
+        "title": "成功案例 - MARS FLAG",
+        "thumbnailPath": "/screenshots/tw-case-studies.png",
+        "level": 2,
+        "marsfinder": {
+          "title": "marsfinder",
+          "url": "top/tw/case-studies/marsfinder",
+          "level": 3,
+          "jra.html": {
+            "url": "https://www.marsflag.com/tw/case-studies/marsfinder/jra.html",
+            "title": "JRA日本中央賽馬會 導入訪談 - MARS FLAG",
+            "thumbnailPath": "/screenshots/tw-case-studies-marsfinder-jra.html.png",
+            "level": 4
+          },
+          "hitachi.html": {
+            "url": "https://www.marsflag.com/tw/case-studies/marsfinder/hitachi.html",
+            "title": "日立製作所 導入訪談 - MARS FLAG",
+            "thumbnailPath": "/screenshots/tw-case-studies-marsfinder-hitachi.html.png",
+            "level": 4
+          },
+          "jvckenwood.html": {
+            "url": "https://www.marsflag.com/tw/case-studies/marsfinder/jvckenwood.html",
+            "title": "JVCKENWOOD 導入訪談 - MARS FLAG",
+            "thumbnailPath": "/screenshots/tw-case-studies-marsfinder-jvckenwood.html.png",
+            "level": 4
+          }
+        },
+        "marsscreen": {
+          "title": "marsscreen",
+          "url": "top/tw/case-studies/marsscreen",
+          "level": 3,
+          "panasonic.html": {
+            "url": "https://www.marsflag.com/tw/case-studies/marsscreen/panasonic.html",
+            "title": "Panasonic 導入訪談 - MARS FLAG",
+            "thumbnailPath": "/screenshots/tw-case-studies-marsscreen-panasonic.html.png",
+            "level": 4
+          }
+        },
+        "marsplatform": {
+          "title": "marsplatform",
+          "url": "top/tw/case-studies/marsplatform",
+          "level": 3,
+          "nemophila.html": {
+            "url": "https://www.marsflag.com/tw/case-studies/marsplatform/nemophila.html",
+            "title": "NEMOPHILA 導入訪談 - MARS FLAG",
+            "thumbnailPath": "/screenshots/tw-case-studies-marsplatform-nemophila.html.png",
+            "level": 4
+          }
+        }
+      }
+    },
+    "cn": {
+      "url": "https://www.marsflag.com/cn/",
+      "title": "MARS FLAG Corporation",
+      "thumbnailPath": "/screenshots/cn.png",
+      "level": 1,
+      "services": {
+        "url": "https://www.marsflag.com/cn/services/",
+        "title": "产品・服务 - MARS FLAG",
+        "thumbnailPath": "/screenshots/cn-services.png",
+        "level": 2,
+        "marsfinder": {
+          "url": "https://www.marsflag.com/cn/services/marsfinder/",
+          "title": "站内搜索 MARS FINDER - MARS FLAG",
+          "thumbnailPath": "/screenshots/cn-services-marsfinder.png",
+          "level": 3
+        },
+        "marsscreen": {
+          "url": "https://www.marsflag.com/cn/services/marsscreen/",
+          "title": "产品搜索平台 MARS SCREEN - MARS FLAG",
+          "thumbnailPath": "/screenshots/cn-services-marsscreen.png",
+          "level": 3
+        },
+        "marsemotech": {
+          "url": "https://www.marsflag.com/cn/services/marsemotech/",
+          "title": "聊天型 AI对话服务 MARS EmoTech - MARS FLAG",
+          "thumbnailPath": "/screenshots/cn-services-marsemotech.png",
+          "level": 3
+        },
+        "marsquality": {
+          "url": "https://www.marsflag.com/cn/services/marsquality/",
+          "title": "网站质量管理服务 MARS QUALITY - MARS FLAG",
+          "thumbnailPath": "/screenshots/cn-services-marsquality.png",
+          "level": 3
+        },
+        "marsplatform": {
+          "url": "https://www.marsflag.com/cn/services/marsplatform/",
+          "title": "API联动云服务 MARS Platform - MARS FLAG",
+          "thumbnailPath": "/screenshots/cn-services-marsplatform.png",
+          "level": 3
+        },
+        "marsexplorer": {
+          "url": "https://www.marsflag.com/cn/services/marsexplorer/",
+          "title": "搜索框智能提示 MARS EXPLORER - MARS FLAG",
+          "thumbnailPath": "/screenshots/cn-services-marsexplorer.png",
+          "level": 3
+        }
+      },
+      "about-us": {
+        "url": "https://www.marsflag.com/cn/about-us/",
+        "title": "关于我们 - MARS FLAG",
+        "thumbnailPath": "/screenshots/cn-about-us.png",
+        "level": 2
+      },
+      "contact-us": {
+        "url": "https://www.marsflag.com/cn/contact-us/",
+        "title": "产品谘询 - MARS FLAG",
+        "thumbnailPath": "/screenshots/cn-contact-us.png",
+        "level": 2,
+        "etc.html": {
+          "url": "https://www.marsflag.com/cn/contact-us/etc.html",
+          "title": "产品谘询 - MARS FLAG",
+          "thumbnailPath": "/screenshots/cn-contact-us-etc.html.png",
+          "level": 3
+        }
+      },
+      "case-studies": {
+        "url": "https://www.marsflag.com/cn/case-studies/",
+        "title": "导入实绩 - MARS FLAG",
+        "thumbnailPath": "/screenshots/cn-case-studies.png",
+        "level": 2
+      }
+    },
+    "ideathon": {
+      "url": "https://www.marsflag.com/ideathon/",
+      "title": "Cambodia Ideathon",
+      "thumbnailPath": "/screenshots/ideathon.png",
+      "level": 1,
+      "en": {
+        "url": "https://www.marsflag.com/ideathon/en/",
+        "title": "Cambodia Ideathon",
+        "thumbnailPath": "/screenshots/ideathon-en.png",
+        "level": 2
+      },
+      "khmer": {
+        "url": "https://www.marsflag.com/ideathon/khmer/",
+        "title": "Cambodia Ideathon",
+        "thumbnailPath": "/screenshots/ideathon-khmer.png",
+        "level": 2
+      }
+    },
+    "service": {
+      "title": "service",
+      "url": "top/service",
+      "level": 1,
+      "marsfinder": {
+        "url": "https://www.marsflag.com/service/marsfinder/",
+        "title": "クラウド型サイト内検索サービス MARS FINDER",
+        "thumbnailPath": "/screenshots/service-marsfinder.png",
+        "level": 2
+      }
+    }
+  }
+}
