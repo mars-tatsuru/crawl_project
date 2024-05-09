@@ -287,6 +287,7 @@ const LayoutFlow = () => {
       connectionLineType={ConnectionLineType.SmoothStep}
       defaultEdgeOptions={defaultEdgeOptions}
       fitView
+      minZoom={0.01}
       fitViewOptions={{
         nodes: [
           {
