@@ -34,7 +34,8 @@ import Dagre from "@dagrejs/dagre";
 import CustomNode from "@/components/Flow/CustomNode";
 import CustomEdge from "@/components/Flow/CustomEdge";
 import styles from "@/styles/Flow.module.scss";
-import tree from "../../backend/storage/key_value_stores/default/site_tree.json";
+// import tree from "../../backend/storage/key_value_stores/default/site_tree.json";
+import tree from "../../backend/site_tree.json";
 
 /************************************************
  * 1. use Darge to layout the nodes and edges
