@@ -28,6 +28,10 @@ import ReactFlow, {
   useNodesInitialized,
   useViewport,
   Viewport,
+  applyNodeChanges,
+  NodeChange,
+  applyEdgeChanges,
+  EdgeChange,
 } from "reactflow";
 
 import Dagre from "@dagrejs/dagre";
@@ -106,10 +110,23 @@ const getLayoutedElements = (nodes: any, edges: any, direction = "TB") => {
 
 const LayoutFlow = () => {
   // Add node or box
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-
+  const [nodes, setNodes] = useNodesState(initialNodes);
   // Add edge or connection
-  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+  const [edges, setEdges] = useEdgesState(initialEdges);
+
+  const onNodesChange = useCallback(
+    (changes: NodeChange[]) => {
+      setNodes((oldNodes) => applyNodeChanges(changes, oldNodes));
+    },
+    [setNodes]
+  );
+
+  const onEdgesChange = useCallback(
+    (changes: EdgeChange[]) => {
+      setEdges((oldEdges) => applyEdgeChanges(changes, oldEdges));
+    },
+    [setEdges]
+  );
 
   // new click event function
   const onLayout = useCallback(

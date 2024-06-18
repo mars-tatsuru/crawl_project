@@ -53,8 +53,9 @@ function NodeIdDisplay() {
   const nodeId = useNodeId();
 
   return (
-    // <span className={styles.nodeId} onClick={foldUpCard}>
-    <span className={styles.nodeId}>{nodeId}</span>
+    <span onClick={foldUpCard} className={styles.nodeId}>
+      {nodeId}
+    </span>
   );
 }
 
