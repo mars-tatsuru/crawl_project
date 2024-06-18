@@ -114,6 +114,7 @@ const LayoutFlow = () => {
   // Add edge or connection
   const [edges, setEdges] = useEdgesState(initialEdges);
 
+  // https://reactflow.dev/api-reference/react-flow#on-nodes-change
   const onNodesChange = useCallback(
     (changes: NodeChange[]) => {
       setNodes((oldNodes) => applyNodeChanges(changes, oldNodes));
@@ -127,37 +128,6 @@ const LayoutFlow = () => {
     },
     [setEdges]
   );
-
-  // new click event function
-  const onLayout = useCallback(
-    (direction: string) => {
-      const { nodes: layoutedNodes, edges: layoutedEdges } =
-        getLayoutedElements(nodes, edges, direction);
-
-      setNodes([...layoutedNodes]);
-      setEdges([...layoutedEdges]);
-    },
-    [nodes, edges]
-  );
-
-  //TODO: 他にも引数にnodeの名前を入れて、検索してzoomする関数を作る
-  // const moveToFirstNode = useCallback(() => {
-  //   const firstNode = nodes[0];
-  //   const windowWidth = window.innerWidth;
-  //   const windowHeight = window.innerHeight;
-  //   const clientRect = firstNode?.position;
-
-  //   if (clientRect) {
-  //     setViewport(
-  //       {
-  //         x: -clientRect.x / 2 + windowWidth / 2,
-  //         y: clientRect.y,
-  //         zoom: 0.5,
-  //       },
-  //       { duration: 1000 }
-  //     );
-  //   }
-  // }, [nodes]);
 
   /************************************************
    * 1 useEffect
@@ -314,23 +284,13 @@ const LayoutFlow = () => {
         minZoom: 1,
         maxZoom: 0.4,
       }}
-      // defaultViewport={defaultViewport}
     >
       <Background style={{ background: "#333" }} />
-      {/* <MiniMap nodeStrokeWidth={3} /> */}
       <Panel position="top-right">
-        {/* <button style={{ marginRight: "10px" }} onClick={() => onLayout("TB")}>
-          vertical layout
-        </button> */}
-        {/* <button onClick={() => onLayout("LR")}>horizontal layout</button> */}
-        {/* <button style={{ marginRight: "10px" }} onClick={moveToFirstNode}>
-          move to top level
-        </button> */}
         <p>
           Current: positionX:{x}, positionY:{y}, zoom:{zoom}
         </p>
       </Panel>
-      {/* <Controls /> */}
     </ReactFlow>
   );
 };
